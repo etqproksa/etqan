@@ -107,11 +107,10 @@ export default function RootLayout({ children }) {
         <Script src="/assets/vendor/lightgallery/plugins/video/lg-video.min.js" strategy="lazyOnload" />
         <Script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" strategy="lazyOnload" />
         <Script src="/assets/vendor/shufflejs/dist/shuffle.min.js" strategy="lazyOnload" />
-          <Script src="/assets/vendor/parallax-js/dist/parallax.min.js" strategy="lazyOnload" />
-           <Script src="/assets/js/theme.min.js" strategy="lazyOnload" />
-
-        {/* Main Theme Script */}
+        <Script src="/assets/vendor/parallax-js/dist/parallax.min.js" strategy="lazyOnload" />
         <Script src="/assets/js/theme.min.js" strategy="lazyOnload" />
+
+    
       </body>
     </html>
   )
