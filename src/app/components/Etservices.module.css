@@ -1,0 +1,182 @@
+/* Custom styles for the Etservices component */
+
+.heroSection {
+  background-color: #0B0F19; /* Dark background color from the image */
+  color: #ffffff; /* White text color */
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Hide overflow from circles extending beyond bounds */
+}
+
+.backgroundGradient {
+  background: #0B0F19;
+  opacity: 0.8;
+}
+
+.itOnlineBlue {
+  color: #6366f1; /* Custom blue color for "IT Online" text */
+}
+
+/* Bubble Container */
+.bubbleContainer {
+  position: absolute;
+  /* The width/height/top/left/right/bottom/transform are set inline in JSX */
+  /* This div acts as the parent for both inner and outer circles */
+}
+
+/* Outer Circle (for text) */
+.outerCircle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Bootstrap shadow */
+}
+
+/* Inner Circle (for icon) */
+.innerCircle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white; /* Ensure inner circle is also white */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Smaller shadow for inner */
+}
+
+/* Circular Text SVG */
+.circularTextSvg {
+  width: 100%;
+  height: 100%;
+  overflow: visible; /* Ensure text is not clipped */
+   padding: 5px;
+}
+
+.circularText {
+  font-size: 12px; /* Adjust font size as needed */
+  fill: white; /* Text color */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+ 
+}
+
+/* Tooltip styles removed */
+/* .tooltipContainer, .tooltipContainer::before, .tooltipContainer::after styles are removed */
+
+/* Keyframes for floating animation */
+@keyframes circle-float-1 {
+  0% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(10px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+}
+
+@keyframes circle-float-2 {
+  0% {
+    transform: translate(-50%, -50%) translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-8px) translateX(8px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0px) translateX(0px);
+  }
+}
+
+@keyframes circle-float-3 {
+  0% {
+    transform: translate(50%, -50%) translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translate(50%, -50%) translateY(12px) translateX(-12px);
+  }
+  100% {
+    transform: translate(50%, -50%) translateY(0px) translateX(0px);
+  }
+}
+
+@keyframes circle-float-4 {
+  0% {
+    transform: translate(50%, 50%) translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translate(50%, 50%) translateY(-10px) translateX(10px);
+  }
+  100% {
+    transform: translate(50%, 50%) translateY(0px) translateX(0px);
+  }
+}
+
+@keyframes circle-float-5 {
+  0% {
+    transform: translate(-50%, 50%) translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translate(-50%, 50%) translateY(15px) translateX(-5px);
+  }
+  100% {
+    transform: translate(-50%, 50%) translateY(0px) translateX(0px);
+  }
+}
+
+/* New animations for added circles */
+@keyframes circle-float-6 {
+  0% {
+    transform: translate(-50%, -50%) translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(5px) translateX(5px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0px) translateX(0px);
+  }
+}
+
+@keyframes circle-float-7 {
+  0% {
+    transform: translate(-50%, 50%) translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translate(-50%, 50%) translateY(-5px) translateX(-5px);
+  }
+  100% {
+    transform: translate(-50%, 50%) translateY(0px) translateX(0px);
+  }
+}
+
+/* Apply animations to elements */
+.circleFloat1 {
+  animation: circle-float-1 1s ease-in-out infinite;
+}
+
+.circleFloat2 {
+  animation: circle-float-2 1s ease-in-out infinite;
+}
+
+.circleFloat3 {
+  animation: circle-float-3 2s ease-in-out infinite;
+}
+
+.circleFloat4 {
+  animation: circle-float-4 3s ease-in-out infinite;
+}
+
+.circleFloat5 {
+  animation: circle-float-5 2.5s ease-in-out infinite;
+}
+
+.circleFloat6 {
+  animation: circle-float-6 4.5s ease-in-out infinite;
+}
+
+.circleFloat7 {
+  animation: circle-float-7 3.2s ease-in-out infinite;
+}

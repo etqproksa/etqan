@@ -1,0 +1,63 @@
+/* Project.module.css */
+
+/* Parallax Container */
+.parallax {
+  position: relative;
+  height: 600px; /* Fixed height for positioning absolute children */
+  /* max-width is set inline in the component */
+}
+
+/* Parallax Layers - these are global classes, not module specific */
+/* .parallax-layer is used directly in JSX */
+
+/* Custom styles for the central circle to match the image */
+/* This class replaces Bootstrap's bg-primary and shadow-primary for visual consistency */
+.centerCircle3dCustom {
+  background: linear-gradient(145deg, #5a48d8, #7b68ee, #5a48d8) !important; /* Purple gradient */
+  box-shadow: 0 0 20px rgba(123, 104, 238, 0.6), inset 0 4px 8px rgba(255, 255, 255, 0.1), inset 0 -4px 8px
+    rgba(0, 0, 0, 0.25) !important; /* Added glow */
+}
+
+/* New: Container for the icon circle (the visible part) */
+.iconCircleContainer {
+  position: relative; /* For absolute positioning of children (spans and icon) */
+  width: 80px; /* Fixed size for the icon circle */
+  height: 80px; /* Fixed size for the icon circle */
+  border-radius: 50%; /* Ensure it's perfectly round */
+  flex-shrink: 0; /* Prevent shrinking in flex container */
+  /* The background and border are applied to the span children within this container */
+  /* Overflow hidden to ensure children don't break roundness */
+  overflow: hidden;
+}
+
+/* New: Styles for the label box (to the right of the icon) */
+.iconLabelBox {
+  background-color: #1a1a2e; /* Dark background */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* White border */
+  color: white; /* White text */
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  margin-left: 8px; /* Space between circle and label */
+}
+
+/* Custom Button Styling - overriding Bootstrap's .btn-outline-primary */
+.btnOutlinePrimaryCustom {
+  background-color: #1a1a2e !important; /* Dark background */
+  border-color: rgba(255, 255, 255, 0.2) !important; /* Light border */
+  color: white !important; /* White text */
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btnOutlinePrimaryCustom:hover {
+  background-color: #2d4a8c !important; /* Darker blue on hover */
+  border-color: #2d4a8c !important;
+  color: white !important;
+}
+.lucideIcon {
+  width: 5em;
+  height: 5em;
+}
+/* Original dark mode support classes - these are global, so they remain in globals.css */
+/* .d-dark-mode-none, .d-dark-mode-block are assumed to be in app/globals.css */
