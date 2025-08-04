@@ -76,10 +76,10 @@ export default function Etservices() {
         <div className="row align-items-center">
           {/* Left Text Content */}
           <div className="col-lg-5 d-flex flex-column pt-lg-4 pt-xl-5 text-center text-lg-start">
-            <h5 className="my-2 text-secondary">Welcome!</h5>
-            <h1 className="display-3 mb-4">
-              Learn <span className={styles.itOnlineBlue}>IT Online</span> with No Limits
-            </h1>
+            <h1>Our Services</h1>
+           <h2 class="display-5 mb-0"><span class="text-gradient-primary">
+              Complaince, Consulting, Audit and Testing
+           </span></h2>
             <p className="fs-lg mb-5 text-muted">
               Enjoy our great selection of IT courses. Choose from more than 25K online video courses and become an IT
               expert now!

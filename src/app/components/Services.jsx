@@ -3,7 +3,7 @@ export default function Services() {
     <section className="container mb-5 pb-2 pb-md-4 pb-lg-5">
       <div className="card border-0 bg-secondary p-md-5 px-sm-2 pt-4 pb-3">
         <div className="card-body mx-auto" style={{ maxWidth: "860px" }}>
-          <h2 className="h1 mb-4 text-center">Our Competencies</h2>
+          <h2 className="h1 mb-4 text-center">Our Core Values</h2>
           <p className="mb-4 pb-3 fs-lg text-center text-muted">
             We fully understand your business. If you need to update something, we are more than happy to help you with
             the services we are providing.
@@ -21,7 +21,7 @@ export default function Services() {
                   aria-expanded="true"
                   aria-controls="collapse-1"
                 >
-                  Digital Marketing
+                Integrity
                 </button>
               </h3>
               <div
@@ -61,7 +61,7 @@ export default function Services() {
                   aria-expanded="false"
                   aria-controls="collapse-2"
                 >
-                  Web Development
+                 Quality
                 </button>
               </h3>
               <div
@@ -102,7 +102,7 @@ export default function Services() {
                   aria-expanded="false"
                   aria-controls="collapse-3"
                 >
-                  Application Development
+                  Innovation
                 </button>
               </h3>
               <div
@@ -142,7 +142,7 @@ export default function Services() {
                   aria-expanded="false"
                   aria-controls="collapse-4"
                 >
-                  Strategy
+                  Customer Focus
                 </button>
               </h3>
               <div
@@ -172,46 +172,7 @@ export default function Services() {
                 </div>
               </div>
             </div>
-            {/* Item */}
-            <div className="accordion-item border-0 rounded-3 shadow-sm mb-3">
-              <h3 className="accordion-header" id="heading-5">
-                <button
-                  className="accordion-button fs-xl shadow-none rounded-3 collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapse-5"
-                  aria-expanded="false"
-                  aria-controls="collapse-5"
-                >
-                  Digital Advertising
-                </button>
-              </h3>
-              <div
-                className="accordion-collapse collapse"
-                id="collapse-5"
-                aria-labelledby="heading-5"
-                data-bs-parent="#accordion-services"
-              >
-                <div className="accordion-body pt-0">
-                  <div className="d-flex flex-md-row flex-column align-items-md-center">
-                    <img
-                      src="/assets/img/landing/digital-agency/services/05.png"
-                      width="200"
-                      alt="Digital Advertising"
-                      className="me-md-4 mb-md-0 mb-3"
-                    />
-                    <div className="ps-md-3">
-                      <p className="mb-0">
-                        Nulla odio diam, arcu dictum neque nec cursus. Vel, aliquam nisl ridiculus sed. Pulvinar lectus
-                        ac pellentesque sollicitudin tristique aliquet ullamcorper in eu. Tincidunt porta magna faucibus
-                        neque, nunc gravida sagittis. Ut tellus sed odio laoreet. Molestie sit viverra maecenas nisl
-                        felis consequat.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      
           </div>
         </div>
       </div>

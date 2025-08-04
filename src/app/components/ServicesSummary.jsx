@@ -1,5 +1,14 @@
 import React from 'react'
-
+import {
+  DatabaseBackup,
+  UserRoundCog,
+  MonitorCog ,
+  FolderClock,
+  TrendingUpDown ,
+  ShieldIcon as ShieldUser,
+  BrickWallFire ,
+  BrainCircuit,
+} from "lucide-react"
 function ServicesSummary() {
   return (
     <section className="container mb-5 pt-lg-5" id="benefits">
@@ -23,8 +32,8 @@ function ServicesSummary() {
             {/* Item */}
             <div className="swiper-slide border-end-lg px-2">
               <div className="text-center">
-                <img src="assets/img/landing/digital-agency/icons/idea.svg" width="48" alt="Bulb icon" className="d-block mb-4 mx-auto" />
-                <h4 className="mb-2 pb-1">Creative Solutions</h4>
+              <FolderClock  color="#A754F3"  size={48} strokeWidth={2} />
+                <h4 className="mb-2 pb-1">Managed IT Serivices</h4>
                 <p className="mx-auto" style={{maxWidth: "336px"}}>Sed morbi nulla pulvinar lectus tempor vel euismod accumsan.</p>
               </div>
             </div>
@@ -32,8 +41,8 @@ function ServicesSummary() {
             {/* Item */}
             <div className="swiper-slide border-end-lg px-2">
               <div className="text-center">
-                <img src="assets/img/landing/digital-agency/icons/award.svg" width="48" alt="Award icon" className="d-block mb-4 mx-auto" />
-                <h4 className="mb-2 pb-1">Award Winning</h4>
+               <BrickWallFire  color="#A754F3"  size={48} strokeWidth={2} />
+                <h4 className="mb-2 pb-1">Cybersecurity & Compliance</h4>
                 <p className="mx-auto" style={{maxWidth: "336px"}}>Sit facilisis dolor arcu, fermentum vestibulum arcu elementum imperdiet.</p>
               </div>
             </div>
@@ -41,8 +50,8 @@ function ServicesSummary() {
             {/* Item */}
             <div className="swiper-slide px-2">
               <div className="text-center">
-                <img src="assets/img/landing/digital-agency/icons/team.svg" width="48" alt="Team icon" className="d-block mb-4 mx-auto" />
-                <h4 className="mb-2 pb-1">Team of Professionals</h4>
+               <BrainCircuit color="#A754F3"  size={48} strokeWidth={2} />
+                <h4 className="mb-2 pb-1">Digital Transformation Advisory</h4>
                 <p className="mx-auto" style={{maxWidth: "336px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
             </div>

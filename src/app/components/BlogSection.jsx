@@ -2,7 +2,7 @@ export default function BlogSection() {
   return (
   
       <section className="container py-5 mb-1 mb-md-4 mb-lg-5">
-        <h2 className="h1 text-center pt-1 pb-4 mb-1 mb-lg-3">Latest News &amp; Healthy Tips</h2>
+        <h2 className="h1 text-center pt-1 pb-4 mb-1 mb-lg-3">Latest News &amp; Tips</h2>
         <div className="position-relative px-xl-5">
           
          {/* Slider prev/next buttons */}

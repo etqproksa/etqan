@@ -3,10 +3,13 @@ export default function Solutions() {
 
     <section className="pb-5 mb-2 mb-md-4 mb-lg-5" style ={{paddingTop: "80px"}}>
       <div className="bg-secondary pb-lg-4 pb-xl-5">
+       
         <div className="container pb-4 pb-md-5">
+           
           <div className="row">
+            
             <div className="col-xl-5 col-lg-6" style={{marginTop: "-80px"}}>
-
+            
              {/* Swiper tabs */}
               <div className="swiper-tabs mx-auto" style={{ maxWidth: "526px" }}>
                 <div id="image-1" className="swiper-tab active">
@@ -17,8 +20,12 @@ export default function Solutions() {
                 </div>
               </div>
             </div>
-            <div className="col-xl-5 col-lg-6 offset-xl-1 pt-2 pt-md-4 pt-lg-5 mt-4">
-
+            <div className="col-xl-5 col-lg-6 offset-xl-1 p-2">
+              <h2 class="display-6 ">
+              <span class="text-secondary opacity-40 " >
+                   Our Solutions
+              </span>
+             </h2>
              {/* Slider prev/next buttons */}
               <div className="d-flex justify-content-center justify-content-lg-start pb-3 mb-3">
                 <button type="button" id="prev" className="btn btn-prev btn-icon btn-sm me-2" aria-label="Previous">

@@ -452,15 +452,7 @@ export default function Header() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <a
-          href="#"
-          className="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <i className="bx bx-cart fs-5 lh-1 me-1"></i>
-          &nbsp;Buy now
-        </a>
+    
       </div>
     </header>
   )
