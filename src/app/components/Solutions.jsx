@@ -21,8 +21,8 @@ export default function Solutions() {
               </div>
             </div>
             <div className="col-xl-5 col-lg-6 offset-xl-1 p-2">
-              <h2 class="display-6 ">
-              <span class="text-secondary opacity-40 " >
+              <h2 className="display-6 ">
+              <span className="text-secondary opacity-40 " >
                    Our Solutions
               </span>
              </h2>

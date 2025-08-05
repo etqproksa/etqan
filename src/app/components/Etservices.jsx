@@ -77,7 +77,7 @@ export default function Etservices() {
           {/* Left Text Content */}
           <div className="col-lg-5 d-flex flex-column pt-lg-4 pt-xl-5 text-center text-lg-start">
             <h1>Our Services</h1>
-           <h2 class="display-5 mb-0"><span class="text-gradient-primary">
+           <h2 className="display-5 mb-0"><span className="text-gradient-primary">
               Complaince, Consulting, Audit and Testing
            </span></h2>
             <p className="fs-lg mb-5 text-muted">
