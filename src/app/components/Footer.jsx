@@ -5,8 +5,8 @@ export default function Footer() {
         <div className="row pb-5">
           <div className="col-lg-4 col-md-6">
             <div className="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">
-              <img src="/assets/img/logo.svg" width="47" alt="Silicon" />
-              Silicon
+              <img src="/assets/img/etqanlogo.png" width="100" alt="Silicon" />
+             
             </div>
             <p className="fs-sm pb-lg-3 mb-4">
               Proin ipsum pharetra, senectus eget scelerisque varius pretium platea velit. Lacus, eget eu vitae nullam

@@ -3,8 +3,8 @@ export default function Header() {
     <header className="header navbar navbar-expand-lg position-absolute navbar-sticky">
       <div className="container px-3">
         <a href="/" className="navbar-brand pe-3">
-          <img src="/assets/img/logo.svg" width="47" alt="Silicon" />
-          Etqan
+          <img src="/assets/img/etqanlogo.png" width="100" alt="Silicon" />
+        
         </a>
         <div id="navbarNav" className="offcanvas offcanvas-end">
           <div className="offcanvas-header border-bottom">

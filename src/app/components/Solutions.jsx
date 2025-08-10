@@ -1,7 +1,7 @@
 export default function Solutions() {
   return (
 
-    <section className="pb-5 mb-2 mb-md-4 mb-lg-5" style ={{paddingTop: "80px"}}>
+    <section className="pb-5 mb-2 mb-md-4 mb-lg-5" style ={{paddingTop: "80px",marginTop: "120px"}}>
       <div className="bg-secondary pb-lg-4 pb-xl-5">
        
         <div className="container pb-4 pb-md-5">
