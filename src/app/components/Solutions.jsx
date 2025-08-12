@@ -1,6 +1,6 @@
 export default function Solutions() {
   return (
-      <section className="container pb-5 mb-md-2 mb-lg-5 " style={{marginTop:"100px"}}>
+      <section className="container" style={{marginTop:"100px"}}>
         <div className="row">
           <div className="col-lg-4 text-center text-lg-start pb-3 pb-lg-0 mb-4 mb-lg-0">
             <h2 className="h1 mb-lg-4">Highly Innovative Technology &amp; Solutions</h2>
