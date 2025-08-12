@@ -3,7 +3,7 @@ import React from 'react'
 function Videocomp() {
   return (
       
-      <section class="container text-center pb-5 mb-3 mb-md-4 mb-lg-5">
+      <section class="container text-center pb-5 mb-3 mb-md-4 mb-lg-5 mt-5">
         <h2 class="h1 pt-1 mb-4">See What Makes Us Different</h2>
         <div class="row justify-content-center mb-md-2 mb-lg-5">
           <div class="col-lg-6 col-md-8">
