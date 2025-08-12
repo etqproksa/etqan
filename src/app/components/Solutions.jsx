@@ -1,72 +1,111 @@
 export default function Solutions() {
   return (
-
-    <section className="pb-5 mb-2 mb-md-4 mb-lg-5" style ={{paddingTop: "80px",marginTop: "120px"}}>
-      <div className="bg-secondary pb-lg-4 pb-xl-5">
-       
-        <div className="container pb-4 pb-md-5">
-           
-          <div className="row">
-            
-            <div className="col-xl-5 col-lg-6" style={{marginTop: "-80px"}}>
-            
-             {/* Swiper tabs */}
-              <div className="swiper-tabs mx-auto" style={{ maxWidth: "526px" }}>
-                <div id="image-1" className="swiper-tab active">
-                  <img src="assets/img/landing/medical/cta/01.jpg" className="rounded-3" alt="Image"/>
-                </div>
-                <div id="image-2" className="swiper-tab">
-                  <img src="assets/img/landing/medical/cta/02.jpg" className="rounded-3" alt="Image" />
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-5 col-lg-6 offset-xl-1 p-2">
-              <h2 className="display-6 ">
-              <span className="text-secondary opacity-40 " >
-                   Our Solutions
-              </span>
-             </h2>
-             {/* Slider prev/next buttons */}
-              <div className="d-flex justify-content-center justify-content-lg-start pb-3 mb-3">
-                <button type="button" id="prev" className="btn btn-prev btn-icon btn-sm me-2" aria-label="Previous">
-                  <i className="bx bx-chevron-left"></i>
-                </button>
-                <button type="button" id="next" className="btn btn-next btn-icon btn-sm ms-2" aria-label="Next">
-                  <i className="bx bx-chevron-right"></i>
-                </button>
-              </div>
-
-             {/* Swiper slider */}
-              <div className="swiper mx-0 mb-md-n2 mb-xxl-n3" data-swiper-options='{
-                "spaceBetween": 30,
-                "loop": true,
-                "tabs": true,
-                "navigation": {
-                  "prevEl": "#prev",
-                  "nextEl": "#next"
-                }
-              }'>
-                <div className="swiper-wrapper text-center text-lg-start">
-
-                 {/* Item */}
-                  <div className="swiper-slide pb-4" data-swiper-tab="#image-1">
-                    <h2 className="h1 mb-4">New Service — Start Your Care <span className="text-success">Online</span> Now</h2>
-                    <p className="pb-2 pb-xl-0 mb-4 mb-xl-5">Morbi lacus vulputate mauris ut et nunc, tempor. Placerat augue eu amet feugiat mi sagittis velit. Sed suscipit nunc suspendisse morbi pharetra libero consectetur. Proin eros sollicitudin augue tempus. Aliquet id sit donec aliquam.</p>
-                    <a href="#" className="btn btn-success btn-lg shadow-success">Learn more</a>
+      <section className="container pb-5 mb-md-2 mb-lg-5 " style={{marginTop:"100px"}}>
+        <div className="row">
+          <div className="col-lg-4 text-center text-lg-start pb-3 pb-lg-0 mb-4 mb-lg-0">
+            <h2 className="h1 mb-lg-4">Highly Innovative Technology &amp; Solutions</h2>
+            <p className="pb-4 mb-0 mb-lg-3">We appreciate your trust greatly. Our patients choose us and our services because they know we are the best. We offer complete health care to individuals with various health concerns.</p>
+            <a href="#" className="btn btn-primary shadow-primary btn-lg">All services</a>
+          </div>
+          <div className="col-xl-7 col-lg-8 offset-xl-1">
+            <div className="row row-cols-1 row-cols-md-2">
+              <div className="col">
+                <div className="card card-hover bg-secondary border-0 mb-4">
+                  <div className="card-body d-flex align-items-start">
+                    <div className="flex-shrink-0 bg-light rounded-3 p-3">
+                      <img src="assets/img/landing/medical/services/cardiology.svg" width="28" alt="Icon" />
+                    </div>
+                    <div className="ps-4">
+                      <h3 className="h5 pb-2 mb-1">Cardiology</h3>
+                      <p className="pb-2 mb-1">Id mollis consectetur congue egestas egestas suspendisse blandit justo.</p>
+                      <a href="services-single-v2.html" className="btn btn-link stretched-link px-0">
+                        Learn more
+                        <i className="bx bx-right-arrow-alt fs-xl ms-2"></i>
+                      </a>
+                    </div>
                   </div>
-
-                 {/* Item */}
-                  <div className="swiper-slide pb-4" data-swiper-tab="#image-2">
-                    <h2 className="h1 mb-4">Support Groups for <span className="text-danger">Depression</span> &amp; Anxiety</h2>
-                    <p className="pb-2 pb-xl-0 mb-4 mb-xl-5">Magna cursus feugiat sed sodales praesent vehicula integer arcu. Felis duis lectus felis, tempus aliquet quis non. At integer consectetur eget nunc, fames. Et facilisi vel, luctus sed interdum vitae nec, velit. Maecenas purus et pharetra, at volutpat aenean.</p>
-                    <a href="#" className="btn btn-danger btn-lg shadow-danger">Learn more</a>
+                </div>
+                <div className="card card-hover bg-secondary border-0 mb-4">
+                  <div className="card-body d-flex align-items-start">
+                    <div className="flex-shrink-0 bg-light rounded-3 p-3">
+                      <img src="assets/img/landing/medical/services/scalpel.svg" width="28" alt="Icon" />
+                    </div>
+                    <div className="ps-4">
+                      <h3 className="h5 pb-2 mb-1">Surgery</h3>
+                      <p className="pb-2 mb-1">Mattis urna ultricies non amet, purus in auctor non. Odio vulputate ac nibh.</p>
+                      <a href="services-single-v2.html" className="btn btn-link stretched-link px-0">
+                        Learn more
+                        <i className="bx bx-right-arrow-alt fs-xl ms-2"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="card card-hover bg-secondary border-0 mb-4">
+                  <div className="card-body d-flex align-items-start">
+                    <div className="flex-shrink-0 bg-light rounded-3 p-3">
+                      <img src="assets/img/landing/medical/services/x-ray.svg" width="28" alt="Icon" />
+                    </div>
+                    <div className="ps-4">
+                      <h3 className="h5 pb-2 mb-1">Radiology</h3>
+                      <p className="pb-2 mb-1">Faucibus cursus maecenas lorem cursus nibh.</p>
+                      <a href="services-single-v2.html" className="btn btn-link stretched-link px-0">
+                        Learn more
+                        <i className="bx bx-right-arrow-alt fs-xl ms-2"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col">
+                <div className="card card-hover bg-secondary border-0 mb-4">
+                  <div className="card-body d-flex align-items-start">
+                    <div className="flex-shrink-0 bg-light rounded-3 p-3">
+                      <img src="assets/img/landing/medical/services/stethoscope.svg" width="28" alt="Icon" />
+                    </div>
+                    <div className="ps-4">
+                      <h3 className="h5 pb-2 mb-1">Family Medicine</h3>
+                      <p className="pb-2 mb-1">Augue pulvinar justo, fermentum fames aliquam.</p>
+                      <a href="services-single-v2.html" className="btn btn-link stretched-link px-0">
+                        Learn more
+                        <i className="bx bx-right-arrow-alt fs-xl ms-2"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="card card-hover bg-secondary border-0 mb-4">
+                  <div className="card-body d-flex align-items-start">
+                    <div className="flex-shrink-0 bg-light rounded-3 p-3">
+                      <img src="assets/img/landing/medical/services/lungs.svg" width="28" alt="Icon" />
+                    </div>
+                    <div className="ps-4">
+                      <h3 className="h5 pb-2 mb-1">Pulmonary</h3>
+                      <p className="pb-2 mb-1">Ullamcorper in magna varius quisque enim tempor iaculis proin sed.</p>
+                      <a href="services-single-v2.html" className="btn btn-link stretched-link px-0">
+                        Learn more
+                        <i className="bx bx-right-arrow-alt fs-xl ms-2"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="card card-hover bg-secondary border-0 mb-4">
+                  <div className="card-body d-flex align-items-start">
+                    <div className="flex-shrink-0 bg-light rounded-3 p-3">
+                      <img src="assets/img/landing/medical/services/tooth.svg" width="28" alt="Icon" />
+                    </div>
+                    <div className="ps-4">
+                      <h3 className="h5 pb-2 mb-1">Dental Care</h3>
+                      <p className="pb-2 mb-1">Faucibus cursus maecenas lorem cursus nibh. Sociis sit facilisis dolor arcu.</p>
+                      <a href="services-single-v2.html" className="btn btn-link stretched-link px-0">
+                        Learn more
+                        <i className="bx bx-right-arrow-alt fs-xl ms-2"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   )
 }
