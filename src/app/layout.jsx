@@ -1,15 +1,17 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import { Inter, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import Script from "next/script"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const interSans = Inter({
+  variable: "--font-inter-sans",
   subsets: ["latin"],
+  display: "swap",
 })
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  display: "swap",
 })
 
 export const metadata = {
@@ -47,7 +49,7 @@ export default function RootLayout({ children }) {
         {/* Main Theme Styles + Bootstrap */}
         <link rel="stylesheet" media="screen" href="/assets/css/theme.min.css" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${interSans.variable} ${jetBrainsMono.variable}`}>
         {/* Page Loading Overlay */}
         <div className="page-loading active" id="page-loading">
           <div className="page-loading-inner">
@@ -109,8 +111,6 @@ export default function RootLayout({ children }) {
         <Script src="/assets/vendor/shufflejs/dist/shuffle.min.js" strategy="lazyOnload" />
         <Script src="/assets/vendor/parallax-js/dist/parallax.min.js" strategy="lazyOnload" />
         <Script src="/assets/js/theme.min.js" strategy="lazyOnload" />
-
-    
       </body>
     </html>
   )
