@@ -15,10 +15,10 @@ const jetBrainsMono = JetBrains_Mono({
 })
 
 export const metadata = {
-  title: "Silicon | Digital Agency Landing",
-  description: "Silicon - Multipurpose Technology Bootstrap Template",
+  title: "Etqan | A trusted partner in digital transformation",
+  description: "Etqan - A trusted partner in digital transformation",
   keywords:
-    "bootstrap, business, creative agency, mobile app showcase, saas, fintech, finance, online courses, software, medical, conference landing, services, e-commerce, shopping cart, multipurpose, shop, ui kit, marketing, seo, landing, blog, portfolio, html5, css3, javascript, gallery, slider, touch, creative",
+    "Technology, business, creative agency, digital transformation, Software, Cutting edge IT Services",
   authors: [{ name: "Createx Studio" }],
   icons: {
     icon: [
