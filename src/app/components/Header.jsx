@@ -3,7 +3,7 @@ export default function Header() {
     <header className="header navbar navbar-expand-lg position-absolute navbar-sticky">
       <div className="container px-3">
         <a href="/" className="navbar-brand pe-3">
-          <img src="/assets/img/etqanlogo.png" width="110" alt="Silicon" />
+          <img src="/assets/img/etqanlogo.png" width="130" alt="Silicon" />
         
         </a>
         <div id="navbarNav" className="offcanvas offcanvas-end">

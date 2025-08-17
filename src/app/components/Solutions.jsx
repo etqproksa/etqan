@@ -1,3 +1,15 @@
+import {
+  DatabaseBackup,
+  UserRoundCog,
+  MonitorCog ,
+  Drill,
+  TrendingUpDown ,
+  IdCard ,
+  BrickWallFire ,
+  BrainCircuit,
+  GlobeLock,
+  User
+} from "lucide-react"
 export default function Solutions() {
   return (
       <section className="container" style={{marginTop:"100px"}}>
@@ -13,10 +25,10 @@ export default function Solutions() {
                 <div className="card card-hover bg-secondary border-0 mb-4">
                   <div className="card-body d-flex align-items-start">
                     <div className="flex-shrink-0 bg-light rounded-3 p-3">
-                      <img src="assets/img/landing/medical/services/cardiology.svg" width="28" alt="Icon" />
+                    <GlobeLock size={32} />
                     </div>
                     <div className="ps-4">
-                      <h3 className="h5 pb-2 mb-1">Cardiology</h3>
+                      <h3 className="h5 pb-2 mb-1">Network Security</h3>
                       <p className="pb-2 mb-1">Id mollis consectetur congue egestas egestas suspendisse blandit justo.</p>
                       <a href="services-single-v2.html" className="btn btn-link stretched-link px-0">
                         Learn more
@@ -28,10 +40,10 @@ export default function Solutions() {
                 <div className="card card-hover bg-secondary border-0 mb-4">
                   <div className="card-body d-flex align-items-start">
                     <div className="flex-shrink-0 bg-light rounded-3 p-3">
-                      <img src="assets/img/landing/medical/services/scalpel.svg" width="28" alt="Icon" />
+                     <DatabaseBackup size={32} />
                     </div>
                     <div className="ps-4">
-                      <h3 className="h5 pb-2 mb-1">Surgery</h3>
+                      <h3 className="h5 pb-2 mb-1">Data Center</h3>
                       <p className="pb-2 mb-1">Mattis urna ultricies non amet, purus in auctor non. Odio vulputate ac nibh.</p>
                       <a href="services-single-v2.html" className="btn btn-link stretched-link px-0">
                         Learn more
@@ -43,10 +55,10 @@ export default function Solutions() {
                 <div className="card card-hover bg-secondary border-0 mb-4">
                   <div className="card-body d-flex align-items-start">
                     <div className="flex-shrink-0 bg-light rounded-3 p-3">
-                      <img src="assets/img/landing/medical/services/x-ray.svg" width="28" alt="Icon" />
+                      <BrickWallFire size={32} />
                     </div>
                     <div className="ps-4">
-                      <h3 className="h5 pb-2 mb-1">Radiology</h3>
+                      <h3 className="h5 pb-2 mb-1">Email Data Protection</h3>
                       <p className="pb-2 mb-1">Faucibus cursus maecenas lorem cursus nibh.</p>
                       <a href="services-single-v2.html" className="btn btn-link stretched-link px-0">
                         Learn more
@@ -60,10 +72,10 @@ export default function Solutions() {
                 <div className="card card-hover bg-secondary border-0 mb-4">
                   <div className="card-body d-flex align-items-start">
                     <div className="flex-shrink-0 bg-light rounded-3 p-3">
-                      <img src="assets/img/landing/medical/services/stethoscope.svg" width="28" alt="Icon" />
+                    <MonitorCog size={32}/>
                     </div>
                     <div className="ps-4">
-                      <h3 className="h5 pb-2 mb-1">Family Medicine</h3>
+                      <h3 className="h5 pb-2 mb-1">Monitory & Optimization</h3>
                       <p className="pb-2 mb-1">Augue pulvinar justo, fermentum fames aliquam.</p>
                       <a href="services-single-v2.html" className="btn btn-link stretched-link px-0">
                         Learn more
@@ -75,11 +87,11 @@ export default function Solutions() {
                 <div className="card card-hover bg-secondary border-0 mb-4">
                   <div className="card-body d-flex align-items-start">
                     <div className="flex-shrink-0 bg-light rounded-3 p-3">
-                      <img src="assets/img/landing/medical/services/lungs.svg" width="28" alt="Icon" />
+                       <UserRoundCog size={32}/>
                     </div>
                     <div className="ps-4">
-                      <h3 className="h5 pb-2 mb-1">Pulmonary</h3>
-                      <p className="pb-2 mb-1">Ullamcorper in magna varius quisque enim tempor iaculis proin sed.</p>
+                      <h3 className="h5 pb-2 mb-1">Identity & Access Management</h3>
+                      <p className="pb-2 mb-1">Ullamcorper in magna varius quisque </p>
                       <a href="services-single-v2.html" className="btn btn-link stretched-link px-0">
                         Learn more
                         <i className="bx bx-right-arrow-alt fs-xl ms-2"></i>
@@ -90,11 +102,11 @@ export default function Solutions() {
                 <div className="card card-hover bg-secondary border-0 mb-4">
                   <div className="card-body d-flex align-items-start">
                     <div className="flex-shrink-0 bg-light rounded-3 p-3">
-                      <img src="assets/img/landing/medical/services/tooth.svg" width="28" alt="Icon" />
+                      <IdCard size={28} />
                     </div>
                     <div className="ps-4">
-                      <h3 className="h5 pb-2 mb-1">Dental Care</h3>
-                      <p className="pb-2 mb-1">Faucibus cursus maecenas lorem cursus nibh. Sociis sit facilisis dolor arcu.</p>
+                      <h3 className="h5 pb-2 mb-1">Brand Identity Protection</h3>
+                      <p className="pb-2 mb-1">Faucibus cursus maecenas lorem cursus nibh.</p>
                       <a href="services-single-v2.html" className="btn btn-link stretched-link px-0">
                         Learn more
                         <i className="bx bx-right-arrow-alt fs-xl ms-2"></i>

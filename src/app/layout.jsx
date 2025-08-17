@@ -1,10 +1,11 @@
 import { Inter, JetBrains_Mono } from "next/font/google"
+
 import "./globals.css"
 import Script from "next/script"
-
+import Footer from "./components/Footer";
 const interSans = Inter({
   variable: "--font-inter-sans",
-  subsets: ["latin"],
+  subsets:  ["latin"],
   display: "swap",
 })
 
@@ -57,9 +58,10 @@ export default function RootLayout({ children }) {
             <span>Loading...</span>
           </div>
         </div>
-
+  <main className="page-wrapper">
         {children}
-
+    </main>
+    <Footer />
         {/* Back to top button */}
         <a href="#top" className="btn-scroll-top" data-scroll>
           <span className="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>

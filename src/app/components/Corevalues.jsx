@@ -1,4 +1,4 @@
-export default function Services() {
+export default function Corevalues() {
   return (
     <section className="container mb-5 pb-2 pb-md-4 pb-lg-5">
       <div className="card border-0 bg-secondary p-md-5 px-sm-2 pt-4 pb-3">
