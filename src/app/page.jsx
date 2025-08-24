@@ -11,7 +11,7 @@ import BlogSection from "./components/BlogSection";
 
 import Etservices from "./components/Etservices";
 import ServicesSummary from "./components/ServicesSummary";
-import Videocomp from "./components/Videocomp";
+import Brands  from "./components/Brands";
 import Corevalues from "./components/Corevalues";
 
 export default function Home() {
@@ -20,10 +20,11 @@ export default function Home() {
       <Header />
       <Hero />
       <ServicesSummary />
-      <FeaturedProjects />
+     
+       <Etservices />
+        <FeaturedProjects />
       <Corevalues />
-      <Etservices />
-      <Videocomp/>
+       <Brands/>
       <Solutions />
       <BlogSection />
     

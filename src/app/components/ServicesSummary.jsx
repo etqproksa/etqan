@@ -33,7 +33,7 @@ function ServicesSummary() {
             <div className="swiper-slide border-end-lg px-2">
               <div className="text-center">
               <FolderClock  color="#A754F3"  size={48} strokeWidth={2} />
-                <h4 className="mb-2 pb-1">Managed IT Serivices</h4>
+                <h5 className="mb-2 pb-1">Managed IT Serivices</h5>
                 <p className="mx-auto" style={{maxWidth: "336px"}}>Sed morbi nulla pulvinar lectus tempor vel euismod accumsan.</p>
               </div>
             </div>
@@ -42,7 +42,7 @@ function ServicesSummary() {
             <div className="swiper-slide border-end-lg px-2">
               <div className="text-center">
                <BrickWallFire  color="#A754F3"  size={48} strokeWidth={2} />
-                <h4 className="mb-2 pb-1">Cybersecurity & Compliance</h4>
+                <h5 className="mb-2 pb-1">Cybersecurity & Compliance</h5>
                 <p className="mx-auto" style={{maxWidth: "336px"}}>Sit facilisis dolor arcu, fermentum vestibulum arcu elementum imperdiet.</p>
               </div>
             </div>
@@ -51,7 +51,7 @@ function ServicesSummary() {
             <div className="swiper-slide px-2">
               <div className="text-center">
                <BrainCircuit color="#A754F3"  size={48} strokeWidth={2} />
-                <h4 className="mb-2 pb-1">Digital Transformation Advisory</h4>
+                <h5 className="mb-2 pb-1">Digital Transformation Advisory</h5>
                 <p className="mx-auto" style={{maxWidth: "336px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
             </div>

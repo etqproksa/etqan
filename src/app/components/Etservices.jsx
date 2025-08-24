@@ -12,8 +12,8 @@ import {
 function Services() {
   return (
 
-      <section className="bg-secondary pb-md-2 pb-lg-5">
-        <div className="d-none d-lg-block" style={{ marginTop: "-60px", paddingTop: "60px" }}></div>
+      <section className="bg-secondary pb-md-2 pb-lg-5 mt-5">
+
         <div className="container pb-4 pt-5">
           <h2 className="h1 text-center text-md-start mb-lg-4 pt-1 pt-md-4">Our Services</h2>
           <div className="row align-items-center pb-5 mb-lg-2">

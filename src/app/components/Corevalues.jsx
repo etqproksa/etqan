@@ -1,6 +1,6 @@
 export default function Corevalues() {
   return (
-    <section className="container mb-5 pb-2 pb-md-4 pb-lg-5">
+    <section className="container mb-5 pb-2 pb-md-4 pb-lg-5 " style={{marginTop:"6rem"}}>
       <div className="card border-0 bg-secondary p-md-5 px-sm-2 pt-4 pb-3">
         <div className="card-body mx-auto" style={{ maxWidth: "860px" }}>
           <h2 className="h1 mb-4 text-center">Our Core Values</h2>

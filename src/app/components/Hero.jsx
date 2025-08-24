@@ -2,7 +2,10 @@
 import "./hero.css";
 export default function Hero() {
   return (
-    <section className="hero-section position-relative d-flex align-items-center min-vh-100" style={{paddingBottom:"1.5rem",paddingTop:"3rem"}}>  
+    <section
+      className="hero-section position-relative d-flex align-items-center"
+      style={{ paddingBottom: "1.5rem", paddingTop: "3rem" }}
+    >
       <div className="hero-container container position-relative py-5">
         <div className="row justify-content-between align-items-center">
           {/* Left Column - Text Content */}
@@ -11,10 +14,13 @@ export default function Hero() {
               {/* Video popup btn */}
 
               {/* Text */}
-
-              <h1 className="display-2 mb-md-5 mb-3 pb-3">
-                  We <span className="text-gradient-primary">Transform</span> Your Ideas into Reality
-                </h1>
+              <h1 className="display-2 mt-5">
+                <span className="text-gradient-primary">Etqan</span>
+              </h1>
+              <h6 className="display-6 mb-3  pb-2">
+                We <span className="text-gradient-primary">Transform</span> Your
+                Ideas into Reality
+              </h6>
 
               <div className="d-md-flex align-items-md-start">
                 <p className="hero-description d-lg-block d-none mb-0 ps-md-3">
@@ -33,15 +39,12 @@ export default function Hero() {
                 href="#benefits"
                 className="hero-scroll-btn btn btn-icon rounded-circle flex-shrink-0 stretched-link me-3"
                 aria-label="Scroll for more"
-              >
-                <i className="hero-scroll-icon bx bx-chevron-down"></i>
-              </a>
-              <span className="hero-scroll-text">Discover more</span>
+              ></a>
             </div>
           </div>
 
           {/* Right Column - Image with larger gap */}
-          <div className="col-md-5 order-md-2 order-1 d-flex justify-content-end">
+          <div className="col-md-6 order-md-2 order-1 d-flex">
             <div style={{ position: "relative" }}>
               <img
                 className="hero-image img-fluid"
