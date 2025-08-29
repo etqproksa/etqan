@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
 
         {/* Main Theme Styles + Bootstrap */}
         <link rel="stylesheet" media="screen" href="/assets/css/theme.min.css" />
-        <link rel="stylesheet" href="./globals.css" />
+        <link rel="stylesheet" href="/assets/css/globals.css" />
       </head>
       <body className={`${interSans.variable} ${jetBrainsMono.variable}`}>
         {/* Page Loading Overlay */}

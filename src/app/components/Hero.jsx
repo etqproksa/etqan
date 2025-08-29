@@ -14,12 +14,12 @@ export default function Hero() {
               {/* Video popup btn */}
 
               {/* Text */}
-              <h1 className="display-2 mt-5">
+              <h1 className="display-1 mt-5">
                 <span className="text-gradient-primary">Etqan</span>
               </h1>
-              <h6 className="display-6 mb-3  pb-2">
+              <h6 className="display-6 mb-3 pb-2">
                 We <span className="text-gradient-primary">Transform</span> Your
-                Ideas into Reality
+                Ideas<br></br>into Reality
               </h6>
 
               <div className="d-md-flex align-items-md-start">
