@@ -114,11 +114,11 @@ export default function Footer() {
           &copy; All rights reserved. Made by{" "}
           <a
             className="nav-link d-inline-block p-0"
-            href="https://createx.studio/"
+            href="https://etqan.com/"
             target="_blank"
             rel="noreferrer noopener"
           >
-            Createx Studio
+           Etqan
           </a>
         </p>
       </div>

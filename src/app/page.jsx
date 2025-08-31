@@ -18,7 +18,7 @@ export default function Home() {
       <FeaturedProjects />
       {/* <Corevalues /> */}
       <Brands />
-      <Solutions />
+      {/* <Solutions /> */}
       {/* <BlogSection /> */}
     </>
   );
