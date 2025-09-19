@@ -52,7 +52,7 @@ async function getGlobalSettings() {
       headers: {
         Authorization: `Bearer ${process.env.STRAPI_JWT}`,
       },
-      cache: "no-store", // ensures fresh data every request
+      next: { revalidate: 60 }, // ISR → static + refresh every 60s
     });
 
     if (!res.ok) {
