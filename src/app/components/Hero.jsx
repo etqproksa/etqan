@@ -1,6 +1,24 @@
 "use client";
 import "./hero.css";
-export default function Hero() {
+
+export default function Hero({ data }) {
+  console.log("this is the hero data", data);
+
+  // Use the block directly
+  const heading = data?.heading || "Etqan";
+  const subheading = data?.subheading || "Digital Transformation";
+  const summary =
+    data?.summary ||
+    "Founded in 2020 and head office in Riyadh, Saudi Arabia...";
+  const imageUrl =
+    data?.Swiper?.images?.[0]?.url || "/assets/img/fallback.jpg";
+  const imageAlt =
+    data?.Swiper?.images?.[0]?.alternativeText ||
+    "Etqan Agency - Digital Transformation";
+
+  // Split heading if it contains —
+  const [mainHeading, subHeading] = heading.split("—");
+
   return (
     <section
       className="hero-section position-relative d-flex align-items-center"
@@ -11,24 +29,20 @@ export default function Hero() {
           {/* Left Column - Text Content */}
           <div className="col-md-6 order-md-1 order-2 d-flex flex-column justify-content-between text-md-start text-center">
             <div className="mb-5">
-              {/* Video popup btn */}
-
-              {/* Text */}
+              {/* Heading */}
               <h1 className="display-1 mt-5">
-                <span className="text-gradient-primary">Etqan</span>
+                <span className="text-gradient-primary">
+                  {mainHeading || heading}
+                </span>
               </h1>
               <h6 className="display-6 mb-3 pb-2">
-                We <span className="text-gradient-primary">Transform</span> Your
-                Ideas<br></br>into Reality
+                {subheading ? subheading.trim() : ""}
               </h6>
 
+              {/* Summary */}
               <div className="d-md-flex align-items-md-start">
                 <p className="hero-description d-lg-block d-none mb-0 ps-md-3">
-                  Founded in 2020 and head office in Riyadh, Saudi Arabia, is a
-                  trusted partner in digital transformation. We deliver
-                  cutting-edge IT services designed to optimize operations,
-                  enhance security, and accelerate growth for organizations
-                  across diverse sectors.
+                  {summary}
                 </p>
               </div>
             </div>
@@ -43,13 +57,13 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column - Image with larger gap */}
+          {/* Right Column - Image */}
           <div className="col-md-6 order-md-2 order-1 d-flex">
             <div style={{ position: "relative" }}>
               <img
                 className="hero-image img-fluid"
-                src="/assets/img/etqanimages/mainimage2.jpg"
-                alt="Etqan Agency - Digital Transformation"
+                src={imageUrl}
+                alt={imageAlt}
               />
               {/* Decorative gradient overlay */}
               <div className="hero-image-overlay"></div>
