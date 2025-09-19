@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@typescript-eslint/parser": "^8.44.0",
     "bootstrap": "^5.3.7",
     "bootstrap-react": "^0.5.0-alpha.14",
     "lucide-react": "^0.528.0",
