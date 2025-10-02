@@ -39,9 +39,9 @@ export default function Hero({ data }) {
                 {subheading ? subheading.trim() : ""}
               </h6>
 
-              {/* Summary */}
-              <div className="d-md-flex align-items-md-start">
-                <p className="hero-description d-lg-block d-none mb-0 ps-md-3">
+                {/* Summary - visible on all devices */}
+              <div className="d-flex align-items-start justify-content-center justify-content-md-start">
+                <p className="hero-description mb-0 px-2 px-md-3">
                   {summary}
                 </p>
               </div>
