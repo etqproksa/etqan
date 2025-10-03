@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import Breadcrumb from "@/components/Breadcrumb";
+import Breadcrumb from "../Breadcrumb";
 
 import { RowsPhotoAlbum } from "react-photo-album";
 import "react-photo-album/rows.css";
