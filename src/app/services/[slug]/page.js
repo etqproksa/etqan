@@ -13,7 +13,7 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import PageHeading from "@/components/ui/pageHeading";
+import PageHeading from "@/app/components/ui/pageHeading";
 import ReactMarkdown from "react-markdown";
 
 const ServicesDetails = ({ params: paramsPromise }) => {
