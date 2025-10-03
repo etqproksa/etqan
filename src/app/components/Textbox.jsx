@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import PageHeading from "@/components/ui/pageHeading"; // make sure this path is correct
+import PageHeading from "./ui/pageHeading";
 
 const Textbox = ({ data }) => {
   return (

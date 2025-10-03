@@ -1,6 +1,6 @@
 import { getStrapiURL } from "@/lib/utils";
 import { fetchData } from "@/lib/fetch";
-import Aboutus from "../../components/Aboutus";
+import Aboutus from "@/app/components/ui/Aboutus";
 import Contact from "../../components/Contact";
 import Textbox from "../../components/Textbox";
 export default async function Page({ params }) {
