@@ -2,7 +2,7 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
-import Breadcrumb from "@/components/Breadcrumb";
+import Breadcrumb from "../Breadcrumb";
 
 function PageHeading({ heading, icon, show }) {
   const pathname = usePathname();

@@ -1,8 +1,8 @@
 import { getStrapiURL } from "@/lib/utils";
 import { fetchData } from "@/lib/fetch";
-import Aboutus from "@/components/ui/Aboutus";
-import Contact from "@/components/Contact";
-import Textbox from "@/components/Textbox";
+import Aboutus from "../../components/Aboutus";
+import Contact from "../../components/Contact";
+import Textbox from "../../components/Textbox";
 export default async function Page({ params }) {
   const { slug } = params; // "contact", "about", etc.
 
