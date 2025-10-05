@@ -66,7 +66,7 @@ const ServicesDetails = ({ params: paramsPromise }) => {
         style={{
           textAlign: "justify",
           border: "2px solid #DCDCE4",
-          backgroundColor: "#F6F6F9",
+          backgroundColor: "#EF611B",
         }}
       >
         <div className="col-md-12 mb-4 pt-2">

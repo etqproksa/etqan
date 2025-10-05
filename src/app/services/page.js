@@ -90,10 +90,10 @@ const Services = async () => {
                   >
                     <div className="card-body pt-3">
                       <div
-                        className="d-inline-block bg-warning rounded-3 position-absolute top-0 translate-middle-y p-3"
+                        className="d-inline-block  rounded-3 position-absolute top-0 translate-middle-y p-3"
                         style={{
-                          backgroundColor: "#F7A604",
-                          boxShadow: "#ffA604",
+                          backgroundColor: "#EF611B",
+                          boxShadow: "#EF611B",
                         }}
                       >
                         <img
@@ -108,7 +108,7 @@ const Services = async () => {
 
                       <h2 className="h4 d-inline-flex align-items-center">
                         {service.title}
-                        <i className="bx bx-right-arrow-circle text-warning fs-3 ms-2"></i>
+                        <i className="bx bx-right-arrow-circle  fs-3 ms-2" style={{color:"#EF611B"}}></i>
                       </h2>
                       <p className="fs-sm text-body mb-0">{service.summary}</p>
                     </div>
