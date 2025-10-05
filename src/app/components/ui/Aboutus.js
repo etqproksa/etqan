@@ -144,7 +144,7 @@ const Aboutus = ({ data }) => {
               {/* Video Thumbnail */}
               <div className="w-100" style={{ aspectRatio: "16/9" }}>
                 <Image
-                  src="https://res.cloudinary.com/dlcgduiez/image/upload/v1758983809/urbanpanelshop1_aab11dff35.jpg"
+                  src="/assets/img/landing/digital-agency/cover.jpg"
                   alt="Video thumbnail"
                   fill
                   className="object-cover rounded-3"
@@ -185,7 +185,7 @@ const Aboutus = ({ data }) => {
                   style={{ minHeight: "60vh" }}
                 >
                   <iframe
-                    src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/61579001102477/videos/1428859824844883&show_text=false&autoplay=false&mute=0"
+                    src="https://www.youtube.com/watch?v=zPo5ZaH6sW8"
                     style={{ 
                       border: "none",
                       width: "min(350px, 90vw)",
