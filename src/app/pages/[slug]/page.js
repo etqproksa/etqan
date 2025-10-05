@@ -1,11 +1,11 @@
 import { getStrapiURL } from "@/lib/utils";
 import { fetchData } from "@/lib/fetch";
-import Aboutus from "@/app/components/ui/Aboutus";
+import Aboutus from "../../components/ui/Aboutus";
 import Contact from "../../components/Contact";
 import Textbox from "../../components/Textbox";
 export default async function Page({ params }) {
-  const { slug } = params; // "contact", "about", etc.
-
+  const { slug } = await params; // "contact", "about", etc.
+ //  console.log("slug is ",slug)
   async function loader() {
     const path = `/api/pages?filters[slug][$eq]=${slug}&populate=blocks`;
     const baseUrl = getStrapiURL();
@@ -15,6 +15,7 @@ export default async function Page({ params }) {
     const data = await fetchData(url.href, authToken, {
       next: { revalidate: 30 },
     });
+    console.log("this is the page data",data)
 
     return data;
   }
