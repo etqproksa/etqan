@@ -75,7 +75,7 @@ const Aboutus = ({ data }) => {
 
         <div className="container position-relative zindex-5 pt-5">
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-lg-7">
               <Breadcrumb />
               <h1 className="pb-2 pb-md-3 text-white">{hero?.title}</h1>
               <p className="fs-xl pb-4 mb-1 mb-md-2 mb-lg-3 text-white ">
@@ -84,7 +84,7 @@ const Aboutus = ({ data }) => {
             </div>
 
             {/* Gallery */}
-            <div className="col-lg-6 mt-xl-3 pt-5 pt-lg-4">
+            <div className="col-lg-5 mt-xl-3 pt-5 pt-lg-4">
               {photos.length > 0 && (
                 <div className="mt-2">
                   <RowsPhotoAlbum
