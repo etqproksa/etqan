@@ -2,7 +2,8 @@
 
 import React from "react";
 import PhotoAlbum from "react-photo-album";
-import "react-photo-album/styles.css";
+import "react-photo-album/rows.css";
+import "./brands.css"; // ✅ import a dedicated CSS file
 
 export default function Brands({ data }) {
   if (!data) return null;
@@ -22,7 +23,6 @@ export default function Brands({ data }) {
         <h2 className="mb-0">{heading}</h2>
       </div>
 
-      {/* Brand Logos */}
       <PhotoAlbum
         layout="rows"
         photos={photos}
@@ -30,7 +30,7 @@ export default function Brands({ data }) {
         spacing={10}
         padding={0}
         renderPhoto={({ imageProps }) => (
-          <div className="card card-body border-0 shadow-none mx-1 my-2 d-flex align-items-center justify-content-center">
+          <div className="brand-card d-flex align-items-center justify-content-center">
             <img
               {...imageProps}
               className="brand-logo"
@@ -39,7 +39,6 @@ export default function Brands({ data }) {
                 width: "auto",
                 objectFit: "contain",
                 display: "block",
-                transition: "filter 0.3s ease, transform 0.3s ease",
               }}
             />
           </div>
