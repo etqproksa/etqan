@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import PhotoAlbum from "react-photo-album";
-import "react-photo-album/rows.css";
+import "react-photo-album/columns.css";
 import styles from "./Brands.module.css";
 import Image from "next/image";
 export default function Brands({ data }) {
@@ -26,29 +26,10 @@ export default function Brands({ data }) {
 
       <div className={styles.brandsGallery}>
         <PhotoAlbum
-          layout="rows"
+          layout="columns"
           photos={photos}
-          spacing={16}
-          padding={0}
-          targetRowHeight={100}
-          renderPhoto={({ photo, wrapperStyle, renderDefaultPhoto }) => (
-            <div style={wrapperStyle}>
-             
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  className={styles.brandImage}
-                  width={100}
-                  height={100}
-                  style={{
-                    display: "block",
-                 
-                    objectFit: "contain",
-                  }}
-                />
-             
-            </div>
-          )}
+        
+
         />
       </div>
     </section>
