@@ -1,0 +1,37 @@
+/* Brands.module.css */
+
+.brandsGallery :global(img) {
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.brandsGallery :global(img:hover) {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.brandLink {
+  display: block;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.brandLink:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.brandImage {
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, transform 0.3s ease;
+}
+
+.brandImage:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
