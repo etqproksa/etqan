@@ -3,7 +3,7 @@ import React from "react";
 import PhotoAlbum from "react-photo-album";
 import "react-photo-album/rows.css";
 import styles from "./Brands.module.css";
-
+import Image from "next/image";
 export default function Brands({ data }) {
   if (!data) return null;
 
@@ -30,26 +30,23 @@ export default function Brands({ data }) {
           photos={photos}
           spacing={16}
           padding={0}
-          targetRowHeight={150}
+          targetRowHeight={100}
           renderPhoto={({ photo, wrapperStyle, renderDefaultPhoto }) => (
             <div style={wrapperStyle}>
-              <a
-                href="#"
-                className={styles.brandLink}
-                onClick={(e) => e.preventDefault()}
-              >
-                <img
+             
+                <Image
                   src={photo.src}
                   alt={photo.alt}
                   className={styles.brandImage}
+                  width={100}
+                  height={100}
                   style={{
                     display: "block",
-                    width: "100%",
-                    height: "100%",
+                 
                     objectFit: "contain",
                   }}
                 />
-              </a>
+             
             </div>
           )}
         />
