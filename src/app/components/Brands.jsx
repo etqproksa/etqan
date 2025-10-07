@@ -20,7 +20,7 @@ export default function Brands({ data }) {
   }));
 
   return (
-    <section className="container pb-4 pb-lg-5 mb-3">
+    <section className="container pb-4 pb-lg-5 mb-3 mt-5">
       <div className="d-flex align-items-center justify-content-center mb-md-4 mb-3">
         <h2 className="mb-0">{heading}</h2>
       </div>
