@@ -38,7 +38,7 @@ export default function Brands({ data }) {
           rowConstraints={{
             minPhotos: 3,
             maxPhotos: 6,
-            singleRowMaxHeight: 150, // Prevent single images from being too large
+            singleRowMaxHeight: 150,
           }}
           spacing={16}
           padding={0}
@@ -54,10 +54,8 @@ export default function Brands({ data }) {
               <img
                 {...restImageProps}
                 style={{
-                
                   objectFit: "contain",
                   padding: "1rem",
-                  background: "#fff",
                   borderRadius: "0.5rem",
                   boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
                 }}

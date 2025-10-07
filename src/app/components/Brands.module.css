@@ -1,5 +1,10 @@
 /* Brands.module.css */
 
+.brandsGallery {
+  width: 100%;
+}
+
+/* Target all images inside the gallery using :global */
 .brandsGallery :global(img) {
   filter: grayscale(100%);
   transition: filter 0.4s ease, transform 0.3s ease;
@@ -11,6 +16,43 @@
   transform: scale(1.05);
 }
 
+/* Wrapper for each brand image */
+.brandWrapper {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  transition: all 0.4s ease;
+}
+
+/* Direct styling on brandImage class */
+.brandImage {
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, transform 0.3s ease;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+  background: #000;
+  border-radius: 0.5rem;
+}
+
+.brandImage:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Alternative: target wrapper hover to change image inside */
+.brandWrapper:hover .brandImage {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Legacy styles for brandLink if needed */
 .brandLink {
   display: block;
   padding: 1rem;
@@ -24,14 +66,4 @@
 
 .brandLink:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.brandImage {
-  filter: grayscale(100%);
-  transition: filter 0.4s ease, transform 0.3s ease;
-}
-
-.brandImage:hover {
-  filter: grayscale(0%);
-  transform: scale(1.05);
 }
