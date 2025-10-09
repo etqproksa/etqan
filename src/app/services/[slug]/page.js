@@ -35,7 +35,7 @@ const ServicesDetails = ({ params: paramsPromise }) => {
         const data = await res.json();
         const serviceData = data?.data?.[0] || null;
         setService(serviceData);
-
+        console.log("Service Data",serviceData);
         const photoData =
           serviceData?.images?.map((img) => ({
             src: img?.url,
@@ -60,21 +60,21 @@ const ServicesDetails = ({ params: paramsPromise }) => {
   if (!service) return <div>No record found</div>;
 
   return (
-    <section className="container bordered-3 mb-5" style={{ marginTop: "30px" }}>
+    <section className="container bg-dark bordered-3 mb-5" style={{ marginTop: "100px" }}>
       <div
         className="row mb-2"
         style={{
           textAlign: "justify",
-          border: "2px solid #DCDCE4",
-          backgroundColor: "#EF611B",
+          border: "1px solid #DCDCE4",
+        
         }}
       >
         <div className="col-md-12 mb-4 pt-2">
         
-         <PageHeading heading={service.title} icon="" show={true}/>
+         <PageHeading heading={service.title} icon={service.serviceIcon?.url} show={true}/>
         </div>
 
-        <p style={{textAlign:"justify"}}><ReactMarkdown>{service.description}</ReactMarkdown></p>
+        <ReactMarkdown>{service.description}</ReactMarkdown>
       </div>
 
       {photos.length > 0 && (
