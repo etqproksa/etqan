@@ -66,8 +66,8 @@ const FeaturedProjects = ({ data }) => {
               <div className="card-img">
                 <Image
                   src={item.image?.url}
+                  width={item.image?.width}
                   height={item.image?.height}
-                  width={item.image?.width} 
                   alt={item.image?.alternativeText || item.title}
                 />
               </div>

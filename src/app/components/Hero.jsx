@@ -1,8 +1,8 @@
 "use client";
 import "./hero.css";
-
+import Image from "next/image";
 export default function Hero({ data }) {
-  console.log("this is the hero data", data);
+ // console.log("this is the hero data", data);
 
   // Use the block directly
   const heading = data?.heading || "Etqan";
@@ -60,9 +60,11 @@ export default function Hero({ data }) {
           {/* Right Column - Image */}
           <div className="col-md-6 order-md-2 order-1 d-flex">
             <div style={{ position: "relative" }}>
-              <img
+              <Image
                 className="hero-image img-fluid"
                 src={imageUrl}
+                width={  data?.Swiper?.images?.[0]?.width}
+                height={  data?.Swiper?.images?.[0]?.height}
                 alt={imageAlt}
               />
               {/* Decorative gradient overlay */}
