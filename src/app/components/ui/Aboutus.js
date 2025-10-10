@@ -24,7 +24,7 @@ const Aboutus = ({ data }) => {
   // ✅ Extract hero data after hooks but before early return
   const hero = data?.Hero;
   const bgImage = hero?.backgroundImage?.url;
-  console.log("this is the about us data",hero)
+//  console.log("this is the about us data",hero)
 
   // Load Cloudinary images with real dimensions
   useEffect(() => {

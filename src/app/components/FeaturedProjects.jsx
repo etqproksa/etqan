@@ -4,7 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-
+import Link from "next/link";
+import Image from "next/image";
 const FeaturedProjects = ({ data }) => {
   if (!data) return null;
 
@@ -40,7 +41,7 @@ const FeaturedProjects = ({ data }) => {
       >
         {etqan_benefits?.map((item) => (
           <SwiperSlide key={item.id}>
-            <a
+            <Link
               href={`/benefits/${item.slug}`}
               className="card-portfolio position-relative d-block rounded-3 overflow-hidden"
             >
@@ -63,12 +64,14 @@ const FeaturedProjects = ({ data }) => {
                 </div>
               </div>
               <div className="card-img">
-                <img
+                <Image
                   src={item.image?.url}
+                  height={item.image?.height}
+                  width={item.image?.width} 
                   alt={item.image?.alternativeText || item.title}
                 />
               </div>
-            </a>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
