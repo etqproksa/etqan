@@ -19,6 +19,11 @@ const nextConfig = {
         hostname: 'i.ytimg.com',
         pathname: '/vi/**',
       },
+       {
+        protocol: 'https',
+        hostname: 'charming-hope-6fe637f980.media.strapiapp.com',
+        pathname: '/**',
+      },
     ],
   },
 

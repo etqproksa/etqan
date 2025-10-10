@@ -4,14 +4,18 @@ import qs from "qs";
 export async function GET(req, { params }) {
   const { slug } =  await params;
 
-  const query = qs.stringify({
-    filters: { slug: { $eq: slug } },
-    populate: { images: true },
-     populate: { serviceIcon: true },
-    locale: "en",
-  });
+ const query = qs.stringify({
+  filters: { slug: { $eq: slug } },
+  populate: {
+    images: { fields: ['url', 'alternativeText', 'width', 'height'] },
+    serviceIcon: { fields: ['url', 'alternativeText', 'width', 'height'] },
+  },
+  locale: 'en',
+});
+
 
   const url = `${process.env.STRAPI_URL}/api/services?${query}`;
+  console.log("this is url",url);
 
   try {
     const res = await fetch(url, {
@@ -29,6 +33,7 @@ export async function GET(req, { params }) {
     }
 
     const data = await res.json();
+    console.log("this is the services data from api data",data);
     return NextResponse.json(data);
   } catch (err) {
     return NextResponse.json({ error: err.message }, { status: 500 });
