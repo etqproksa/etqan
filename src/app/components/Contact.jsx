@@ -6,12 +6,8 @@ const Contact = ({ data }) => {
   const { address, map } = data;
 
   return (
-    <section className="container py-2 py-lg-4 py-xl-5 mb-3 mt-3 "
-      style={{
-          textAlign: "justify",
-          border: "1px solid #C6F0C2",
-          backgroundColor: "#EAFBE7",
-        }}
+    <section className="container py-2 py-lg-4 py-xl-5 mb-3 mt-5 "
+    
     >
       <div className="row py-5">
         {/* Map */}
