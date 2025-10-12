@@ -13,8 +13,9 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Image from "next/image";
-
-const Aboutus = ({ data }) => {
+import VideoSection from "./VideoSection";
+{/* This is the hero section with right image gallery */}
+const HeroSection = ({ data }) => {
   // ✅ All hooks MUST be declared before any early returns
   const [photos, setPhotos] = useState([]);
   const [galleryOpen, setGalleryOpen] = useState(false);
@@ -112,100 +113,7 @@ const Aboutus = ({ data }) => {
           </div>
         </div>
       </section>
-
-      {/* Video Section - Mobile Responsive */}
-      <section className="container pb-5 mt-5 mt-md-0 mb-md-2 mb-lg-4">
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-10 col-lg-8">
-            <div className="position-relative rounded-3 overflow-hidden">
-              {/* Play Button - Properly Centered */}
-              <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center zindex-5">
-                <button
-                  className="btn btn-video btn-icon btn-xl stretched-link bg-white"
-                  aria-label="Play video"
-                  onClick={() => setVideoOpen(true)}
-                  style={{
-                    width: "80px",
-                    height: "80px",
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "24px"
-                  }}
-                >
-                  <i className="bx bx-play"></i>
-                </button>
-              </div>
-              
-              {/* Dark Overlay */}
-              <div className="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-35"></div>
-              
-              {/* Video Thumbnail */}
-              <div className="w-100" style={{ aspectRatio: "16/9" }}>
-                <Image
-                  src="/assets/img/landing/digital-agency/cover.jpg"
-                  alt="Video thumbnail"
-                  fill
-                  className="object-cover rounded-3"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Custom Video Modal - Mobile Responsive */}
-      {videoOpen && (
-        <div 
-          className="modal fade show" 
-          style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.9)' }}
-          onClick={() => setVideoOpen(false)}
-        >
-          <div 
-            className="modal-dialog modal-dialog-centered"
-            style={{ 
-              maxWidth: "min(400px, 90vw)",
-              margin: "1rem auto"
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="modal-content bg-transparent border-0">
-              <div className="modal-header border-0 pb-2">
-                <button
-                  type="button"
-                  className="btn-close btn-close-white ms-auto"
-                  onClick={() => setVideoOpen(false)}
-                ></button>
-              </div>
-              <div className="modal-body p-0">
-                <div 
-                  className="d-flex justify-content-center align-items-center"
-                  style={{ minHeight: "60vh" }}
-                >
-                  <iframe
-                    src="https://www.youtube.com/watch?v=zPo5ZaH6sW8"
-                    style={{ 
-                      border: "none",
-                      width: "min(350px, 90vw)",
-                      height: "min(600px, 80vh)",
-                      maxWidth: "100%",
-                      borderRadius: "10px"
-                    }}
-                    scrolling="no"
-                    frameBorder="0"
-                    allow="encrypted-media; picture-in-picture; web-share"
-                    allowFullScreen
-                    title="Facebook Video"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
+    
       {/* Additional CSS for better mobile experience */}
       <style jsx>{`
         @media (max-width: 768px) {
@@ -233,4 +141,4 @@ const Aboutus = ({ data }) => {
   );
 };
 
-export default Aboutus;
+export default HeroSection;

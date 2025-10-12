@@ -1,8 +1,14 @@
 import { getStrapiURL } from "@/lib/utils";
 import { fetchData } from "@/lib/fetch";
-import Aboutus from "../../components/ui/Aboutus";
+
 import Contact from "../../components/Contact";
 import Textbox from "../../components/Textbox";
+import HeroSection from "../../components/ui/HeroSection";
+import VideoSection from "../../components/ui/VideoSection";
+import { Video } from "lucide-react";
+import ImageGallery from "../../components/ui/ImageGallery";
+import TextBoxWithImage from "../../components/ui/TextBoxWithImage";
+import TextBoxWithCarousel from "../../components/ui/TextBoxWithCarousel";
 export default async function Page({ params }) {
   const { slug } = await params; // "contact", "about", etc.
  //  console.log("slug is ",slug)
@@ -23,11 +29,23 @@ export default async function Page({ params }) {
   function BlockRenderer(block) {
     switch (block.__component) {
       case "blocks.hero-section":
-        return <Aboutus data={block} />;
+        return <HeroSection data={block} />;
+      case "blocks.video-section":
+        return <VideoSection data={block} />;
+      case "blocks.video-section":
+        return <VideoSection data={block} />;
       case "blocks.contact":
         return <Contact data={block} />;
-       case "blocks.textbox":
+      case "blocks.textbox":
         return <Textbox data={block} />;
+      case "blocks.image-gallery":
+        return <ImageGallery data={block} />;
+       case "blocks.text-box-with-image":
+        return <TextBoxWithImage data={block} />;
+       case "blocks.text-box-with-carousel":
+        return <TextBoxWithCarousel data={block} />;
+
+
       default:
         return null;
     }

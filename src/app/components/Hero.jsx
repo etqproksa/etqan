@@ -22,7 +22,7 @@ export default function Hero({ data }) {
   return (
     <section
       className="hero-section position-relative d-flex align-items-center"
-      style={{ paddingBottom: "0.5rem", paddingTop: "3rem" }}
+      style={{ paddingBottom: "0.5rem", paddingTop: "5rem" }}
     >
       <div className="hero-container container position-relative py-5">
         <div className="row justify-content-between align-items-center">
