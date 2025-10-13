@@ -42,7 +42,7 @@ const FeaturedProjects = ({ data }) => {
         {etqan_benefits?.map((item) => (
           <SwiperSlide key={item.id}>
             <Link
-              href={`/benefits/${item.slug}`}
+              href={`/etqan-benefits/${item.slug}`}
               className="card-portfolio position-relative d-block rounded-3 overflow-hidden"
             >
               <span
@@ -65,10 +65,10 @@ const FeaturedProjects = ({ data }) => {
               </div>
               <div className="card-img">
                 <Image
-                  src={item.image?.url}
-                  width={item.image?.width}
-                  height={item.image?.height}
-                  alt={item.image?.alternativeText || item.title}
+                  src={item.frontimage?.url}
+                  width={item.frontimage?.width}
+                  height={item.frontimage?.height}
+                  alt={item.frontimage?.alternativeText || item.title}
                 />
               </div>
             </Link>
