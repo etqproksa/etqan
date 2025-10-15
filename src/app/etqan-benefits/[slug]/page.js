@@ -72,7 +72,6 @@ const BenefitsDetails = ({ params: paramsPromise }) => {
         }}
       >
         <div className="col-md-12 mb-4 pt-2">
-        
          <PageHeading heading={benefit.title} icon="" show={true}/>
         </div>
 

@@ -101,7 +101,7 @@ const Services = async () => {
                             service?.serviceIcon?.url ||
                             "/assets/img/services/icons/rocket.svg"
                           }
-                          width="40"
+                          width="55"
                           alt={service.title}
                         />
                       </div>
