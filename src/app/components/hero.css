@@ -4,7 +4,22 @@
 
 /* Bootstrap 5 compatible Hero Section Styles */
 .hero-section {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #a754f3 80%, #7c3aed 100%);
+  /* background: linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #a754f3 80%, #7c3aed 100%); */
+/* background: linear-gradient(135deg, #000000 0%, #0A1E40 15%, #005BED 40%, #12A2A2 70%, #5DEDED 100%); */
+/* background: linear-gradient(135deg, #000000 0%, #000000 25%, #0A1E40 35%, #005BED 55%, #12A2A2 80%, #5DEDED 100%); */
+/* background: linear-gradient(135deg, #000000 0%, #0A1E40 25%, #005BED 45%, #12A2A2 70%, #5DEDED 100%); */
+/* background: linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #12A2A2 80%, #5DEDED 100%); */
+/* background: linear-gradient(135deg, #000000 0%, #1a1a1a 35%, #005BED 60%, #12A2A2 80%, #5DEDED 100%); */
+/* background: linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #005BED 80%, #12A2A2 100%); */
+background: linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #005BED 65%, #12A2A2 80%, #5DEDED 100%);
+
+
+
+
+
+
+
+
   min-height: 100vh;
 }
 
