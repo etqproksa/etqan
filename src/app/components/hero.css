@@ -13,13 +13,6 @@
 /* background: linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #005BED 80%, #12A2A2 100%); */
 background: linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #005BED 65%, #12A2A2 80%, #5DEDED 100%);
 
-
-
-
-
-
-
-
   min-height: 100vh;
 }
 
@@ -171,4 +164,10 @@ background: linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #005BED 65%, #12A2A
   border-radius: 50%;
   filter: blur(60px);
 }
-
+.text-gradient {
+  background: linear-gradient(135deg, #005BED 0%, #12A2A2 50%, #5DEDED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}

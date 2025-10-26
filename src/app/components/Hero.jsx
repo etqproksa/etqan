@@ -31,7 +31,7 @@ export default function Hero({ data }) {
             <div className="mb-5">
               {/* Heading */}
               <h1 className="display-1 mt-5">
-                <span className="text-gradient-primary">
+                <span className="text-gradient">
                   {mainHeading || heading}
                 </span>
               </h1>
