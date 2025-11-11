@@ -22,120 +22,90 @@ export default function Header({ headerdata, menu }) {
   };
 
   return (
-    <header className="header navbar navbar-expand-lg position-absolute navbar-sticky">
-   
-      <div className="container px-3">
-        {/* Logo */}
-        <Link href="/" className="navbar-brand pe-3" onClick={closeOffcanvas}>
-          {logo ? (
-            <img
-              src={logo.url}
-              width="130"
-              alt={logo.alternativeText || logo.name}
-            />
-          ) : (
-            <span>UrbanPanel Shop</span>
-          )}
-        </Link>
+   <header className="header navbar navbar-expand-lg fixed-top shadow-sm">
+  <div className="container px-3">
+    <Link href="/" className="navbar-brand pe-3" onClick={closeOffcanvas}>
+      {logo ? (
+        <img src={logo.url} width="130" alt={logo.alternativeText || logo.name} />
+      ) : (
+        <span>Etqan Project</span>
+      )}
+    </Link>
 
-        {/* Toggler */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+    <button
+      className="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-label="Toggle navigation"
+    >
+      <span className="navbar-toggler-icon"></span>
+    </button>
 
-        {/* Offcanvas Menu */}
-        <div
-          id="navbarNav"
-          className="offcanvas offcanvas-end flex-grow-1"
-          tabIndex={-1}
-          aria-labelledby="navbarNavLabel"
-        >
-          <div className="offcanvas-header border-bottom d-lg-none">
-            <h5 className="offcanvas-title" id="navbarNavLabel">
-              Menu
-            </h5>
-            <button
-              type="button"
-              className="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-
-          <div className="offcanvas-body">
-            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-              {sections.map((section) => {
-                if (section.dropdown && section.dropdown.length > 0) {
-                  return (
-                    <li key={section.id} className="nav-item dropdown">
-                      <div className="d-flex align-items-center">
-                        <Link
-                          href={section.headingUrl || "#"}
-                          className={`nav-link ${
-                            pathname === section.headingUrl ? "active" : ""
-                          }`}
-                          onClick={closeOffcanvas}
-                        >
-                          {section.heading}
-                        </Link>
-                        <a
-                          href="#"
-                          className="nav-link dropdown-toggle"
-                          role="button"
-                          data-bs-toggle="dropdown"
-                          onClick={(e) => e.preventDefault()}
-                        ></a>
-                      </div>
-                      <ul className="dropdown-menu">
-                        {section.dropdown.map((item) => (
-                          <li key={item.id}>
-                            <Link
-                              href={item.titleUrl || "#"}
-                              className="dropdown-item text-wrap text-break"
-                              style={{
-                                whiteSpace: "normal",
-                                maxWidth: "250px",
-                              }}
-                              onClick={closeOffcanvas}
-                            >
-                              {item.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
-                  );
-                }
-
-                return (
-                  <li key={section.id} className="nav-item">
-                    <Link
-                      href={section.headingUrl || "#"}
-                      className={`nav-link ${
-                        pathname === section.headingUrl ? "active" : ""
-                      }`}
-                      onClick={closeOffcanvas}
-                    >
-                      {section.heading}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-
-          
-          </div>
-        </div>
-
-
+    <div
+      id="navbarNav"
+      className="offcanvas offcanvas-end flex-grow-1"
+      tabIndex={-1}
+      aria-labelledby="navbarNavLabel"
+    >
+      <div className="offcanvas-header border-bottom d-lg-none">
+        <h5 className="offcanvas-title" id="navbarNavLabel">Menu</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-    </header>
+
+      <div className="offcanvas-body">
+        <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+          {sections.map((section) => (
+            section.dropdown?.length > 0 ? (
+              <li key={section.id} className="nav-item dropdown">
+                <div className="d-flex align-items-center">
+                  <Link
+                    href={section.headingUrl || "#"}
+                    className={`nav-link pe-1 ${pathname === section.headingUrl ? "active" : ""}`}
+                    onClick={closeOffcanvas}
+                  >
+                    {section.heading}
+                  </Link>
+                  <a
+                    href="#"
+                    className="nav-link dropdown-toggle ps-0"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    onClick={(e) => e.preventDefault()}
+                  ></a>
+                </div>
+                <ul className="dropdown-menu">
+                  {section.dropdown.map((item) => (
+                    <li key={item.id}>
+                      <Link
+                        href={item.titleUrl || "#"}
+                        className="dropdown-item text-wrap text-break"
+                        onClick={closeOffcanvas}
+                      >
+                        {item.title} 
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ) : (
+              <li key={section.id} className="nav-item">
+                <Link
+                  href={section.headingUrl || "#"}
+                  className={`nav-link ${pathname === section.headingUrl ? "active" : ""}`}
+                  onClick={closeOffcanvas}
+                >
+                  {section.heading}
+                </Link>
+              </li>
+            )
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
   );
 }

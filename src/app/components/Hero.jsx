@@ -30,11 +30,11 @@ export default function Hero({ data }) {
           <div className="col-md-6 order-md-1 order-2 d-flex flex-column justify-content-between text-md-start text-center">
             <div className="mb-5">
               {/* Heading */}
-              <h1 className="display-1 mt-5">
+              <h3 className="display-3 mt-5">
                 <span className="text-gradient">
                   {mainHeading || heading}
                 </span>
-              </h1>
+              </h3>
               <h6 className="display-6 mb-3 pb-2">
                 {subheading ? subheading.trim() : ""}
               </h6>
