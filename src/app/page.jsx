@@ -7,7 +7,7 @@ import { fetchData } from "@/lib/fetch";
 import Services from "./components/Etservices";
 import ServicesSummary from "./components/ServicesSummary";
 import Brands from "./components/Brands";
-
+import VisionMission from "./components/VisionMission";
 export default async function Home() {
   // Loader function to fetch data
   async function loader() {
@@ -41,6 +41,8 @@ export default async function Home() {
          return <FeaturedProjects data={block} />; // ✅ pass the block directly
         case "blocks.client-logos":
          return <Brands data={block} />; // ✅ pass the block directly
+        case "blocks.vision-mission":
+         return <VisionMission data={block} />; // ✅ pass the block directly
       default:
         return null;
     }
