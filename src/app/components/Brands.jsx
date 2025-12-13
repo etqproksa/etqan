@@ -1,70 +1,83 @@
 "use client";
-import React from "react";
-import PhotoAlbum from "react-photo-album";
-import "react-photo-album/columns.css";
-import styles from "./Brands.module.css";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./brands.css"; // 👈 add this
 
 export default function Brands({ data }) {
   if (!data) return null;
 
   const { heading, logos } = data;
-  console.log("this is the new brands data", data);
-  
-  // Transform your logos data to match react-photo-album format
-  const photos = logos?.map((logo) => ({
-    src: logo.url,
-    width: logo.width,
-    height: logo.height,
-    alt: logo.alternativeText || logo.name,
-    key: logo.id,
-  }));
 
   return (
-    <section className="container pb-4 pb-lg-5 mb-3 mt-5">
-      <div className="d-flex align-items-center justify-content-center mb-md-4 mb-3">
-        <h2 className="mb-5">{heading}</h2>
-      </div>
+    <section className="container pb-4 pb-lg-5 mb-3 " style={{marginTop:"5rem"}}>
+      {/* Heading + Navigation */}
+      <div className="d-flex align-items-center justify-content-center mb-md-4 mb-3 position-relative">
+  <h2 className="mb-0 text-center">{heading}</h2>
 
-      <div className={styles.brandsGallery}>
-        <PhotoAlbum
-          layout="columns"
-          photos={photos}
-          targetRowHeight={(containerWidth) => {
-            // Adaptive row height based on container width
-            if (containerWidth < 600) return 80;
-            if (containerWidth < 900) return 100;
-            return 120;
-          }}
-          rowConstraints={{
-            minPhotos: 3,
-            maxPhotos: 6,
-            singleRowMaxHeight: 150,
-          }}
-          spacing={16}
-          padding={0}
-          sizes={{
-            size: "calc(100vw - 240px)",
-            sizes: [
-              { viewport: "(max-width: 600px)", size: "calc(100vw - 32px)" },
-              { viewport: "(max-width: 900px)", size: "calc(100vw - 64px)" },
-            ],
-          }}
-          renderPhoto={({ photo, imageProps: { style, ...restImageProps } }) => (
-            <div className={styles.brandWrapper} style={style}>
+  {/* Navigation buttons on desktop */}
+  <div className="d-md-flex d-none position-absolute end-0">
+    <button
+      type="button"
+      id="prev-brand"
+      className="btn btn-prev btn-icon btn-sm me-2"
+      aria-label="Previous"
+    >
+      <i className="bx bx-chevron-left"></i>
+    </button>
+    <button
+      type="button"
+      id="next-brand"
+      className="btn btn-next btn-icon btn-sm ms-2"
+      aria-label="Next"
+    >
+      <i className="bx bx-chevron-right"></i>
+    </button>
+  </div>
+</div>
+
+
+      {/* Swiper */}
+      <Swiper
+        modules={[Navigation, Pagination]}
+        slidesPerView={2}
+        loop
+        navigation={{
+          prevEl: "#prev-brand",
+          nextEl: "#next-brand",
+        }}
+        pagination={{
+          el: ".swiper-pagination",
+          clickable: true,
+        }}
+        breakpoints={{
+          500: { slidesPerView: 3, spaceBetween: 8 },
+          650: { slidesPerView: 4, spaceBetween: 8 },
+          900: { slidesPerView: 5, spaceBetween: 8 },
+          1100: { slidesPerView: 6, spaceBetween: 8 },
+        }}
+        className="mx-n2"
+      >
+        {logos?.map((logo) => (
+          <SwiperSlide key={logo.id} className="py-3">
+            <a href="#" className="card card-body card-hover px-2 mx-2 brand-card">
               <img
-                {...restImageProps}
-                style={{
-                  objectFit: "contain",
-                  padding: "1rem",
-                  borderRadius: "0.5rem",
-                  boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-                }}
-                className={styles.brandImage}
+                src={logo.url}
+                alt={logo.alternativeText || logo.name}
+                className="brand-logo"
+                loading="lazy"
               />
-            </div>
-          )}
-        />
-      </div>
+            </a>
+          </SwiperSlide>
+        ))}
+
+        {/* Pagination (mobile only) */}
+        <div className="swiper-pagination position-relative pt-3 mt-4 d-md-none d-flex" />
+      </Swiper>
     </section>
   );
 }

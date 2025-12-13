@@ -17,12 +17,13 @@ const VisionMission = ({ data }) => {
 
   return (
     <section
-      className="container py-2 mt-5 mb-2 shadow-lg"
+      className="container py-2  mb-2 shadow-lg"
       style={{
         backgroundImage: `url(${backgroundImage?.url || ""})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         borderRadius: "1rem",
+        marginTop: "5rem",
       }}
     >
       <div className="container py-5">

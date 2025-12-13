@@ -8,6 +8,7 @@ import Services from "./components/Etservices";
 import ServicesSummary from "./components/ServicesSummary";
 import Brands from "./components/Brands";
 import VisionMission from "./components/VisionMission";
+import CtaImage from "./components/ui/CtaImage";
 export default async function Home() {
   // Loader function to fetch data
   async function loader() {
@@ -43,6 +44,8 @@ export default async function Home() {
          return <Brands data={block} />; // ✅ pass the block directly
         case "blocks.vision-mission":
          return <VisionMission data={block} />; // ✅ pass the block directly
+        case "blocks.cta-image":
+         return <CtaImage data={block} />; // ✅ pass the block directly
       default:
         return null;
     }
