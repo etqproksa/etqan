@@ -1,38 +1,49 @@
+"use client";
 import React from "react";
 
 function CtaImage({ data }) {
   if (!data) return null;
 
-  const { middleImage, title, ctatitle, ctaUrl } = data;
+  const { middleImage, title, description, ctatitle, ctaUrl } = data;
 
   return (
-    <section className="container mb-5 mt-5 pb-lg-5 pt-5 "
-     style={{ backgroundColor: "#1A1E28" , borderRadius: "8px"}}>
-   <h2 className="h1 position-relative mb-md-5 mb-4 text-center">
-    {title}
+    <section
+      className="container my-5 py-5 px-0 rounded-3"
+      style={{ backgroundColor: "#1A1E28" }}
+    >
+      <div className="row align-items-center">
+        {/* Text column */}
+        <div className="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
+          <h3 className="mb-lg-4 text-white">{title}</h3>
 
+          {description && (
+            <p className="text-light opacity-75 mb-4">
+              {description}
+            </p>
+          )}
 
-</h2>
-
-
-      {middleImage?.url && (
-        <div className="d-flex justify-content-center">
-          <img
-            src={middleImage.url}
-            alt={middleImage.alternativeText || middleImage.name}
-            className="rounded-3 img-fluid"
-            width={850}
-          />
+          {ctatitle && ctaUrl && (
+            <a href={ctaUrl} className="btn btn-outline-primary btn-lg">
+              {ctatitle}
+            </a>
+          )}
         </div>
-      )}
-   <div className="d-flex justify-content-center mt-5">
-  <a href={ctaUrl} className="btn btn-outline-primary btn-lg">
-    {ctatitle}
-  </a>
-</div>
 
+        {/* Image column */}
+        {middleImage?.url && (
+          <div className="col-lg-6 col-md-7 mt-3 mt-md-0">
+            <img
+              src={middleImage.url}
+              alt={middleImage.alternativeText || middleImage.name}
+              className="d-block rounded-3 mx-auto me-md-0 img-fluid"
+              width={430}
+            />
+          </div>
+        )}
+      </div>
     </section>
   );
 }
 
 export default CtaImage;
+
