@@ -108,7 +108,7 @@ const Services = async () => {
 
                       <h2 className="h4 d-inline-flex align-items-center">
                         {service.title}
-                        <i className="bx bx-right-arrow-circle  fs-3 ms-2" style={{color:"#EF611B"}}></i>
+                        <i className="bx bx-right-arrow-circle  fs-3 ms-2" style={{color:"#8B47CB"}}></i>
                       </h2>
                       <p className="fs-sm text-body mb-0">{service.summary}</p>
                     </div>
