@@ -2,31 +2,35 @@
 import React from "react";
 
 function ServicesSummary({ data }) {
-  const services = data?.service_summaries || []; // <-- safe access
+  const services = data?.service_summaries || [];
 
   if (!Array.isArray(services) || services.length === 0) {
-    return null; // nothing to render
+    return null;
   }
 
   return (
     <section className="container mb-5 pt-lg-5" id="benefits">
-      <div className="row pt-3">
+      <div className="row pt-3 g-4">
         {services.map((service) => (
           <div
             key={service.documentId}
-            className="col-12 col-sm-6 col-lg-4 border-end-lg px-2 mb-4"
+            className="col-12 col-sm-6 col-lg-4 border-end-lg"
           >
-            <div className="text-center">
+            <div className="text-center h-100">
               {service.serviceIcon?.url && (
                 <img
                   src={service.serviceIcon.url}
                   alt={service.serviceIcon.alternativeText || service.title}
                   width={60}
                   height={60}
+                  className="mb-3"
                 />
               )}
-              <h5 className="mb-2 pb-1 mt-2">{service.title}</h5>
-              <p className="" style={{ maxWidth: "336px",textAlign:"justify" }}>
+
+              <h5 className="mb-3">{service.title}</h5>
+
+              {/* Balanced text container */}
+              <p className="mx-auto text-muted text-justify services-text">
                 {service.summary}
               </p>
             </div>
