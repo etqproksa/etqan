@@ -26,7 +26,7 @@ function ServicesSummary({ data }) {
                 />
               )}
               <h5 className="mb-2 pb-1 mt-2">{service.title}</h5>
-              <p className="mx-auto" style={{ maxWidth: "336px",textAlign:"justify" }}>
+              <p className="" style={{ maxWidth: "336px",textAlign:"justify" }}>
                 {service.summary}
               </p>
             </div>

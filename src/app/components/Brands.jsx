@@ -16,8 +16,9 @@ export default function Brands({ data }) {
   return (
     <section className="container pb-4 pb-lg-5 mb-3 " style={{marginTop:"5rem"}}>
       {/* Heading + Navigation */}
+       <h2 className="mb-0 text-center">{heading}</h2>
       <div className="d-flex align-items-center justify-content-center mb-md-4 mb-3 position-relative">
-  <h2 className="mb-0 text-center">{heading}</h2>
+ 
 
   {/* Navigation buttons on desktop */}
   <div className="d-md-flex d-none position-absolute end-0">
@@ -60,11 +61,11 @@ export default function Brands({ data }) {
           900: { slidesPerView: 5, spaceBetween: 8 },
           1100: { slidesPerView: 6, spaceBetween: 8 },
         }}
-        className="mx-n2"
+        
       >
         {logos?.map((logo) => (
           <SwiperSlide key={logo.id} className="py-3">
-            <a href="#" className="card card-body card-hover px-2 mx-2 brand-card">
+            <a href="#" className="card card-body card-hover px-2  brand-card">
               <img
                 src={logo.url}
                 alt={logo.alternativeText || logo.name}

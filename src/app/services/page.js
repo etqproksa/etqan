@@ -92,7 +92,7 @@ const Services = async () => {
                       <div
                         className="d-inline-block  rounded-3 position-absolute top-0 translate-middle-y p-3"
                         style={{
-                          backgroundColor: "#EF611B",
+                          backgroundColor: "#8B47CB",
                           boxShadow: "#EF611B",
                         }}
                       >
