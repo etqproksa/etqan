@@ -85,7 +85,7 @@ const Services = async () => {
               {validServices.map((service) => (
                 <div key={service.id} className="col py-4 my-2 my-sm-3">
                   <a
-                    href={`/services/${service.slug}`}
+                    href={`/services/details/${service.slug}`}
                     className="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3"
                   >
                     <div className="card-body pt-3">
