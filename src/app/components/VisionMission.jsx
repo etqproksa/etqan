@@ -61,24 +61,23 @@ const VisionMission = ({ data }) => {
 
             {/* VISION BLOCK */}
             <div className="mb-4">
-              <a
-                href="#"
-                className="btn btn-md btn-primary shadow-primary w-100 w-sm-auto mb-2"
+              <h5
+                 className="text-gradient-primary"
               >
                 {visiontitle}
-              </a>
+              </h5>
 
               <p className="fs-md text-muted" style={{textAlign:"justify"}}>{visiontext}</p>
             </div>
 
             {/* MISSION BLOCK */}
             <div>
-              <a
-                href="#"
-                className="btn btn-md btn-primary shadow-primary w-100 w-sm-auto mb-2"
+              <h5
+              
+                className="text-gradient-primary"
               >
                 {missiontitle}
-              </a>
+              </h5>
 
               <p className="fs-md text-muted" style={{textAlign:"justify"}}>{missiontext}</p>
             </div>
