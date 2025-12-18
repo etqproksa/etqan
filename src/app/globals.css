@@ -70,3 +70,5 @@ body {
   transition: opacity 0.3s ease-in-out;
 }
 
+/* Hide main content when loading */
+
