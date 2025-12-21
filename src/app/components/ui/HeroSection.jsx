@@ -59,9 +59,9 @@ const HeroSection = ({ data }) => {
   return (
     <>
       {/* Hero Section */}
-      <section
-        className="position-relative pt-5 mt-2"
-        style={{ marginBottom: "20rem" }}
+       <section
+        className="container py-2 bg-secondary mb-5 pb-5"
+        style={{ marginTop: "6rem" }}
       >
         {/* Background */}
         {bgImage && (
