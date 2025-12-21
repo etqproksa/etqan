@@ -1,18 +1,18 @@
 import React from "react";
+import Link from "next/link";
 
-const VisionMission = ({ data }) => {
+const ServicesSolutions = ({ data }) => {
   if (!data) return null;
 
   const {
-    maintitle,
-    visiontitle,
-    missiontitle,
-    visiontext,
-    missiontext,
-    icon,
+    heading,
+    summary,
     image,
     imageAlignment,
     backgroundImage,
+    icon,
+    ctaTitle,
+    ctaUrl,
   } = data;
 
   return (
@@ -31,58 +31,57 @@ const VisionMission = ({ data }) => {
 
           {/* IMAGE LEFT */}
           {imageAlignment === "Left" && (
-            <div className="col-md-6 text-center rounded-3 shadow-lg mb-4 mb-md-0">
+            <div className="col-md-6 text-center mb-4 mb-md-0">
               <img
                 src={image?.url}
-                alt={image?.alternativeText || maintitle}
+                alt={image?.alternativeText || heading}
                 className="img-fluid rounded-3 shadow-sm"
               />
             </div>
           )}
 
-          {/* TEXT SECTION */}
-          <div className="col-md-6 text-center text-md-start mb-4 mb-md-0">
+          {/* CONTENT */}
+          <div className="col-md-6 text-center text-md-start">
 
-            {/* ICON + TITLE INLINE */}
-            {maintitle && (
+            {/* ICON + HEADING */}
+            {heading && (
               <div className="d-flex align-items-center gap-3 mb-4">
+
+                {/* ICON */}
                 {icon?.url && (
                   <img
                     src={icon.url}
+                    alt={icon.alternativeText || "service-icon"}
                     width="60"
                     height="60"
-                    alt="vision-mission-icon"
                   />
                 )}
-                <h2 className="display-7 mb-0 text-white">
-                  {maintitle}
-                </h2>
+
+                <h2 className="mb-0 text-white">{heading}</h2>
               </div>
             )}
 
-            {/* VISION */}
-            <div className="mb-4">
-              <h5 className="text-gradient-primary">{visiontitle}</h5>
-              <p className="fs-md text-muted" style={{ textAlign: "justify" }}>
-                {visiontext}
+            {/* SUMMARY */}
+            {summary && (
+              <p className="fs-md text-light" style={{ textAlign: "justify" }}>
+                {summary}
               </p>
-            </div>
+            )}
 
-            {/* MISSION */}
-            <div>
-              <h5 className="text-gradient-primary">{missiontitle}</h5>
-              <p className="fs-md text-muted" style={{ textAlign: "justify" }}>
-                {missiontext}
-              </p>
-            </div>
+            {/* CTA */}
+            {ctaTitle && ctaUrl && (
+              <Link href={ctaUrl} className="btn btn-primary mt-3">
+                {ctaTitle}
+              </Link>
+            )}
           </div>
 
           {/* IMAGE RIGHT */}
           {imageAlignment === "Right" && (
-            <div className="col-md-6 text-center rounded-3 shadow-lg mb-4 mb-md-0">
+            <div className="col-md-6 text-center mt-4 mt-md-0">
               <img
                 src={image?.url}
-                alt={image?.alternativeText || maintitle}
+                alt={image?.alternativeText || heading}
                 className="img-fluid rounded-3 shadow-sm"
               />
             </div>
@@ -94,4 +93,4 @@ const VisionMission = ({ data }) => {
   );
 };
 
-export default VisionMission;
+export default ServicesSolutions;

@@ -5,6 +5,7 @@ import FeaturedProjects from "./components/FeaturedProjects";
 import { getStrapiURL } from "@/lib/utils";
 import { fetchData } from "@/lib/fetch";
 import Services from "./components/Etservices";
+import ServicesSolutions from "./components/ServicesSolutions";
 import ServicesSummary from "./components/ServicesSummary";
 import Brands from "./components/Brands";
 import VisionMission from "./components/VisionMission";
@@ -38,6 +39,8 @@ export default async function Home() {
         return <ServicesSummary data={block} />; // ✅ pass the block directly
       case "blocks.services":
          return <Services data={block} />; // ✅ pass the block directly
+        case "blocks.services-solutions":
+         return <ServicesSolutions data={block} />; // ✅ pass the block directly
       case "blocks.benefits":
          return <FeaturedProjects data={block} />; // ✅ pass the block directly
         case "blocks.client-logos":

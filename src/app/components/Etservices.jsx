@@ -1,5 +1,5 @@
 import React from "react";
-
+//This is the landing page services component
 function Services({ data }) {
   if (!data || !data.services) return null;
 
