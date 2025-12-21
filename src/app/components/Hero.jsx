@@ -18,26 +18,24 @@ export default function Hero({ data }) {
   const [mainHeading] = heading.split("—");
 
   return (
-    <section className="hero-section position-relative d-flex align-items-center">
+    <section className="hero-section position-relative d-flex align-items-center mt-5">
       <div className="container hero-container py-5">
-        <div className="row align-items-center g-4 g-lg-3">
-
+        <div className="row align-items-start g-4 g-lg-3">
           {/* TEXT COLUMN */}
           <div className="col-lg-5 col-md-6 order-md-1 order-2 text-md-start text-center d-flex flex-column justify-content-between">
             <div>
-              <h3 className="display-3 mt-4">
-                <span className="text-gradient">
-                  {mainHeading || heading}
-                </span>
+              <h3 className="display-3 mb-3">
+                <span className="text-gradient">{mainHeading || heading}</span>
               </h3>
 
-              <h6 className="display-6 mb-3 pb-2">
+              <h7
+                className="display-7 mb-3 pb-2 text-gradient-primary"
+                style={{ fontSize: "1.8rem", fontWeight: "bold" }}
+              >
                 {subheading?.trim()}
-              </h6>
+              </h7>
 
-              <p className="hero-description mx-auto mx-md-0">
-                {summary}
-              </p>
+              <p className="hero-description mx-auto mx-md-0">{summary}</p>
             </div>
 
             {/* SCROLL BUTTON */}
@@ -65,7 +63,6 @@ export default function Hero({ data }) {
               <div className="hero-image-overlay" />
             </div>
           </div>
-
         </div>
       </div>
 
