@@ -1,3 +1,4 @@
+/* UPDATED HERO SECTION WITH RESPONSIVE TOP SPACING */
 .hero-section {
   background: linear-gradient(
     135deg,
@@ -8,6 +9,18 @@
     #5DEDED 100%
   );
   min-height: 100vh;
+  padding-top: 80px; /* Mobile: reduced space from menu */
+}
+
+/* Remove top padding from text content wrapper */
+.hero-section .mb-5.pt-4 {
+  padding-top: 0 !important;
+}
+
+/* Ensure heading has no extra margin */
+.hero-section .display-3 {
+  margin-top: 0;
+  line-height: 1.1;
 }
 
 /* IMAGE WRAPPER MUST FILL COLUMN */
@@ -42,9 +55,35 @@
   pointer-events: none;
 }
 
+/* TABLET AND ABOVE */
+@media (min-width: 768px) {
+  .hero-section {
+    padding-top: 100px; /* Reduced space on tablets */
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .hero-section {
+    padding-top: 60px; /* Reduced space on desktop */
+  }
+}
+
 /* EXTRA LARGE SCREENS */
 @media (min-width: 1400px) {
+  .hero-section {
+    padding-top: 140px; /* Reduced space on large screens */
+  }
+  
   .hero-image-wrapper {
     max-width: 820px;
   }
+}
+
+/* ALIGN IMAGE WITH HEADING TOP - Add this class to your image wrapper */
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  align-self: flex-start; /* Aligns image to top of flex container */
 }
