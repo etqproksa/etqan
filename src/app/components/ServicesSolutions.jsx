@@ -70,7 +70,7 @@ const ServicesSolutions = ({ data }) => {
 
             {/* CTA */}
             {ctaTitle && ctaUrl && (
-              <Link href={ctaUrl} className="btn btn-primary mt-3">
+              <Link href={ctaUrl} className="btn  btn-outline-primary mt-3">
                 {ctaTitle}
               </Link>
             )}
