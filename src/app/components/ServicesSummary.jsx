@@ -14,7 +14,7 @@ function ServicesSummary({ data }) {
         {services.map((service) => (
           <div
             key={service.documentId}
-            className="col-12 col-sm-6 col-lg-4 border-end-lg"
+            className="col-12 col-sm-6 col-xl-3 border-end-lg"
           >
             <div className="text-center h-100">
               {service.serviceIcon?.url && (
