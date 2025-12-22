@@ -32,11 +32,10 @@ export default function Hero({ data }) {
             </span>
           </h3>
 
-          <h7 className="display-7 mb-3 pb-2 text-gradient-primary" style={{fontSize:"1.8rem",fontWeight:"bold"}}>
+          <p className="mb-3 pb-2 text-gradient-primary" style={{fontSize:"1.8rem",fontWeight:"bold"}}>
             {subheading?.trim()}
-          </h7>
-
-          <p className=" mb-0 px-2 px-md-3">
+          </p>
+          <p className=" mb-0">
             {summary}
           </p>
         </div>

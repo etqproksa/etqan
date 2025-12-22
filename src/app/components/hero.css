@@ -65,7 +65,7 @@
 /* DESKTOP */
 @media (min-width: 1024px) {
   .hero-section {
-    padding-top: 60px; /* Reduced space on desktop */
+    padding-top: 90px; /* Reduced space on desktop */
   }
 }
 
