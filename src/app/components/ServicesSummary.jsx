@@ -11,10 +11,12 @@ function ServicesSummary({ data }) {
   return (
     <section className="container mb-5 pt-lg-5" id="benefits">
       <div className="row pt-3 g-4">
-        {services.map((service) => (
+        {services.map((service, index) => (
           <div
             key={service.documentId}
-            className="col-12 col-sm-6 col-xl-3 border-end-lg"
+            className={`col-12 col-sm-6 col-xl-3 ${
+              index < services.length - 1 ? "border-end-lg" : ""
+            }`}
           >
             <div className="text-center h-100">
               {service.serviceIcon?.url && (
