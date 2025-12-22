@@ -1,7 +1,7 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -14,39 +14,41 @@ export default function Brands({ data }) {
   const { heading, logos } = data;
 
   return (
-    <section className="container pb-2 pb-lg-5 mb-2 " style={{marginTop:"5rem"}}>
+    <section className="container" style={{ marginTop: "5rem" }}>
       {/* Heading + Navigation */}
-       <h2 className="mb-0 text-center">{heading}</h2>
+      <h2 className="mb-0 text-center">{heading}</h2>
       <div className="d-flex align-items-center justify-content-center mb-md-4 mb-3 position-relative">
- 
-
-  {/* Navigation buttons on desktop */}
-  <div className="d-md-flex d-none position-absolute end-0">
-    <button
-      type="button"
-      id="prev-brand"
-      className="btn btn-prev btn-icon btn-sm me-2"
-      aria-label="Previous"
-    >
-      <i className="bx bx-chevron-left"></i>
-    </button>
-    <button
-      type="button"
-      id="next-brand"
-      className="btn btn-next btn-icon btn-sm ms-2"
-      aria-label="Next"
-    >
-      <i className="bx bx-chevron-right"></i>
-    </button>
-  </div>
-</div>
-
+        {/* Navigation buttons on desktop */}
+        <div className="d-md-flex d-none position-absolute end-0">
+          <button
+            type="button"
+            id="prev-brand"
+            className="btn btn-prev btn-icon btn-sm me-2"
+            aria-label="Previous"
+          >
+            <i className="bx bx-chevron-left"></i>
+          </button>
+          <button
+            type="button"
+            id="next-brand"
+            className="btn btn-next btn-icon btn-sm ms-2"
+            aria-label="Next"
+          >
+            <i className="bx bx-chevron-right"></i>
+          </button>
+        </div>
+      </div>
 
       {/* Swiper */}
       <Swiper
-        modules={[Navigation, Pagination]}
+       modules={[Navigation, Pagination, Autoplay]}
         slidesPerView={2}
         loop
+        autoplay={{
+          delay: 2500, // time between slides (ms)
+          disableOnInteraction: false, // keep autoplay after manual swipe
+          pauseOnMouseEnter: true, // pause on hover (desktop)
+        }}
         navigation={{
           prevEl: "#prev-brand",
           nextEl: "#next-brand",
@@ -61,7 +63,6 @@ export default function Brands({ data }) {
           900: { slidesPerView: 5, spaceBetween: 8 },
           1100: { slidesPerView: 6, spaceBetween: 8 },
         }}
-        
       >
         {logos?.map((logo) => (
           <SwiperSlide key={logo.id} className="py-3">
