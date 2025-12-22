@@ -9,7 +9,7 @@ export default function Footer( {footerData}) {
   
 
   return (
-    <footer className="footer mt-5 pt-5 pb-4 pb-lg-5" style={{ backgroundColor: "#151822" }}>
+    <footer className="footer pt-5 pb-4 pb-lg-5" style={{ backgroundColor: "#151822" , marginTop:"5rem"}}>
       <div className="container pt-lg-4">
         <div className="row pb-5">
           <div className="col-lg-4 col-md-6">
