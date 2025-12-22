@@ -23,7 +23,7 @@ const ServicesSolutions = ({ data }) => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         borderRadius: "1rem",
-        marginTop: "5rem",
+        marginTop: "2rem",
       }}
     >
       <div className="container py-5">
