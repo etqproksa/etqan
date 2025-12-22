@@ -14,7 +14,7 @@ export default function Brands({ data }) {
   const { heading, logos } = data;
 
   return (
-    <section className="container pb-4 pb-lg-5 mb-3 " style={{marginTop:"5rem"}}>
+    <section className="container pb-2 pb-lg-5 mb-2 " style={{marginTop:"5rem"}}>
       {/* Heading + Navigation */}
        <h2 className="mb-0 text-center">{heading}</h2>
       <div className="d-flex align-items-center justify-content-center mb-md-4 mb-3 position-relative">
