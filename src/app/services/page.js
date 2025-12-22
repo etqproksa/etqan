@@ -5,7 +5,7 @@ import { fetchData } from "@/lib/fetch";
 const Services = async () => {
   // Loader function
   async function loader() {
-    const path = `/api/pages`;
+    const path = `/api/pages?populate=blocks`;
     const baseUrl = getStrapiURL();
     const url = new URL(path, baseUrl);
 
