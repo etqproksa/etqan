@@ -35,7 +35,7 @@ export default function Hero({ data }) {
           <p className="mb-3 pb-2 text-gradient-primary" style={{fontSize:"1.8rem",fontWeight:"bold"}}>
             {subheading?.trim()}
           </p>
-          <p className=" mb-0">
+          <p className="mb-0" style={{textAlign:"justify"}}>
             {summary}
           </p>
         </div>
