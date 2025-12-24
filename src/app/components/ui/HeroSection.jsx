@@ -79,7 +79,7 @@ const HeroSection = ({ data }) => {
             <div className="col-lg-7">
               <Breadcrumb />
               <h1 className="pb-2 pb-md-3 text-white">{hero?.title}</h1>
-              <p className="fs-xl pb-4 mb-1 mb-md-2 mb-lg-3 text-white ">
+              <p className="pb-4 mb-1 mb-md-2 mb-lg-3 text-white " style={{fontSize:"1rem",textAlign:"justify"}}>
                 {hero?.summary}
               </p>
             </div>
