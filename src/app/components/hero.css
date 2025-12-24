@@ -87,3 +87,6 @@
   max-width: 720px;
   align-self: flex-start; /* Aligns image to top of flex container */
 }
+.markdown-container p {
+  text-align: justify;
+}

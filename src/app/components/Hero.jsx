@@ -1,6 +1,7 @@
 "use client";
 import "./hero.css";
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 export default function Hero({ data }) {
  // console.log("this is the hero data", data);
 
@@ -35,9 +36,10 @@ export default function Hero({ data }) {
           <p className="mb-3 pb-2 text-gradient-primary" style={{fontSize:"1.8rem",fontWeight:"bold"}}>
             {subheading?.trim()}
           </p>
-          <p className="mb-0" style={{textAlign:"justify"}}>
-            {summary}
-          </p>
+            <div className="markdown-container">
+          <ReactMarkdown>{summary}</ReactMarkdown>
+          </div>
+           
         </div>
 
         <div className="d-inline-flex align-items-center justify-content-center justify-content-md-start">
