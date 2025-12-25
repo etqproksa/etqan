@@ -4,7 +4,7 @@ import Breadcrumb from "../Breadcrumb";
 
 import { RowsPhotoAlbum } from "react-photo-album";
 import "react-photo-album/rows.css";
-
+import ReactMarkdown from "react-markdown";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
@@ -49,7 +49,7 @@ const HeroSection = ({ data }) => {
   if (!hero) return null;
 
   return (
- <section className="container  py-2 bg-secondary mb-5"
+ <section className="container py-2 bg-secondary"
   style={{
     position: "relative",
     marginTop: "6rem",
@@ -86,12 +86,9 @@ const HeroSection = ({ data }) => {
           <div className="col-lg-7">
             <Breadcrumb />
             <h1 className="text-white mb-3">{hero.title}</h1>
-            <p
-              className="text-white"
-              style={{ textAlign: "justify", fontSize: "1rem" }}
-            >
-              {hero.summary}
-            </p>
+              <div className="markdown-container">
+               <ReactMarkdown>{hero.description}</ReactMarkdown>
+            </div>
           </div>
 
           <div className="col-lg-5 pt-4">

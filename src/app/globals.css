@@ -71,4 +71,7 @@ body {
 }
 
 /* Hide main content when loading */
+.markdown-container p {
+  text-align: justify;
+}
 

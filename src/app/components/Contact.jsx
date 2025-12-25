@@ -7,7 +7,7 @@ const Contact = ({ data }) => {
 
   return (
    <section
-        className="container py-2 bg-secondary mb-5"
+        className="container py-2 bg-secondary "
         style={{ marginTop: "6rem" }}
       >
       <div className="row py-5">
