@@ -24,7 +24,7 @@ export default function Footer({ footerData }) {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        marginTop: "5rem",
+        marginTop: "2.5rem",
       }}
     >
       <div className="container pt-lg-4">

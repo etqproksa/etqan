@@ -12,22 +12,15 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import Image from "next/image";
 
-{/* This is the hero section with right image gallery */}
 const HeroSection = ({ data }) => {
-  // ✅ All hooks MUST be declared before any early returns
   const [photos, setPhotos] = useState([]);
   const [galleryOpen, setGalleryOpen] = useState(false);
-  const [videoOpen, setVideoOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
-  // ✅ Extract hero data after hooks but before early return
   const hero = data?.Hero;
   const bgImage = hero?.backgroundImage?.url;
-//  console.log("this is the about us data",hero)
 
-  // Load Cloudinary images with real dimensions
   useEffect(() => {
     if (hero?.images?.length) {
       const loadImages = async () => {
@@ -42,7 +35,7 @@ const HeroSection = ({ data }) => {
                     src: img.url,
                     width: image.width,
                     height: image.height,
-                    alt: img?.alternativeText || img?.name || "Gallery Image",
+                    alt: img?.alternativeText || "Gallery Image",
                   });
               })
           )
@@ -53,67 +46,78 @@ const HeroSection = ({ data }) => {
     }
   }, [hero?.images]);
 
-  // ✅ Early return AFTER all hooks are declared
   if (!hero) return null;
 
   return (
-    
-   
-       <section
-        className="container py-2 bg-secondary mb-5 pb-5"
-        style={{ marginTop: "6rem" }}
+ <section className="container  py-2 bg-secondary mb-5"
+  style={{
+    position: "relative",
+    marginTop: "6rem",
+    minHeight: "90vh",
+    overflow: "hidden",
+    borderRadius: "1.5rem",
+  
+  }}
+>
+      {/* ✅ Background (GUARANTEED VISIBLE) */}
+      {bgImage && (
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            zIndex: 1,
+          }}
+        />
+      )}
+
+      {/* ✅ Content */}
+      <div
+        className="container py-5"
+        style={{
+          position: "relative",
+          zIndex: 2,
+        }}
       >
-        {/* Background */}
-        {bgImage && (
-          <div
-            className="position-absolute top-0 start-0 w-100 bg-position-bottom-center bg-size-cover bg-repeat-0 bg-dark"
-            style={{ backgroundImage: `url(${bgImage})` }}
-          >
-          
+        <div className="row">
+          <div className="col-lg-7">
+            <Breadcrumb />
+            <h1 className="text-white mb-3">{hero.title}</h1>
+            <p
+              className="text-white"
+              style={{ textAlign: "justify", fontSize: "1rem" }}
+            >
+              {hero.summary}
+            </p>
           </div>
-        )}
 
-        <div className="container position-relative zindex-5 pt-5">
-          <div className="row">
-            <div className="col-lg-7">
-              <Breadcrumb />
-              <h1 className="pb-2 pb-md-3 text-white">{hero?.title}</h1>
-              <p className="pb-4 mb-1 mb-md-2 mb-lg-3 text-white " style={{fontSize:"1rem",textAlign:"justify"}}>
-                {hero?.summary}
-              </p>
-            </div>
+          <div className="col-lg-5 pt-4">
+            {photos.length > 0 && (
+              <>
+                <RowsPhotoAlbum
+                  photos={photos}
+                  onClick={({ index }) => {
+                    setIndex(index);
+                    setGalleryOpen(true);
+                  }}
+                />
 
-            {/* Gallery */}
-            <div className="col-lg-5 mt-xl-3 pt-5 pt-lg-4">
-              {photos.length > 0 && (
-                <div className="mt-2">
-                  <RowsPhotoAlbum
-                    photos={photos}
-                    onClick={({ index }) => {
-                      setIndex(index);
-                      setGalleryOpen(true);
-                    }}
-                  />
-
-                  {/* Lightbox for images only */}
-                  <Lightbox
-                    open={galleryOpen}
-                    index={index}
-                    close={() => setGalleryOpen(false)}
-                    plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-                    slides={photos.map((p) => ({
-                      src: p.src,
-                      title: p.alt,
-                    }))}
-                  />
-                </div>
-              )}
-            </div>
+                <Lightbox
+                  open={galleryOpen}
+                  index={index}
+                  close={() => setGalleryOpen(false)}
+                  plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+                  slides={photos.map((p) => ({ src: p.src }))}
+                />
+              </>
+            )}
           </div>
         </div>
-      </section>
-    
-   
+      </div>
+    </section>
   );
 };
 
