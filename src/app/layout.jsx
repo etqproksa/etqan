@@ -76,9 +76,9 @@ export default async function RootLayout({ children }) {
         <main className="page-wrapper">
           <Header headerdata={headerData} menu={menu}  />
           {children}
-          <Footer footerData={footerData} />
+         
         </main>
-
+       <Footer footerData={footerData} />
         {/* Back to top button */}
         <a href="#top" className="btn-scroll-top" data-scroll>
           <span className="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>

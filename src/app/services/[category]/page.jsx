@@ -21,7 +21,7 @@ export default async function CategoryPage({ params }) {
           },
         },
       },
-      publicationState: "live",
+      status: "published",
     },
     { encodeValuesOnly: true }
   );
@@ -31,7 +31,7 @@ export default async function CategoryPage({ params }) {
   const res = await fetchData(url, process.env.STRAPI_JWT, {
     cache: "no-store",
   });
-
+    console.log("this is the category data",res);
   const categoryData = res?.data?.[0];
 
   if (!categoryData) {
@@ -41,7 +41,7 @@ export default async function CategoryPage({ params }) {
   const services = categoryData.services || [];
 
   if (!services.length) {
-    return <h2 className="text-center mt-5">No services found</h2>;
+    return <h2 className="text-center mt-5">No Solution found</h2>;
   }
 
   return (
