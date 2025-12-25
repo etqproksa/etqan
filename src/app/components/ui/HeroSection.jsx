@@ -13,7 +13,7 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Image from "next/image";
-import VideoSection from "./VideoSection";
+
 {/* This is the hero section with right image gallery */}
 const HeroSection = ({ data }) => {
   // ✅ All hooks MUST be declared before any early returns
@@ -69,8 +69,7 @@ const HeroSection = ({ data }) => {
             className="position-absolute top-0 start-0 w-100 bg-position-bottom-center bg-size-cover bg-repeat-0 bg-dark"
             style={{ backgroundImage: `url(${bgImage})` }}
           >
-            <div className="d-lg-none" style={{ height: "960px" }}></div>
-            <div className="d-none d-lg-block" style={{ height: "768px" }}></div>
+          
           </div>
         )}
 
