@@ -57,8 +57,8 @@ const HeroSection = ({ data }) => {
   if (!hero) return null;
 
   return (
-    <>
-      {/* Hero Section */}
+    
+   
        <section
         className="container py-2 bg-secondary mb-5 pb-5"
         style={{ marginTop: "6rem" }}
@@ -114,30 +114,7 @@ const HeroSection = ({ data }) => {
         </div>
       </section>
     
-      {/* Additional CSS for better mobile experience */}
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .btn-video {
-            width: 60px !important;
-            height: 60px !important;
-            font-size: 18px !important;
-          }
-        }
-        
-        @media (max-width: 480px) {
-          .btn-video {
-            width: 50px !important;
-            height: 50px !important;
-            font-size: 16px !important;
-          }
-        }
-        
-        .btn-video:hover {
-          transform: scale(1.1);
-          transition: transform 0.2s ease;
-        }
-      `}</style>
-    </>
+   
   );
 };
 
