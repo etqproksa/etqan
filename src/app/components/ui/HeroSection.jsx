@@ -53,7 +53,7 @@ const HeroSection = ({ data }) => {
   style={{
     position: "relative",
     marginTop: "6rem",
-    minHeight: "90vh",
+    minHeight: "70vh",
     overflow: "hidden",
     borderRadius: "1.5rem",
   
