@@ -3,21 +3,42 @@ import React from "react";
 const Contact = ({ data }) => {
   if (!data) return null;
 
-  const { address, map } = data;
+  const {
+    address,
+    map,
+    phone,
+    email,
+    emailIcon,
+    phoneIcon,
+    locationIcon,
+    backgroundImage,
+  } = data;
 
   return (
-   <section
-        className="container py-2 bg-secondary "
-        style={{ marginTop: "6rem" }}
+    <section
+      className="container p-5"
+      style={{
+        marginTop: "5rem",
+        borderRadius: "1rem",
+        backgroundImage: backgroundImage?.url
+          ? `url(${backgroundImage.url})`
+          : undefined,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Optional overlay for readability */}
+      <div
+        className="row py-5 align-items-stretch"
+      
       >
-      <div className="row py-5">
         {/* Map */}
         <div className="col-lg-6 mb-5 mb-lg-0">
-          <div className="d-flex flex-column h-100 shadow-sm rounded-3 overflow-hidden">
-            {/* Inject map iframe safely */}
+          <div className="h-100 shadow-sm rounded-3 overflow-hidden">
             <div
-              className="d-block h-100"
-              style={{ minHeight: "300px" }}
+              className="h-100"
+              style={{ minHeight: "320px" }}
               dangerouslySetInnerHTML={{ __html: map }}
             />
           </div>
@@ -26,19 +47,69 @@ const Contact = ({ data }) => {
         {/* Contact Info */}
         <div className="col-lg-5 offset-lg-1">
           <h2 className="h4 mb-4">Contact Us</h2>
-          <ul className="list-unstyled pb-2 pb-lg-0 mb-4 mb-lg-5">
+
+          <ul className="list-unstyled mb-4">
             {/* Address */}
-            <li className="d-flex pb-1 mb-2">
-              <i
-                className="bx bx-map text-primary fs-xl me-2"
-                style={{ marginTop: ".125rem" }}
-              ></i>
-              <span style={{ whiteSpace: "pre-line" }}>{address}</span>
-            </li>
+            {address && (
+              <li className="d-flex align-items-start mb-3">
+                {locationIcon?.url && (
+                  <img
+                    src={locationIcon.url}
+                    alt={locationIcon.alternativeText || "Location"}
+                    width={28}
+                    height={28}
+                    className="me-3 mt-1"
+                  />
+                )}
+                <span style={{ whiteSpace: "pre-line" }}>{address}</span>
+              </li>
+            )}
+
+            {/* Phone */}
+            {phone && (
+              <li className="d-flex align-items-center mb-3">
+                {phoneIcon?.url && (
+                  <img
+                    src={phoneIcon.url}
+                    alt={phoneIcon.alternativeText || "Phone"}
+                    width={28}
+                    height={28}
+                    className="me-3"
+                  />
+                )}
+                <a
+                  href={`tel:${phone}`}
+                  className="text-decoration-none text-dark"
+                >
+                  {phone}
+                </a>
+              </li>
+            )}
+
+            {/* Email */}
+            {email && (
+              <li className="d-flex align-items-center">
+                {emailIcon?.url && (
+                  <img
+                    src={emailIcon.url}
+                    alt={emailIcon.alternativeText || "Email"}
+                    width={28}
+                    height={28}
+                    className="me-3"
+                  />
+                )}
+                <a
+                  href={`mailto:${email}`}
+                  className="text-decoration-none text-dark"
+                >
+                  {email}
+                </a>
+              </li>
+            )}
           </ul>
 
           {/* Social Links */}
-          <div className="d-flex pt-1 pt-md-3 pt-xl-4">
+          <div className="d-flex pt-2">
             <a
               href="#"
               className="btn btn-icon btn-secondary btn-facebook me-3"

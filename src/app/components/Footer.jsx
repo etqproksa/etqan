@@ -46,7 +46,7 @@ export default function Footer({ footerData }) {
               <span className="text-white">{footerData?.heading}</span>
             </div>
 
-            <p className="fs-sm pb-lg-3 mb-4 text-white">
+            <p className="fs-sm pb-lg-3 mb-4 text-white" style={{textAlign:"justify"}}>
               {footerData?.description}
             </p>
           </div>
