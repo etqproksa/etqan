@@ -9,6 +9,7 @@ import { Video } from "lucide-react";
 import ImageGallery from "../../components/ui/ImageGallery";
 import TextBoxWithImage from "../../components/ui/TextBoxWithImage";
 import TextBoxWithCarousel from "../../components/ui/TextBoxWithCarousel";
+import MainServices from "../../components/MainServices";
 export default async function Page({ params }) {
   const { slug } = await params; // "contact", "about", etc.
  //  console.log("slug is ",slug)
@@ -44,8 +45,8 @@ export default async function Page({ params }) {
         return <TextBoxWithImage data={block} />;
        case "blocks.text-box-with-carousel":
         return <TextBoxWithCarousel data={block} />;
-
-
+       case "blocks.main-services":
+        return <MainServices data={block} />;
       default:
         return null;
     }
