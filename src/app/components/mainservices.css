@@ -37,7 +37,7 @@
         }
 
         .service-content {
-          background-color: #2d3238;
+          background-color: #1E212B;
           color: #fff;
           padding: 3rem;
           display: flex;
@@ -71,7 +71,7 @@
         .image-left .service-caret {
           left: -25px;
           border-width: 25px 25px 25px 0;
-          border-color: transparent #2d3238 transparent transparent;
+          border-color: transparent #1E212B transparent transparent;
         }
 
         /* When image is on right */
@@ -88,7 +88,7 @@
         .image-right .service-caret {
           right: -25px;
           border-width: 25px 0 25px 25px;
-          border-color: transparent transparent transparent #2d3238;
+          border-color: transparent transparent transparent #1E212B;
         }
 
         /* Rounded corners for first row */
