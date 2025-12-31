@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import './mainservices.css'
+import './mainservices.css';
+import ReactMarkdown from "react-markdown";
 const MainServices = ({ data }) => {
   if (!data?.MainServices?.length) return null;
 
@@ -40,9 +41,9 @@ const MainServices = ({ data }) => {
                       {service.title}
                     </h5>
 
-                    <p className="service-text">
-                      {service.text}
-                    </p>
+                  <div className="markdown-container">
+                          <ReactMarkdown>{service.text}</ReactMarkdown>
+                  </div>
 
                     <Link href={`/${service.ctaUrl}`} className=" btn btn-outline-primary">
                       {service.ctaText || "Learn More"}
