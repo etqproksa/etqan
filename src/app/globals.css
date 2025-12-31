@@ -73,6 +73,7 @@ body {
 /* Hide main content when loading */
 .markdown-container p {
   text-align: justify;
+  text-color:muted
 }
 .bg-holder {
   position: absolute;

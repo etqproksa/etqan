@@ -46,7 +46,7 @@ const Contact = ({ data }) => {
 
         {/* Contact Info */}
         <div className="col-lg-5 offset-lg-1">
-          <h2 className="h4 mb-4">Contact Us</h2>
+          <h1 className="mb-4">Contact Us</h1>
 
           <ul className="list-unstyled mb-4">
             {/* Address */}

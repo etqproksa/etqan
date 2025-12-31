@@ -38,11 +38,11 @@ function Services({ data }) {
                       />
                     )}
                   </div>
-                  <h2 className="h4 d-inline-flex align-items-center">
+                  <h2 className="h4 d-inline-flex align-items-center text-muted">
                     {service.title}
                     <i className="bx bx-right-arrow-circle text-primary fs-3 ms-2"></i>
                   </h2>
-                  <p className="fs-sm text-body mb-0">{service.summary}</p>
+                  <p className="fs-sm mb-0 text-muted">{service.summary}</p>
                 </div>
               </a>
             </div>

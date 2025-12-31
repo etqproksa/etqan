@@ -39,15 +39,15 @@ export default async function Home() {
         return <ServicesSummary data={block} />; // ✅ pass the block directly
       case "blocks.services":
          return <Services data={block} />; // ✅ pass the block directly
-        case "blocks.services-solutions":
+      case "blocks.services-solutions":
          return <ServicesSolutions data={block} />; // ✅ pass the block directly
       case "blocks.benefits":
          return <FeaturedProjects data={block} />; // ✅ pass the block directly
-        case "blocks.client-logos":
+      case "blocks.client-logos":
          return <Brands data={block} />; // ✅ pass the block directly
-        case "blocks.vision-mission":
+      case "blocks.vision-mission":
          return <VisionMission data={block} />; // ✅ pass the block directly
-        case "blocks.cta-image":
+      case "blocks.cta-image":
          return <CtaImage data={block} />; // ✅ pass the block directly
       default:
         return null;

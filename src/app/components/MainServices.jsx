@@ -11,7 +11,7 @@ const MainServices = ({ data }) => {
 
       <section className="services-section">
         {/* Heading */}
-        <h3 className="service-heading">Our Services</h3>
+        <h1 className="mb-3">Our Services</h1>
 
         {/* Services Grid - all rows in one container */}
         <div className="services-grid">

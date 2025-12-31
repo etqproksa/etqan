@@ -63,7 +63,7 @@ const ServicesSolutions = ({ data }) => {
 
             {/* SUMMARY */}
             {summary && (
-              <p className="fs-md text-light" style={{ textAlign: "justify" }}>
+              <p className="fs-md text-muted" style={{ textAlign: "justify" }}>
                 {summary}
               </p>
             )}
