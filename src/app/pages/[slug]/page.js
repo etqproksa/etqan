@@ -10,6 +10,7 @@ import ImageGallery from "../../components/ui/ImageGallery";
 import TextBoxWithImage from "../../components/ui/TextBoxWithImage";
 import TextBoxWithCarousel from "../../components/ui/TextBoxWithCarousel";
 import MainServices from "../../components/MainServices";
+import MainSolutions from "../../components/MainSolutions";
 export default async function Page({ params }) {
   const { slug } = await params; // "contact", "about", etc.
  //  console.log("slug is ",slug)
@@ -47,6 +48,8 @@ export default async function Page({ params }) {
         return <TextBoxWithCarousel data={block} />;
        case "blocks.main-services":
         return <MainServices data={block} />;
+        case "blocks.main-solutions":
+        return <MainSolutions data={block} />;
       default:
         return null;
     }

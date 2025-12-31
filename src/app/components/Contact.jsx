@@ -16,7 +16,7 @@ const Contact = ({ data }) => {
 
   return (
     <section
-      className="container p-5"
+      className="container bg-secondary  p-5"
       style={{
         marginTop: "5rem",
         borderRadius: "1rem",
