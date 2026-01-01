@@ -6,7 +6,7 @@ const MainSolutions = ({ data }) => {
   if (!data?.MainSolutions?.length) return null;
 
   return (
-      <section className="services-section mt-5">
+      <section className="services-section">
         {/* Heading */}
         <h1 className="mb-5">Our Solutions</h1>
 
