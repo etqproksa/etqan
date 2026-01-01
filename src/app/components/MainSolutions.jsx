@@ -6,9 +6,9 @@ const MainSolutions = ({ data }) => {
   if (!data?.MainSolutions?.length) return null;
 
   return (
-      <section className="services-section">
+      <section className="services-section mt-5">
         {/* Heading */}
-        <h1 className="mb-3">Our Solutions</h1>
+        <h1 className="mb-5">Our Solutions</h1>
 
         {/* Services Grid - all rows in one container */}
         <div className="services-grid">
