@@ -33,14 +33,15 @@ export default async function CategoryPage({ params }) {
   });
 
   const categoryData = res?.data?.[0];
+  //console.log("this is the category data",categoryData);
 
   if (!categoryData) {
     return <h2 className="text-center mt-5">Category not found</h2>;
   }
 
-  const services = categoryData.services || [];
+  const solutions = categoryData.solutions || [];
 
-  if (!services.length) {
+  if (!solutions.length) {
     return <h2 className="text-center mt-5">No services found</h2>;
   }
 
@@ -66,10 +67,10 @@ export default async function CategoryPage({ params }) {
           )}
 
           <div className="row row-cols-1 row-cols-md-2">
-            {services.map((service) => (
-              <div key={service.id} className="col py-4 my-2 my-sm-3">
+            {solutions.map((solution) => (
+              <div key={solution.id} className="col py-4 my-2 my-sm-3">
                 <a
-                  href={`/services/${category}/${service.slug}`}
+                  href={`/services/${category}/${solution.slug}`}
                   className="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3"
                 >
                   <div className="card-body pt-3">
@@ -83,21 +84,21 @@ export default async function CategoryPage({ params }) {
                     >
                       <img
                         src={
-                          service?.serviceIcon?.url ||
+                          solution?.solutionIcon?.url ||
                           "/assets/img/services/icons/rocket.svg"
                         }
                         width="55"
                         height="55"
                         alt={
-                          service?.serviceIcon?.alternativeText ||
-                          service.title
+                          solution?.solutionIcon?.alternativeText ||
+                          solution.title
                         }
                       />
                     </div>
 
                     {/* TITLE */}
                     <h2 className="h4 d-inline-flex align-items-center">
-                      {service.title}
+                      {solution.title}
                       <i
                         className="bx bx-right-arrow-circle fs-3 ms-2"
                         style={{ color: "#8B47CB" }}
@@ -105,9 +106,7 @@ export default async function CategoryPage({ params }) {
                     </h2>
 
                     {/* SUMMARY */}
-                    <p className="fs-sm text-body mb-0">
-                      {service.summary}
-                    </p>
+                    <p className="fs-sm text-body mb-0">{solution.summary}</p>
                   </div>
                 </a>
               </div>
