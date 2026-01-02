@@ -106,7 +106,7 @@ export default async function CategoryPage({ params }) {
                     </h2>
 
                     {/* SUMMARY */}
-                    <p className="fs-sm text-body mb-0">{solution.summary}</p>
+                    <p className="fs-sm text-body mb-0">opp</p>
                   </div>
                 </a>
               </div>
