@@ -16,7 +16,7 @@ const Contact = ({ data }) => {
 
   return (
     <section
-      className="container bg-secondary  p-5"
+      className="container bg-secondary p-5"
       style={{
         marginTop: "5rem",
         borderRadius: "1rem",
@@ -28,11 +28,7 @@ const Contact = ({ data }) => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Optional overlay for readability */}
-      <div
-        className="row py-5 align-items-stretch"
-      
-      >
+      <div className="row py-5 align-items-stretch">
         {/* Map */}
         <div className="col-lg-6 mb-5 mb-lg-0">
           <div className="h-100 shadow-sm rounded-3 overflow-hidden">
@@ -49,33 +45,52 @@ const Contact = ({ data }) => {
           <h1 className="mb-4">Contact Us</h1>
 
           <ul className="list-unstyled mb-4">
-            {/* Address */}
-            {address && (
-              <li className="d-flex align-items-start mb-3">
-                {locationIcon?.url && (
-                  <img
-                    src={locationIcon.url}
-                    alt={locationIcon.alternativeText || "Location"}
-                    width={28}
-                    height={28}
-                    className="me-3 mt-1"
-                  />
-                )}
-                <span style={{ whiteSpace: "pre-line" }}>{address}</span>
-              </li>
-            )}
+{address && (
+  <li className="d-flex mb-3">
+    {locationIcon?.url && (
+      <span
+        className="me-3 flex-shrink-0"
+        style={{
+          display: "flex",
+          alignSelf: "flex-start",
+         
+        }}
+      >
+        <img
+          src={locationIcon.url}
+          alt={locationIcon.alternativeText || "Location"}
+          width={24}
+          height={24}
+          style={{ display: "block" }}
+        />
+      </span>
+    )}
+
+    <span
+      style={{
+        whiteSpace: "pre-line",
+        lineHeight: "1.7",
+      }}
+    >
+      {address}
+    </span>
+  </li>
+)}
+
+
 
             {/* Phone */}
             {phone && (
-              <li className="d-flex align-items-center mb-3">
+              <li className="d-flex align-items-start mb-3">
                 {phoneIcon?.url && (
-                  <img
-                    src={phoneIcon.url}
-                    alt={phoneIcon.alternativeText || "Phone"}
-                    width={28}
-                    height={28}
-                    className="me-3"
-                  />
+                  <span className="me-3  flex-shrink-0">
+                    <img
+                      src={phoneIcon.url}
+                      alt={phoneIcon.alternativeText || "Phone"}
+                      width={28}
+                      height={28}
+                    />
+                  </span>
                 )}
                 <a
                   href={`tel:${phone}`}
@@ -88,15 +103,16 @@ const Contact = ({ data }) => {
 
             {/* Email */}
             {email && (
-              <li className="d-flex align-items-center">
+              <li className="d-flex align-items-start">
                 {emailIcon?.url && (
-                  <img
-                    src={emailIcon.url}
-                    alt={emailIcon.alternativeText || "Email"}
-                    width={28}
-                    height={28}
-                    className="me-3"
-                  />
+                  <span className="me-3  flex-shrink-0">
+                    <img
+                      src={emailIcon.url}
+                      alt={emailIcon.alternativeText || "Email"}
+                      width={28}
+                      height={28}
+                    />
+                  </span>
                 )}
                 <a
                   href={`mailto:${email}`}
