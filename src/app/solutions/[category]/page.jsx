@@ -34,6 +34,7 @@ export default async function CategoryPage({ params }) {
 
   const categoryData = res?.data?.[0];
   console.log("this is the category data",categoryData);
+  return false;
 
   if (!categoryData) {
     return <h2 className="text-center mt-5">Category not found</h2>;
