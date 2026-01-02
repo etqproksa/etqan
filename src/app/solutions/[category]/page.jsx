@@ -23,7 +23,7 @@ export default async function CategoryPage({ params }) {
       },
       status: "published",
     },
-    { encodeValuesOnly: true }
+ 
   );
 
   const url = `${getStrapiURL()}/api/solution-categories?${query}`;
@@ -34,7 +34,7 @@ export default async function CategoryPage({ params }) {
 
   const categoryData = res?.data?.[0];
   console.log("this is the category data",categoryData);
-  return false;
+ 
 
   if (!categoryData) {
     return <h2 className="text-center mt-5">Category not found</h2>;
@@ -71,7 +71,7 @@ export default async function CategoryPage({ params }) {
             {solutions.map((solution) => (
               <div key={solution.id} className="col py-4 my-2 my-sm-3">
                 <a
-                  href={`/services/${category}/${solution.slug}`}
+                  href={`/solutions/${category}/${solution.slug}`}
                   className="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3"
                 >
                   <div className="card-body pt-3">
