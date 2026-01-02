@@ -3,7 +3,7 @@ import { getStrapiURL } from "@/lib/utils";
 import { fetchData } from "@/lib/fetch";
 
 export default async function CategoryPage({ params }) {
-  const { category } = await params;
+  const { category } =   await params;
 
   const query = qs.stringify(
     {
@@ -33,7 +33,7 @@ export default async function CategoryPage({ params }) {
   });
 
   const categoryData = res?.data?.[0];
-  //console.log("this is the category data",categoryData);
+  console.log("this is the category data",categoryData);
 
   if (!categoryData) {
     return <h2 className="text-center mt-5">Category not found</h2>;
@@ -106,7 +106,7 @@ export default async function CategoryPage({ params }) {
                     </h2>
 
                     {/* SUMMARY */}
-                    <p className="fs-sm text-body mb-0">opp</p>
+                    <p className="fs-sm text-body mb-0">{solution.summary}</p>
                   </div>
                 </a>
               </div>
