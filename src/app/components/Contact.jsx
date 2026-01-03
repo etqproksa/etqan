@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = ({ data }) => {
   if (!data) return null;
-  console.log("this is the data for contact",data);
+
   const {
     address,
     map,
@@ -13,6 +13,28 @@ const Contact = ({ data }) => {
     locationIcon,
     backgroundImage,
   } = data;
+
+  const Icon = ({ icon, alt }) => {
+    if (!icon?.url) return null;
+
+    return (
+      <span
+        className="me-3 flex-shrink-0"
+        style={{
+          display: "flex",
+          alignSelf: "flex-start",
+        }}
+      >
+        <img
+          src={icon.url}
+          alt={icon.alternativeText || alt}
+          width={24}
+          height={24}
+          style={{ display: "block" }}
+        />
+      </span>
+    );
+  };
 
   return (
     <section
@@ -45,63 +67,33 @@ const Contact = ({ data }) => {
           <h1 className="mb-4">Contact Us</h1>
 
           <ul className="list-unstyled mb-4">
+            {/* Address */}
             {address && (
               <li className="d-flex mb-3">
-                {locationIcon?.url && (
-                  <span
-                    className="me-3 flex-shrink-0"
-                    style={{
-                      display: "flex",
-                      alignSelf: "flex-start",
-                    }}
-                  >
-                    <img
-                      src={locationIcon.url}
-                      alt={locationIcon.alternativeText || "Location"}
-                      width={24}
-                      height={24}
-                      style={{ display: "block" }}
-                    />
-                  </span>
-                )}
-
-                <span
-                  style={{
-                    whiteSpace: "pre-line",
-                    lineHeight: "1.7",
-                  }}
-                >
+                <Icon icon={locationIcon} alt="Location" />
+                <span style={{ whiteSpace: "pre-line", lineHeight: "1.7" }}>
                   {address}
                 </span>
               </li>
             )}
 
-           <span
-  className="me-3 flex-shrink-0"
-  style={{ display: "flex", alignSelf: "flex-start" }}
->
-  <img
-    src={phoneIcon.url}
-    alt="Phone"
-    width={28}
-    height={28}
-    style={{ display: "block" }}
-  />
-</span>
+            {/* Phone */}
+            {phone && (
+              <li className="d-flex align-items-start mb-3">
+                <Icon icon={phoneIcon} alt="Phone" />
+                <a
+                  href={`tel:${phone}`}
+                  className="text-decoration-none text-dark"
+                >
+                  {phone}
+                </a>
+              </li>
+            )}
 
             {/* Email */}
             {email && (
               <li className="d-flex align-items-start">
-                {emailIcon?.url && (
-                  <span className="me-3  flex-shrink-0">
-                    <img
-                      src={emailIcon.url}
-                      alt={emailIcon.alternativeText || "Email"}
-                      width={28}
-                      height={28}
-                    />
-                  </span>
-                )}
+                <Icon icon={emailIcon} alt="Email" />
                 <a
                   href={`mailto:${email}`}
                   className="text-decoration-none text-dark"
@@ -116,28 +108,28 @@ const Contact = ({ data }) => {
           <div className="d-flex pt-2">
             <a
               href="#"
-              className="btn btn-icon btn-secondary btn-facebook me-3"
+              className="btn btn-icon btn-secondary me-3"
               aria-label="Facebook"
             >
               <i className="bx bxl-facebook"></i>
             </a>
             <a
               href="#"
-              className="btn btn-icon btn-secondary btn-instagram me-3"
+              className="btn btn-icon btn-secondary me-3"
               aria-label="Instagram"
             >
               <i className="bx bxl-instagram"></i>
             </a>
             <a
               href="#"
-              className="btn btn-icon btn-secondary btn-twitter me-3"
+              className="btn btn-icon btn-secondary me-3"
               aria-label="Twitter"
             >
               <i className="bx bxl-twitter"></i>
             </a>
             <a
               href="#"
-              className="btn btn-icon btn-secondary btn-youtube"
+              className="btn btn-icon btn-secondary"
               aria-label="YouTube"
             >
               <i className="bx bxl-youtube"></i>
