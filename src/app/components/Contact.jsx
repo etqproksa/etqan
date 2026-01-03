@@ -71,7 +71,7 @@ const Contact = ({ data }) => {
             {address && (
               <li className="d-flex mb-3">
                 <Icon icon={locationIcon} alt="Location" />
-                <span style={{ whiteSpace: "pre-line", lineHeight: "1.7" }}>
+                <span style={{ lineHeight: "1.7" }}>
                   {address}
                 </span>
               </li>
