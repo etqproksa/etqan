@@ -87,7 +87,7 @@ const Contact = ({ data }) => {
                 </a>
               </li>
             )}
-
+            
             {/* Email */}
             {email && (
               <li className="d-flex align-items-start">
