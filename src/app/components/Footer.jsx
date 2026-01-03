@@ -46,7 +46,7 @@ export default function Footer({ footerData }) {
               <span className="text-white">{footerData?.heading}</span>
             </div>
 
-            <p className="fs-sm pb-lg-3 mb-4 text-white" style={{textAlign:"justify"}}>
+            <p className="fs-sm pb-lg-3 mb-4 text-muted" style={{textAlign:"justify"}}>
               {footerData?.description}
             </p>
           </div>
@@ -73,7 +73,7 @@ export default function Footer({ footerData }) {
                       <li key={link.id} className="nav-item">
                         <Link
                           href={`/pages${link.titleUrl || "#"}`}
-                          className="nav-link d-inline-block px-0 pt-1 pb-2 text-white"
+                          className="nav-link d-inline-block px-0 pt-1 pb-2 text-muted"
                         >
                           {link.title}
                         </Link>
