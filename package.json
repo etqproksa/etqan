@@ -11,6 +11,7 @@
   "dependencies": {
     "@typescript-eslint/parser": "^8.44.0",
     "bootstrap": "^5.3.7",
+    "bootstrap-icons": "^1.13.1",
     "bootstrap-react": "^0.5.0-alpha.14",
     "lucide-react": "^0.528.0",
     "next": "^16.1.1",

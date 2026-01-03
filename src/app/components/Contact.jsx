@@ -71,9 +71,7 @@ const Contact = ({ data }) => {
             {address && (
               <li className="d-flex mb-3">
                 <Icon icon={locationIcon} alt="Location" />
-                <span style={{ lineHeight: "1.7" }}>
-                  {address}
-                </span>
+                <span style={{ lineHeight: "1.7" }}>{address}</span>
               </li>
             )}
 
@@ -109,30 +107,33 @@ const Contact = ({ data }) => {
             <a
               href="#"
               className="btn btn-icon btn-secondary me-3"
+              aria-label="Linkedin"
+            >
+              <i className="bx bxl-linkedin"></i>
+            </a>
+            <a
+              href="#"
+              className="btn btn-icon btn-secondary me-3"
               aria-label="Facebook"
             >
               <i className="bx bxl-facebook"></i>
             </a>
+
             <a
               href="#"
               className="btn btn-icon btn-secondary me-3"
-              aria-label="Instagram"
+              aria-label="twitter-x"
             >
-              <i className="bx bxl-instagram"></i>
-            </a>
-            <a
-              href="#"
-              className="btn btn-icon btn-secondary me-3"
-              aria-label="Twitter"
-            >
-              <i className="bx bxl-twitter"></i>
-            </a>
-            <a
-              href="#"
-              className="btn btn-icon btn-secondary"
-              aria-label="YouTube"
-            >
-              <i className="bx bxl-youtube"></i>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-twitter-x"
+                viewBox="0 0 16 16"
+              >
+                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+              </svg>
             </a>
           </div>
         </div>
