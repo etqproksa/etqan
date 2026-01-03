@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import Breadcrumb from "../Breadcrumb";
+
 
 function PageHeading({ heading, icon, show }) {
   const pathname = usePathname();
@@ -59,7 +59,7 @@ function PageHeading({ heading, icon, show }) {
           </span>
         </div>
       )}
-      <Breadcrumb />
+    
     </>
   );
 }
