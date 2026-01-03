@@ -103,7 +103,7 @@ export default function Footer({ footerData }) {
                       <li key={social.id} className="nav-item">
                         <Link
                           href={social.url || "#"}
-                          className="nav-link d-inline-block px-0 pt-1 pb-2 text-white"
+                          className="nav-link d-inline-block px-0 pt-1 pb-2 text-muted"
                         >
                           {social.title}
                         </Link>
@@ -116,7 +116,7 @@ export default function Footer({ footerData }) {
           </div>
         </div>
 
-        <p className="nav d-block fs-xs text-center text-md-start pb-2 pb-lg-0 mb-0 text-white">
+        <p className="nav d-block fs-xs text-center text-md-start pb-2 pb-lg-0 mb-0 text-muted">
           &copy; {footerData?.copyright}
         </p>
       </div>
