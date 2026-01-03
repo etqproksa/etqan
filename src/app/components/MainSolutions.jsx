@@ -33,9 +33,9 @@ const MainSolutions = ({ data }) => {
                   <div className="service-caret"></div>
 
                   <div className="service-inner">
-                    <h5 className="service-title">
+                    <h4 className="mb-3">
                       {solution.title}
-                    </h5>
+                    </h4>
 
                   <div className="markdown-container">
                           <ReactMarkdown>{solution.text}</ReactMarkdown>

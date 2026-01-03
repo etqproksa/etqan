@@ -37,9 +37,9 @@ const MainServices = ({ data }) => {
                   <div className="service-caret"></div>
 
                   <div className="service-inner">
-                    <h5 className="service-title">
+                    <h4 className="mb-3">
                       {service.title}
-                    </h5>
+                    </h4>
 
                   <div className="markdown-container">
                           <ReactMarkdown>{service.text}</ReactMarkdown>
