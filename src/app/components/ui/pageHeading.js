@@ -28,11 +28,12 @@ function PageHeading({ heading, icon, show }) {
     <>
       {show && (
         <div
-          className="flex justify-center items-center gap-2 text-white p-2 text-center text-uppercase mb-2"
+          className="flex justify-center items-center gap-2 display-4 text-white p-2 text-center text-uppercase mb-2 bg-gradient-primary text-bold"
           style={{
             fontSize: "1.05rem",
             fontFamily: "'Poppins', sans-serif",
-            backgroundColor: "#E2571F",
+            marginTop: "0.5rem",
+         
           }}
         >
           {icon &&
@@ -40,8 +41,8 @@ function PageHeading({ heading, icon, show }) {
               <Image
                 src={icon}
                 alt="icon"
-                width={38}
-                height={38}
+                width={45}
+                height={45}
                 className="inline-block"
                 style={{ verticalAlign: "middle" }}
               />

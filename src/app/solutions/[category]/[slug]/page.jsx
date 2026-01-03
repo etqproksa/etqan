@@ -13,7 +13,7 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import PageHeading  from "../../../components/ui/pageHeading";
+import PageHeading from "../../../components/ui/pageHeading";
 import ReactMarkdown from "react-markdown";
 
 const SolutionsDetails = ({ params: paramsPromise }) => {
@@ -35,7 +35,7 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
         const data = await res.json();
         const SolutionData = data?.data?.[0] || null;
         setSolution(SolutionData);
-        console.log("Solution Data",SolutionData);
+        console.log("Solution Data", SolutionData);
         const photoData =
           SolutionData?.images?.map((img) => ({
             src: img?.url,
@@ -60,28 +60,31 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
   if (!Solution) return <div>No record found</div>;
 
   return (
-    <section className="container bg-dark bordered-3 mb-5" style={{ marginTop: "100px" }}>
+    <section
+      className="container bg-secondary bordered-3 mb-5"
+      style={{ marginTop: "100px" }}
+    >
       <div
         className="row mb-2"
         style={{
           textAlign: "justify",
-          border: "1px solid #DCDCE4",
-        
         }}
       >
         <div className="col-md-12 mb-4 pt-2">
-        
-         <PageHeading heading={Solution.title} icon={Solution.SolutionIcon?.url} show={true}/>
+          <PageHeading
+            heading={Solution.title}
+            icon={Solution.SolutionIcon?.url}
+            show={true}
+          />
         </div>
 
-        <ReactMarkdown>{Solution.description}</ReactMarkdown>
+        <div className="markdown-container">
+          <ReactMarkdown>{solution.description}</ReactMarkdown>
+        </div>
       </div>
 
       {photos.length > 0 && (
-        <div
-          className="row p-5 mt-2"
-          style={{ backgroundColor: "rgb(228, 240, 221)" }}
-        >
+        <div className="row p-5 mt-2">
           <RowsPhotoAlbum
             photos={photos}
             onClick={() => {
