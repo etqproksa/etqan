@@ -15,9 +15,11 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 import PageHeading from "../../../components/ui/pageHeading";
 import ReactMarkdown from "react-markdown";
+import Preloader from "../../../components/ui/Preloader";
 
 const ServicesDetails = ({ params: paramsPromise }) => {
   const [service, setService] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [open, setOpen] = useState(false);
   const [photos, setPhotos] = useState([]);
@@ -29,9 +31,7 @@ const ServicesDetails = ({ params: paramsPromise }) => {
         const { slug } = params;
 
         const res = await fetch(`/api/services/${slug}`);
-        if (!res.ok) {
-          throw new Error(`Failed with status ${res.status}`);
-        }
+        if (!res.ok) throw new Error(`Failed with status ${res.status}`);
 
         const data = await res.json();
         const serviceData = data?.data?.[0] || null;
@@ -49,12 +49,15 @@ const ServicesDetails = ({ params: paramsPromise }) => {
         setPhotos(photoData);
       } catch (err) {
         setError(err.message);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchService();
   }, [paramsPromise]);
 
+  if (isLoading) return <Preloader />;
   if (error) return <div className="container mt-5">Error: {error}</div>;
   if (!service) return <div className="container mt-5">No record found</div>;
 
@@ -79,10 +82,7 @@ const ServicesDetails = ({ params: paramsPromise }) => {
 
       {photos.length > 0 && (
         <div className="row p-5 mt-2">
-          <RowsPhotoAlbum
-            photos={photos}
-            onClick={() => setOpen(true)}
-          />
+          <RowsPhotoAlbum photos={photos} onClick={() => setOpen(true)} />
 
           <Lightbox
             open={open}
