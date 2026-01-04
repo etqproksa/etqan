@@ -1,7 +1,7 @@
 import qs from "qs";
 import { getStrapiURL } from "@/lib/utils";
 import { fetchData } from "@/lib/fetch";
-
+import Link from "next/link";
 export default async function CategoryPage({ params }) {
   const { category } =   await params;
 
@@ -70,7 +70,7 @@ export default async function CategoryPage({ params }) {
           <div className="row row-cols-1 row-cols-md-2">
             {solutions.map((solution) => (
               <div key={solution.id} className="col py-4 my-2 my-sm-3">
-                <a
+                <Link
                   href={`/solutions/${category}/${solution.slug}`}
                   className="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3"
                 >
@@ -80,7 +80,7 @@ export default async function CategoryPage({ params }) {
                       className="d-inline-block rounded-3 position-absolute top-0 translate-middle-y p-3"
                       style={{
                         backgroundColor: "#8B47CB",
-                        boxShadow: "#EF611B",
+                    
                       }}
                     >
                       <img
@@ -109,7 +109,7 @@ export default async function CategoryPage({ params }) {
                     {/* SUMMARY */}
                     <p className="fs-sm text-body mb-0">{solution.summary}</p>
                   </div>
-                </a>
+                </Link>
               </div>
             ))}
           </div>

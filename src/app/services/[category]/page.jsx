@@ -1,7 +1,7 @@
 import qs from "qs";
 import { getStrapiURL } from "@/lib/utils";
 import { fetchData } from "@/lib/fetch";
-
+import Link from "next/link";
 export default async function CategoryPage({ params }) {
   const { category } = await params;
 
@@ -68,7 +68,7 @@ export default async function CategoryPage({ params }) {
           <div className="row row-cols-1 row-cols-md-2">
             {services.map((service) => (
               <div key={service.id} className="col py-4 my-2 my-sm-3">
-                <a
+                <Link
                   href={`/services/${category}/${service.slug}`}
                   className="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3"
                 >
@@ -109,7 +109,7 @@ export default async function CategoryPage({ params }) {
                       {service.summary}
                     </p>
                   </div>
-                </a>
+                </Link>
               </div>
             ))}
           </div>
