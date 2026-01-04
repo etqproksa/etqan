@@ -15,9 +15,11 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 import PageHeading from "../../../components/ui/pageHeading";
 import ReactMarkdown from "react-markdown";
+import Preloader from "../../../components/Preloader";
 
 const SolutionsDetails = ({ params: paramsPromise }) => {
   const [solution, setSolution] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [open, setOpen] = useState(false);
   const [photos, setPhotos] = useState([]);
@@ -29,9 +31,7 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
         const { slug } = params;
 
         const res = await fetch(`/api/solutions/${slug}`);
-        if (!res.ok) {
-          throw new Error(`Failed with status ${res.status}`);
-        }
+        if (!res.ok) throw new Error(`Failed with status ${res.status}`);
 
         const data = await res.json();
         const solutionData = data?.data?.[0] || null;
@@ -49,13 +49,21 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
         setPhotos(photoData);
       } catch (err) {
         setError(err.message);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchSolution();
   }, [paramsPromise]);
 
+  // ✅ 1. Show ONLY preloader while loading
+  if (isLoading) return <Preloader />;
+
+  // ✅ 2. Error after loading
   if (error) return <div className="container mt-5">Error: {error}</div>;
+
+  // ✅ 3. No data after loading
   if (!solution) return <div className="container mt-5">No record found</div>;
 
   return (
@@ -79,10 +87,7 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
 
       {photos.length > 0 && (
         <div className="row p-5 mt-2">
-          <RowsPhotoAlbum
-            photos={photos}
-            onClick={() => setOpen(true)}
-          />
+          <RowsPhotoAlbum photos={photos} onClick={() => setOpen(true)} />
 
           <Lightbox
             open={open}
