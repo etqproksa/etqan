@@ -17,7 +17,7 @@ import PageHeading from "../../../components/ui/pageHeading";
 import ReactMarkdown from "react-markdown";
 
 const SolutionsDetails = ({ params: paramsPromise }) => {
-  const [Solution, setSolution] = useState(null);
+  const [solution, setSolution] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [open, setOpen] = useState(false);
@@ -33,11 +33,11 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
         if (!res.ok) throw new Error(`Failed with ${res.status}`);
 
         const data = await res.json();
-        const SolutionData = data?.data?.[0] || null;
-        setSolution(SolutionData);
-        console.log("Solution Data", SolutionData);
+        const solutionData = data?.data?.[0] || null;
+        setSolution(solutionData);
+        console.log("Solution Data", solutionData);
         const photoData =
-          SolutionData?.images?.map((img) => ({
+          solutionData?.images?.map((img) => ({
             src: img?.url,
             width: img?.width || 600,
             height: img?.height || 400,
@@ -57,7 +57,7 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
 
   if (isLoading) return <Skeleton count={5} height={300} />;
   if (error) return <div>Error: {error}</div>;
-  if (!Solution) return <div>No record found</div>;
+  if (!solution) return <div>No record found</div>;
 
   return (
     <section
@@ -72,8 +72,8 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
       >
         <div className="col-md-12 mb-4 pt-2">
           <PageHeading
-            heading={Solution.title}
-            icon={Solution.SolutionIcon?.url}
+            heading={solution.title}
+            icon={solution.SolutionIcon?.url}
             show={true}
           />
         </div>
