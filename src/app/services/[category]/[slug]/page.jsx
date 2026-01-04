@@ -15,7 +15,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 import PageHeading from "../../../components/ui/pageHeading";
 import ReactMarkdown from "react-markdown";
-import Preloader from "../../../components/ui/Preloader";
+import Preloader from "../../../components/Preloader";
 
 const ServicesDetails = ({ params: paramsPromise }) => {
   const [service, setService] = useState(null);
@@ -57,8 +57,13 @@ const ServicesDetails = ({ params: paramsPromise }) => {
     fetchService();
   }, [paramsPromise]);
 
+  // ✅ 1. Always block UI while loading
   if (isLoading) return <Preloader />;
+
+  // ✅ 2. Handle error AFTER loading
   if (error) return <div className="container mt-5">Error: {error}</div>;
+
+  // ✅ 3. Handle empty data AFTER loading
   if (!service) return <div className="container mt-5">No record found</div>;
 
   return (
