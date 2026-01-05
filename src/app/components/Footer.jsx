@@ -102,7 +102,7 @@ export default function Footer({ footerData }) {
                     {socials.map((social) => (
                       <li key={social.id} className="nav-item">
                         <Link
-                          href={social.url || "#"}
+                          href={social.titleUrl || "#"} target="_blank"
                           className="nav-link d-inline-block px-0 pt-1 pb-2 text-muted"
                         >
                           {social.title}
