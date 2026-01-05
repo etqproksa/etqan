@@ -105,7 +105,7 @@ const Contact = ({ data }) => {
           {/* Social Links */}
           <div className="d-flex pt-2">
             <a
-              href="#"
+              href="https://www.linkedin.com/company/etqan-projects/" target="_blank"
               className="btn btn-icon btn-secondary me-3"
               aria-label="Linkedin"
             >
