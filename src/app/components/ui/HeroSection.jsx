@@ -51,7 +51,7 @@ const HeroSection = ({ data }) => {
   // ── Inline styles ──────────────────────────────────────────────
   const sectionStyle = {
     position: "relative",
-    marginTop: "5rem",
+    marginTop: "6rem",
     borderRadius: "1.25rem",
     overflow: "hidden",
     background: bgImage
