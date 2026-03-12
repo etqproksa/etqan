@@ -31,7 +31,7 @@ const Contact = ({ data }) => {
   };
 
   const sectionStyle = {
-    marginTop: "5rem",
+    marginTop: "6rem",
     borderRadius: "1.25rem",
     background: backgroundImage?.url
       ? `url(${backgroundImage.url}) center/cover no-repeat`
