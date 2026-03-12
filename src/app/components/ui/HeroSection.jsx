@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import Breadcrumb from "../Breadcrumb";
+/* import Breadcrumb from "../Breadcrumb"; */
 
 import { RowsPhotoAlbum } from "react-photo-album";
 import "react-photo-album/rows.css";
@@ -84,7 +84,7 @@ const HeroSection = ({ data }) => {
       >
         <div className="row">
           <div className="col-lg-7">
-            <Breadcrumb />
+         
             <h1 className="text-white mb-3">{hero.title}</h1>
               <div className="markdown-container">
                <ReactMarkdown>{hero.description}</ReactMarkdown>
