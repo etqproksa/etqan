@@ -12,8 +12,7 @@ export default function Footer({ footerData }) {
   const bgImage = footerData?.backgroundImage?.url;
 
   // icon image (single or multiple media support)
-  const icon =
-    footerData?.icon?.url || footerData?.icon?.[0]?.url || null;
+  const icon = footerData?.icon?.url || footerData?.icon?.[0]?.url || null;
 
   return (
     <footer
@@ -31,22 +30,19 @@ export default function Footer({ footerData }) {
         <div className="row pb-5">
           <div className="col-lg-4 col-md-6">
             <div className="navbar-brand text-white p-0 me-0 mb-3 mb-lg-4 d-flex align-items-center gap-2">
-              
               {/* 👇 ICON */}
               {icon && (
-                <Image
-                  src={icon}
-                  alt="Footer Icon"
-                  width={50}
-                  height={50}
-                />
+                <Image src={icon} alt="Footer Icon" width={50} height={50} />
               )}
 
               {/* 👇 HEADING */}
               <span className="text-white">{footerData?.heading}</span>
             </div>
 
-            <p className="fs-sm pb-lg-3 mb-4 text-muted" style={{textAlign:"justify"}}>
+            <p
+              className="fs-sm pb-lg-3 mb-4 text-muted"
+              style={{ textAlign: "justify" }}
+            >
               {footerData?.description}
             </p>
           </div>
@@ -102,10 +98,20 @@ export default function Footer({ footerData }) {
                     {socials.map((social) => (
                       <li key={social.id} className="nav-item">
                         <Link
-                          href={social.titleUrl || "#"} target="_blank"
+                          href={social.titleUrl || "#"}
+                          target="_blank"
                           className="nav-link d-inline-block px-0 pt-1 pb-2 text-muted"
                         >
-                          {social.title}
+                          {social.title === "Twitter" && social.icon?.url ? (
+                            <Image
+                              src={social.icon.url}
+                              alt="Twitter"
+                              width={20}
+                              height={20}
+                            />
+                          ) : (
+                            social.title
+                          )}
                         </Link>
                       </li>
                     ))}
