@@ -66,14 +66,14 @@ export default function Brands({ data }) {
       >
         {logos?.map((logo) => (
           <SwiperSlide key={logo.id} className="py-3">
-            <a href="#" className="card card-body  px-2  brand-card">
+           
               <img
                 src={logo.url}
                 alt={logo.alternativeText || logo.name}
                 className="brand-logo"
                 loading="lazy"
               />
-            </a>
+         
           </SwiperSlide>
         ))}
 
