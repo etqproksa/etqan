@@ -78,46 +78,61 @@ export default function Footer({ footerData }) {
                   </ul>
                 </div>
               </div>
+<div className="col-lg-6">
+  <h6 className="mb-2">
+    <a
+      href="#social-links"
+      className="d-block text-white dropdown-toggle d-lg-none py-2"
+      data-bs-toggle="collapse"
+    >
+      Socials
+    </a>
+  </h6>
+  <div
+    id="social-links"
+    className="collapse d-lg-block"
+    data-bs-parent="#footer-links"
+  >
+    <div className="d-flex flex-row gap-2 pt-2">
+      {socials.map((social) => (
+        <Link
+          key={social.id}
+          href={social.titleUrl || "#"}
+          target="_blank"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "40px",
+            height: "40px",
+            borderRadius: "8px",
+            border: "1px solid rgba(255,255,255,0.2)",
+            backgroundColor: "rgba(255,255,255,0.05)",
+            transition: "background-color 0.2s",
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.15)"}
+          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.05)"}
+        >
+          {social.icon?.url ? (
+            <Image
+              src={social.icon.url}
+              alt={social.title}
+              width={20}
+              height={20}
+            />
+          ) : (
+            <span className="text-white" style={{ fontSize: "12px" }}>
+              {social.title?.charAt(0)}
+            </span>
+          )}
+        </Link>
+      ))}
+    </div>
+  </div>
+</div>
+           
 
-              <div className="col-lg-6">
-                <h6 className="mb-2">
-                  <a
-                    href="#social-links"
-                    className="d-block text-white dropdown-toggle d-lg-none py-2"
-                    data-bs-toggle="collapse"
-                  >
-                    Socials
-                  </a>
-                </h6>
-                <div
-                  id="social-links"
-                  className="collapse d-lg-block"
-                  data-bs-parent="#footer-links"
-                >
-                  <ul className="nav flex-column mb-2 mb-lg-0">
-                    {socials.map((social) => (
-                      <li key={social.id} className="nav-item">
-                        <Link
-                          href={social.titleUrl || "#"}
-                          target="_blank"
-                          className="nav-link d-inline-block px-0 pt-1 pb-2 text-muted"
-                        >
-                          {social.title === "Twitter" && social.icon?.url ? (
-                            <Image
-                              src={social.icon.url}
-                              alt="Twitter"
-                              width={20}
-                              height={20}
-                            />
-                          ) : (
-                            social.title
-                          )}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
