@@ -1,4 +1,5 @@
 
+import AosBlock from "./components/AosBlock"; // 👈 add this import
 import Hero from "./components/Hero";
 import FeaturedProjects from "./components/FeaturedProjects";
 //data from lib
@@ -66,11 +67,11 @@ export default async function Home() {
 
   return (
     <div>
-      {homeData.map((block, index) => (
-        <div key={block.id || `block-${index}`}>
-          {BlockRenderer(block)}
-        </div>
-      ))}
-    </div>
+    {homeData.map((block, index) => (
+      <AosBlock key={block.id || `block-${index}`} index={index}>
+        {BlockRenderer(block)}
+      </AosBlock>
+    ))}
+  </div>
   );
 }
