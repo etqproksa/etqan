@@ -149,6 +149,7 @@ const HeroSection = ({ data }) => {
     fontSize: "0.9375rem",
     lineHeight: 1.8,
     fontWeight: 400,
+    textAlign: "justify",
   };
 
   return (
