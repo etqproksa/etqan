@@ -100,13 +100,21 @@ const Contact = ({ data }) => {
 
       <div className="row py-3 align-items-stretch" style={{ position: "relative", zIndex: 1 }}>
 
-        {/* Map with dark filter */}
+        {/* Map */}
         <div className="col-lg-6 mb-4 mb-lg-0">
-          <div style={mapWrapperStyle}>
+          <div className="map-wrapper" style={mapWrapperStyle}>
             <div
               style={{ width: "100%", height: "100%", minHeight: "340px" }}
               dangerouslySetInnerHTML={{ __html: map }}
             />
+            <style>{`
+              .map-wrapper iframe {
+                width: 100% !important;
+                height: 100% !important;
+                min-height: 340px !important;
+                display: block !important;
+              }
+            `}</style>
           </div>
         </div>
 
