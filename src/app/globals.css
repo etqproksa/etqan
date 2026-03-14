@@ -1,3 +1,7 @@
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 .page-loading {
   position: fixed;
   top: 0;
@@ -60,9 +64,7 @@
 }
 
 /* Ensure body content is visible */
-body {
-  min-height: 100vh;
-}
+
 
 /* Make sure main content is visible when preloader is removed */
 .page-wrapper {

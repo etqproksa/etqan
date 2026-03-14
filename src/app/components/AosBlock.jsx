@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const animations = ["fade-up", "fade-down", "fade-left", "fade-right", "zoom-in", "fade-right"];
+const animations = ["fade-up", "fade-down", "zoom-in", "fade-up", "zoom-in", "fade-down"];
 
 export default function AosBlock({ children, index }) {
   useEffect(() => {

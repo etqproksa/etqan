@@ -66,7 +66,7 @@ export default async function Home() {
   }
 
   return (
-    <div style={{ overflowX: "hidden" }}>
+    <div>
     {homeData.map((block, index) => (
       <AosBlock key={block.id || `block-${index}`} index={index}>
         {BlockRenderer(block)}
