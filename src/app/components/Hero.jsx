@@ -48,7 +48,7 @@ export default function Hero({ data }) {
             <ReactMarkdown>{summary}</ReactMarkdown>
           </div>
 
-          <div className="hero-stats">
+          {/* <div className="hero-stats">
             <div className="stat">
               <div className="stat-num">5<span>+</span></div>
               <div className="stat-label">Years Active</div>
@@ -63,7 +63,7 @@ export default function Hero({ data }) {
               <div className="stat-num">50<span>+</span></div>
               <div className="stat-label">Clients Served</div>
             </div>
-          </div>
+          </div> */}
 
           <div className="hero-ctas">
             <Link href="/pages/main-services" className="btn-primary">
