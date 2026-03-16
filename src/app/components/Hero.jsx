@@ -2,6 +2,7 @@
 import "./hero.css";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
+import Link from "next/link";
 
 export default function Hero({ data }) {
   const heading = data?.heading || "Etqan";
@@ -65,13 +66,12 @@ export default function Hero({ data }) {
           </div>
 
           <div className="hero-ctas">
-            <a href="#services" className="btn-primary">
+            <Link href="/pages/main-services" className="btn-primary">
               <span>Explore Services</span>
               <span className="btn-arrow">→</span>
-            </a>
-            <a href="#about" className="btn-secondary">
-              About Us ↗
-            </a>
+            </Link>
+            <Link href="/pages/about" className="btn-secondary">  About Us ↗</Link>
+            
           </div>
 
         </div>
