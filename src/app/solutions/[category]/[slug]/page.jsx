@@ -18,6 +18,7 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
         const { slug } = params;
 
         const res = await fetch(`/api/solutions/${slug}`);
+        console.log("this is the solution data",res);
         if (!res.ok) throw new Error(`Failed with status ${res.status}`);
 
         const data = await res.json();
@@ -37,7 +38,7 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
   if (error) return <div className="sd-error">Error: {error}</div>;
   if (!solution) return <div className="sd-error">No record found</div>;
 
-  const bannerImage = solution.bannerImage;
+  const bannerImage = solution.bannerImage
 
   return (
     <div className="sd-page">
