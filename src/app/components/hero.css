@@ -1,4 +1,3 @@
-
 /* ─── BASE SECTION ─────────────────────────────────────────── */
 .hero-section {
   position: relative;
@@ -7,15 +6,14 @@
   align-items: center;
   overflow: hidden;
   background: #000;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 /* ─── ANIMATED GRID BACKGROUND ─────────────────────────────── */
 .grid-bg {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(0, 91, 237, 0.08) 1px, transparent 1px),
+  background-image: linear-gradient(rgba(0, 91, 237, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 91, 237, 0.08) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: gridMove 20s linear infinite;
@@ -23,8 +21,12 @@
 }
 
 @keyframes gridMove {
-  0%   { transform: translateY(0); }
-  100% { transform: translateY(60px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(60px);
+  }
 }
 
 /* ─── GRADIENT ORBS ─────────────────────────────────────────── */
@@ -40,7 +42,7 @@
 .orb-1 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, #005BED, transparent);
+  background: radial-gradient(circle, #005bed, transparent);
   top: -100px;
   right: -100px;
   animation-duration: 6s;
@@ -49,7 +51,7 @@
 .orb-2 {
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, #12A2A2, transparent);
+  background: radial-gradient(circle, #12a2a2, transparent);
   bottom: -50px;
   left: 10%;
   animation-duration: 8s;
@@ -59,15 +61,22 @@
 .orb-3 {
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, #5DEDED, transparent);
+  background: radial-gradient(circle, #5deded, transparent);
   top: 40%;
   left: 40%;
   animation-duration: 10s;
 }
 
 @keyframes orbPulse {
-  0%, 100% { transform: scale(1);    opacity: 0.35; }
-  50%       { transform: scale(1.15); opacity: 0.50; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.5;
+  }
 }
 
 /* ─── DIAGONAL ACCENT LINE ──────────────────────────────────── */
@@ -128,13 +137,18 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #5DEDED;
+  background: #5deded;
   animation: badgeBlink 2s ease-in-out infinite;
 }
 
 @keyframes badgeBlink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.3; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
 }
 
 .badge-text {
@@ -142,12 +156,12 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #5DEDED;
+  color: #5deded;
 }
 
 /* Heading */
 .hero-heading {
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: clamp(2.4rem, 5vw, 4rem);
   font-weight: 900;
   line-height: 1.05;
@@ -162,7 +176,7 @@
 
 .heading-gradient {
   display: block;
-  background: linear-gradient(90deg, #005BED, #12A2A2, #5DEDED);
+  background: linear-gradient(90deg, #005bed, #12a2a2, #5deded);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -172,7 +186,7 @@
 .hero-subheading {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #12A2A2;
+  color: #12a2a2;
   letter-spacing: 0.02em;
   animation: fadeSlideDown 0.7s ease 0.2s both;
 }
@@ -207,7 +221,7 @@
 }
 
 .stat-num {
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
   color: #fff;
@@ -215,7 +229,7 @@
 }
 
 .stat-num span {
-  color: #5DEDED;
+  color: #5deded;
 }
 
 .stat-label {
@@ -245,9 +259,9 @@
   align-items: center;
   gap: 8px;
   padding: 13px 28px;
-  background: linear-gradient(135deg, #005BED, #12A2A2);
+  background: linear-gradient(135deg, #005bed, #12a2a2);
   color: #fff;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   border: none;
@@ -260,10 +274,10 @@
 }
 
 .btn-primary::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #12A2A2, #5DEDED);
+  background: linear-gradient(135deg, #12a2a2, #5deded);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -294,7 +308,7 @@
   padding: 12px 24px;
   background: transparent;
   color: rgba(255, 255, 255, 0.8);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -306,7 +320,7 @@
 
 .btn-secondary:hover {
   border-color: rgba(93, 237, 237, 0.5);
-  color: #5DEDED;
+  color: #5deded;
   background: rgba(93, 237, 237, 0.05);
 }
 
@@ -316,9 +330,9 @@
   display: flex;
   align-items: flex-start; /* ← change from "center" to "flex-start" */
   justify-content: center;
-  align-self: start;       /* ← add this */
-  padding-top: 0;          /* ← add this */
-   padding-top: 72px; /* ← badge height (~32px) + gap (~28px) + small offset (~12px) */
+  align-self: start; /* ← add this */
+  /* ← add this */
+  padding-top: 95px; /* ← badge height (~32px) + gap (~28px) + small offset (~12px) */
   animation: fadeSlideRight 0.9s ease 0.3s both;
 }
 
@@ -331,7 +345,7 @@
 }
 
 .image-frame::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -1px;
   border-radius: 21px;
@@ -346,8 +360,13 @@
 }
 
 @keyframes borderGlow {
-  0%, 100% { opacity: 0.7; }
-  50%       { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .image-inner {
@@ -397,10 +416,20 @@
 }
 
 @keyframes scanMove {
-  0%   { top: 0%;   opacity: 0; }
-  5%   { opacity: 1; }
-  95%  { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
 }
 
 /* HUD corner accents */
@@ -415,16 +444,16 @@
 .corner-tl {
   top: 10px;
   left: 10px;
-  border-top: 2px solid #005BED;
-  border-left: 2px solid #005BED;
+  border-top: 2px solid #005bed;
+  border-left: 2px solid #005bed;
   border-radius: 4px 0 0 0;
 }
 
 .corner-br {
   bottom: 10px;
   right: 10px;
-  border-bottom: 2px solid #12A2A2;
-  border-right: 2px solid #12A2A2;
+  border-bottom: 2px solid #12a2a2;
+  border-right: 2px solid #12a2a2;
   border-radius: 0 0 4px 0;
 }
 
@@ -456,13 +485,27 @@
 }
 
 @keyframes floatUp {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-6px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
-.tag-tl { top: 12%;    left: -60px; }
-.tag-tr { top: 55%;    right: -65px; }
-.tag-br { bottom: 18%; right: -50px; }
+.tag-tl {
+  top: 12%;
+  left: -60px;
+}
+.tag-tr {
+  top: 55%;
+  right: -65px;
+}
+.tag-br {
+  bottom: 18%;
+  right: -50px;
+}
 
 .float-tag-icon {
   width: 28px;
@@ -474,9 +517,15 @@
   font-size: 14px;
 }
 
-.ft-blue { background: rgba(0, 91, 237, 0.2); }
-.ft-teal { background: rgba(18, 162, 162, 0.2); }
-.ft-cyan { background: rgba(93, 237, 237, 0.15); }
+.ft-blue {
+  background: rgba(0, 91, 237, 0.2);
+}
+.ft-teal {
+  background: rgba(18, 162, 162, 0.2);
+}
+.ft-cyan {
+  background: rgba(93, 237, 237, 0.15);
+}
 
 .float-tag-text {
   display: flex;
@@ -498,7 +547,7 @@
 }
 
 .ft-value.teal {
-  color: #5DEDED;
+  color: #5deded;
 }
 
 /* ─── SCROLL INDICATOR ──────────────────────────────────────── */
@@ -530,19 +579,38 @@
 }
 
 @keyframes scrollPulse {
-  0%, 100% { opacity: 0.4; transform: scaleY(1); }
-  50%       { opacity: 1;   transform: scaleY(1.2); }
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.2);
+  }
 }
 
 /* ─── ANIMATIONS ────────────────────────────────────────────── */
 @keyframes fadeSlideDown {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeSlideRight {
-  from { opacity: 0; transform: translateX(30px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* ─── RESPONSIVE ────────────────────────────────────────────── */
