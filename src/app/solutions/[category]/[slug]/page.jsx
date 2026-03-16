@@ -1,28 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-
-import { RowsPhotoAlbum } from "react-photo-album";
-import "react-photo-album/rows.css";
-
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
-
-import PageHeading from "../../../components/ui/pageHeading";
+import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Preloader from "../../../components/Preloader";
+import "./slug.css";
 
 const SolutionsDetails = ({ params: paramsPromise }) => {
   const [solution, setSolution] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [open, setOpen] = useState(false);
-  const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
     const fetchSolution = async () => {
@@ -35,18 +22,7 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
 
         const data = await res.json();
         const solutionData = data?.data?.[0] || null;
-
         setSolution(solutionData);
-
-        const photoData =
-          solutionData?.images?.map((img) => ({
-            src: img?.url,
-            width: img?.width || 600,
-            height: img?.height || 400,
-            alt: img?.alternativeText || "Solution Image",
-          })) || [];
-
-        setPhotos(photoData);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -57,50 +33,86 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
     fetchSolution();
   }, [paramsPromise]);
 
-  // ✅ 1. Show ONLY preloader while loading
   if (isLoading) return <Preloader />;
+  if (error) return <div className="sd-error">Error: {error}</div>;
+  if (!solution) return <div className="sd-error">No record found</div>;
 
-  // ✅ 2. Error after loading
-  if (error) return <div className="container mt-5">Error: {error}</div>;
-
-  // ✅ 3. No data after loading
-  if (!solution) return <div className="container mt-5">No record found</div>;
+  const bannerImage = solution.images?.[0];
 
   return (
-    <section
-      className="container bg-secondary bordered-3 mb-5"
-      style={{ marginTop: "100px" }}
-    >
-      <div className="row mb-2" style={{ textAlign: "justify" }}>
-        <div className="col-md-12 mb-4 pt-2">
-          <PageHeading
-            heading={solution.title}
-            icon={solution.SolutionIcon?.url}
-            show={true}
+    <div className="sd-page">
+
+      {/* ── BANNER ─────────────────────────────────────────────── */}
+      <div className="sd-banner">
+        {bannerImage ? (
+          <Image
+            src={bannerImage.url}
+            alt={bannerImage.alternativeText || solution.title}
+            fill
+            priority
+            className="sd-banner-img"
+            style={{ objectFit: "cover", objectPosition: "center" }}
           />
+        ) : (
+          <div className="sd-banner-placeholder" />
+        )}
+
+        {/* Dark gradient overlays */}
+        <div className="sd-banner-overlay" />
+        <div className="sd-banner-overlay-bottom" />
+
+        {/* Animated grid */}
+        <div className="sd-grid" />
+
+        {/* Scan line */}
+        <div className="sd-scan" />
+
+        {/* Banner content */}
+        <div className="sd-banner-content">
+          {solution.SolutionIcon?.url && (
+            <div className="sd-icon-wrap">
+              <Image
+                src={solution.SolutionIcon.url}
+                alt="icon"
+                width={36}
+                height={36}
+                className="sd-icon"
+              />
+            </div>
+          )}
+          <div className="sd-breadcrumb">Solutions</div>
+          <h1 className="sd-title">{solution.title}</h1>
+          <div className="sd-title-bar" />
         </div>
 
-        <div className="markdown-container">
-          <ReactMarkdown>{solution.description}</ReactMarkdown>
+        {/* Corner HUD accents */}
+        <div className="sd-corner sd-corner-tl" />
+        <div className="sd-corner sd-corner-br" />
+      </div>
+
+      {/* ── BODY ───────────────────────────────────────────────── */}
+      <div className="sd-body">
+
+        {/* Decorative side line */}
+        <div className="sd-side-line" />
+
+        <div className="sd-content-wrap">
+
+          {/* Section label */}
+          <div className="sd-section-label">
+            <span className="sd-label-dot" />
+            Overview
+          </div>
+
+          {/* Description */}
+          <div className="sd-description markdown-container">
+            <ReactMarkdown>{solution.description}</ReactMarkdown>
+          </div>
+
         </div>
       </div>
 
-      {photos.length > 0 && (
-        <div className="row p-5 mt-2">
-          <RowsPhotoAlbum photos={photos} onClick={() => setOpen(true)} />
-
-          <Lightbox
-            open={open}
-            close={() => setOpen(false)}
-            slides={photos.map((photo) => ({
-              src: photo.src,
-              title: photo.alt,
-            }))}
-            plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-          />
-        </div>
-      )}
-    </section>
+    </div>
   );
 };
 
