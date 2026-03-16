@@ -7,8 +7,8 @@ export async function GET(req, { params }) {
  const query = qs.stringify({
   filters: { slug: { $eq: slug } },
   populate: {
-    bannerImage: { fields: ['url', 'alternativeText', 'width', 'height'] },
-    solutionIcon: { fields: ['url', 'alternativeText', 'width', 'height'] },
+     solutionIcon: { fields: ['url', 'alternativeText', 'width', 'height'] },
+     bannerImage: { fields: ['url', 'alternativeText', 'width', 'height'] }
   },
   locale: 'en',
 });
