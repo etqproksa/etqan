@@ -4,6 +4,10 @@ import Preloader from "./components/Preloader";
 import BootstrapClient from "./components/BootstrapClient";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+export const metadata = {
+  title: "Etqan Projects",
+  description: "Technology You Trust",
+};
 
 // Google Font
 const poppins = Poppins({
