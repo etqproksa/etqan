@@ -19,9 +19,9 @@ const MainSolutions = ({ data }) => {
           <div className="ms-banner-overlay" />
           <div className="ms-banner-content">
             <span className="ms-banner-eyebrow">Etqan Projects</span>
-            <h1 className="ms-banner-title">Our Services</h1>
+            <h1 className="ms-banner-title">Our Solutions</h1>
             <p className="ms-banner-sub">
-              Strengthening your technology environment — from managed IT to compliance assurance.
+              Strengthening your technology environment — from cybersecurity to network Infrastructure.
             </p>
           </div>
         </div>
