@@ -1,5 +1,4 @@
 import React from "react";
-import "./visionMission.css";
 
 const VisionMission = ({ data }) => {
   if (!data) return null;
@@ -17,17 +16,26 @@ const VisionMission = ({ data }) => {
   } = data;
 
   return (
-    <section className="vm-section">
-      <div className="container">
-        <div className="row align-items-center g-4">
+    <section
+      className="container py-2 mb-2 shadow-lg"
+      style={{
+        backgroundImage: `url(${backgroundImage?.url || ""})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        borderRadius: "1rem",
+        marginTop: "5rem",
+      }}
+    >
+      <div className="container py-5">
+        <div className="row align-items-center">
 
           {/* IMAGE LEFT */}
           {imageAlignment === "Left" && (
-            <div className="col-md-6 text-center mb-4 mb-md-0">
+            <div className="col-md-6 text-center rounded-3 shadow-lg mb-4 mb-md-0">
               <img
                 src={image?.url}
                 alt={image?.alternativeText || maintitle}
-                className="vm-image"
+                className="img-fluid rounded-3 shadow-sm"
               />
             </div>
           )}
@@ -35,6 +43,7 @@ const VisionMission = ({ data }) => {
           {/* TEXT SECTION */}
           <div className="col-md-6 text-center text-md-start mb-4 mb-md-0">
 
+            {/* ICON + TITLE INLINE */}
             {maintitle && (
               <div className="d-flex align-items-center gap-3 mb-4">
                 {icon?.url && (
@@ -43,32 +52,38 @@ const VisionMission = ({ data }) => {
                     width="60"
                     height="60"
                     alt="vision-mission-icon"
-                    className="vm-icon"
                   />
                 )}
-                <h2 className="vm-maintitle">{maintitle}</h2>
+                <h2 className="display-7 mb-0 text-white">
+                  {maintitle}
+                </h2>
               </div>
             )}
 
+            {/* VISION */}
             <div className="mb-4">
-              <h5 className="vm-subtitle">{visiontitle}</h5>
-              <p className="vm-text">{visiontext}</p>
+              <h5 className="text-gradient-primary">{visiontitle}</h5>
+              <p className="fs-md text-muted" style={{ textAlign: "justify" }}>
+                {visiontext}
+              </p>
             </div>
 
+            {/* MISSION */}
             <div>
-              <h5 className="vm-subtitle">{missiontitle}</h5>
-              <p className="vm-text">{missiontext}</p>
+              <h5 className="text-gradient-primary">{missiontitle}</h5>
+              <p className="fs-md text-muted" style={{ textAlign: "justify" }}>
+                {missiontext}
+              </p>
             </div>
-
           </div>
 
           {/* IMAGE RIGHT */}
           {imageAlignment === "Right" && (
-            <div className="col-md-6 text-center mb-4 mb-md-0">
+            <div className="col-md-6 text-center rounded-3 shadow-lg mb-4 mb-md-0">
               <img
                 src={image?.url}
                 alt={image?.alternativeText || maintitle}
-                className="vm-image"
+                className="img-fluid rounded-3 shadow-sm"
               />
             </div>
           )}

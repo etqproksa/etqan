@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import "./servicesSummary.css";
 
 function ServicesSummary({ data }) {
   const services = data?.service_summaries || [];
@@ -9,35 +10,39 @@ function ServicesSummary({ data }) {
   }
 
   return (
-    <section className="container mb-5 pt-lg-5" id="benefits">
-      <div className="row pt-3 g-4">
-        {services.map((service, index) => (
-          <div
-            key={service.documentId}
-            className={`col-12 col-sm-6 col-xl-3 ${
-              index < services.length - 1 ? "border-end-lg" : ""
-            }`}
-          >
-            <div className="text-center h-100">
-              {service.serviceIcon?.url && (
-                <img
-                  src={service.serviceIcon.url}
-                  alt={service.serviceIcon.alternativeText || service.title}
-                  width={60}
-                  height={60}
-                  className="mb-3"
-                />
-              )}
+    <section className="services-summary-section" id="benefits">
+      <div className="container pb-lg-4">
+        <div className="row pt-3 g-4">
+          {services.map((service, index) => (
+            <div
+              key={service.documentId}
+              className={`col-12 col-sm-6 col-xl-3 ${
+                index < services.length - 1 ? "service-col-divider" : ""
+              }`}
+            >
+              <div className="service-card text-center">
 
-              <h5 className="mb-3">{service.title}</h5>
+                {service.serviceIcon?.url && (
+                  <div className="service-icon-wrap mx-auto">
+                    <img
+                      src={service.serviceIcon.url}
+                      alt={service.serviceIcon.alternativeText || service.title}
+                      width={36}
+                      height={36}
+                    />
+                  </div>
+                )}
 
-              {/* Balanced text container */}
-              <p className="mx-auto text-muted text-justify services-text">
-                {service.summary}
-              </p>
+                <h5>{service.title}</h5>
+
+                <p className="services-text">
+                  {service.summary}
+                </p>
+
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
