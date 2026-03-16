@@ -3,8 +3,8 @@ import qs from "qs";
 
 export async function GET(req, { params }) {
   const { slug } = await params; // ← only slug, no category
-  console.log("STRAPI_URL:", process.env.STRAPI_URL);  // ← add this
-  console.log("SLUG:", slug);  
+  //console.log("STRAPI_URL:", process.env.STRAPI_URL);  // ← add this
+  //console.log("SLUG:", slug);  
   const query = qs.stringify({
     filters: {
       slug: { $eq: slug },
@@ -17,7 +17,7 @@ export async function GET(req, { params }) {
   });
 
   const url = `${process.env.STRAPI_URL}/api/solutions?${query}`;
- console.log("FULL URL:", url);      
+ //console.log("FULL URL:", url);      
   try {
     const res = await fetch(url, {
       headers: {
