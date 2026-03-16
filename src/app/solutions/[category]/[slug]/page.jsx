@@ -15,7 +15,7 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
     const fetchSolution = async () => {
       try {
         const params = await paramsPromise;
-        const { slug } = params;
+       const { category, slug } = params;  // ← get both
       ///  console.log("this is the slug",slug);
         const res = await fetch(`/api/solutions/${slug}`);
         console.log("this is the data from solutions api",res);
