@@ -1,0 +1,116 @@
+/* ─── SECTION ────────────────────────────────────────────────── */
+.ss-section {
+  background: #0b0f19;
+  padding: 60px 0;
+  position: relative;
+}
+
+/* top divider glow */
+.ss-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 91, 237, 0.4),
+    rgba(93, 237, 237, 0.5),
+    rgba(0, 91, 237, 0.4),
+    transparent
+  );
+}
+
+/* ─── INNER CARD BOX ─────────────────────────────────────────── */
+.ss-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* subtle corner glow */
+.ss-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle at bottom right, rgba(18, 162, 162, 0.08), transparent);
+  pointer-events: none;
+  border-radius: 0 0 1rem 0;
+}
+
+/* ─── HEADING ────────────────────────────────────────────────── */
+.ss-card h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+/* ─── ICON ───────────────────────────────────────────────────── */
+.ss-icon {
+  filter: brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(185deg);
+  opacity: 0.85;
+}
+
+/* ─── SUMMARY ────────────────────────────────────────────────── */
+.ss-card .ss-summary {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.75;
+  text-align: justify;
+  margin-bottom: 0;
+}
+
+/* ─── CTA BUTTON ─────────────────────────────────────────────── */
+.ss-card .btn-ss-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: transparent;
+  color: #5DEDED;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(93, 237, 237, 0.35);
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 1.25rem;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.ss-card .btn-ss-cta:hover {
+  background: rgba(93, 237, 237, 0.08);
+  border-color: rgba(93, 237, 237, 0.6);
+  color: #fff;
+}
+
+/* ─── IMAGE ──────────────────────────────────────────────────── */
+.ss-card .ss-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 91, 237, 0.2);
+  display: block;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .ss-section {
+    padding: 40px 0;
+  }
+
+  .ss-card {
+    padding: 1.75rem 1.25rem;
+  }
+}

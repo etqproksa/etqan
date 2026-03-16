@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import "./servicesSolutions.css";
 
 const ServicesSolutions = ({ data }) => {
   if (!data) return null;
@@ -9,84 +10,70 @@ const ServicesSolutions = ({ data }) => {
     summary,
     image,
     imageAlignment,
-    backgroundImage,
     icon,
     ctaTitle,
     ctaUrl,
   } = data;
 
   return (
-    <section
-      className="container py-2 mb-2 shadow-lg"
-      style={{
-        backgroundImage: `url(${backgroundImage?.url || ""})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        borderRadius: "1rem",
-        marginTop: "2rem",
-      }}
-    >
-      <div className="container py-5">
-        <div className="row align-items-center">
+    <section className="ss-section">
+      <div className="container">
+        <div className="ss-card">
+          <div className="row align-items-center g-4">
 
-          {/* IMAGE LEFT */}
-          {imageAlignment === "Left" && (
-            <div className="col-md-6 text-center mb-4 mb-md-0">
-              <img
-                src={image?.url}
-                alt={image?.alternativeText || heading}
-                className="img-fluid rounded-3 shadow-sm"
-              />
-            </div>
-          )}
-
-          {/* CONTENT */}
-          <div className="col-md-6 text-center text-md-start">
-
-            {/* ICON + HEADING */}
-            {heading && (
-              <div className="d-flex align-items-center gap-3 mb-4">
-
-                {/* ICON */}
-                {icon?.url && (
-                  <img
-                    src={icon.url}
-                    alt={icon.alternativeText || "service-icon"}
-                    width="60"
-                    height="60"
-                  />
-                )}
-
-                <h2 className="mb-0 text-white">{heading}</h2>
+            {/* IMAGE LEFT */}
+            {imageAlignment === "Left" && (
+              <div className="col-md-6 text-center mb-4 mb-md-0">
+                <img
+                  src={image?.url}
+                  alt={image?.alternativeText || heading}
+                  className="ss-image"
+                />
               </div>
             )}
 
-            {/* SUMMARY */}
-            {summary && (
-              <p className="fs-md text-muted" style={{ textAlign: "justify" }}>
-                {summary}
-              </p>
-            )}
+            {/* CONTENT */}
+            <div className="col-md-6 text-center text-md-start">
 
-            {/* CTA */}
-            {ctaTitle && ctaUrl && (
-              <Link href={ctaUrl} className="btn  btn-outline-primary mt-3">
-                {ctaTitle}
-              </Link>
-            )}
-          </div>
+              {heading && (
+                <div className="d-flex align-items-center gap-3 mb-4">
+                  {icon?.url && (
+                    <img
+                      src={icon.url}
+                      alt={icon.alternativeText || "icon"}
+                      width="60"
+                      height="60"
+                      className="ss-icon"
+                    />
+                  )}
+                  <h2 className="mb-0">{heading}</h2>
+                </div>
+              )}
 
-          {/* IMAGE RIGHT */}
-          {imageAlignment === "Right" && (
-            <div className="col-md-6 text-center mt-4 mt-md-0">
-              <img
-                src={image?.url}
-                alt={image?.alternativeText || heading}
-                className="img-fluid rounded-3 shadow-sm"
-              />
+              {summary && (
+                <p className="ss-summary">{summary}</p>
+              )}
+
+              {ctaTitle && ctaUrl && (
+                <Link href={ctaUrl} className="btn-ss-cta">
+                  {ctaTitle} →
+                </Link>
+              )}
+
             </div>
-          )}
 
+            {/* IMAGE RIGHT */}
+            {imageAlignment === "Right" && (
+              <div className="col-md-6 text-center mt-4 mt-md-0">
+                <img
+                  src={image?.url}
+                  alt={image?.alternativeText || heading}
+                  className="ss-image"
+                />
+              </div>
+            )}
+
+          </div>
         </div>
       </div>
     </section>
