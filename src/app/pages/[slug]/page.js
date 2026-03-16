@@ -34,8 +34,7 @@ export default async function Page({ params }) {
         return <HeroSection data={block} />;
       case "blocks.video-section":
         return <VideoSection data={block} />;
-      case "blocks.video-section":
-        return <VideoSection data={block} />;
+    
       case "blocks.contact":
         return <Contact data={block} />;
       case "blocks.textbox":

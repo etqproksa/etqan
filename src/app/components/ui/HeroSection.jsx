@@ -1,50 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
-import { RowsPhotoAlbum } from "react-photo-album";
-import "react-photo-album/rows.css";
 import ReactMarkdown from "react-markdown";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 const HeroSection = ({ data }) => {
-  const [photos, setPhotos] = useState([]);
-  const [galleryOpen, setGalleryOpen] = useState(false);
-  const [index, setIndex] = useState(0);
-  const [mounted, setMounted] = useState(false);
-
   const hero = data?.Hero;
   const bgImage = hero?.backgroundImage?.url;
-
-  useEffect(() => {
-    setMounted(true);
-    if (hero?.images?.length) {
-      const loadImages = async () => {
-        const photoData = await Promise.all(
-          hero.images.map(
-            (img) =>
-              new Promise((resolve) => {
-                const image = new window.Image();
-                image.src = img.url;
-                image.onload = () =>
-                  resolve({
-                    src: img.url,
-                    width: image.width,
-                    height: image.height,
-                    alt: img?.alternativeText || "Gallery Image",
-                  });
-              })
-          )
-        );
-        setPhotos(photoData);
-      };
-      loadImages();
-    }
-  }, [hero?.images]);
 
   if (!hero) return null;
 
@@ -106,7 +65,6 @@ const HeroSection = ({ data }) => {
     overflow: "hidden",
     border: "1px solid rgba(255,255,255,0.08)",
     boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
-    cursor: "pointer",
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
   };
 
@@ -249,38 +207,26 @@ const HeroSection = ({ data }) => {
             </div>
           </div>
 
-          {/* Right: Photo Gallery */}
+          {/* Right: Single Image */}
           <div className="col-lg-6">
-            {photos.length > 0 ? (
-              <>
-                <div
-                  style={photoWrapperStyle}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.transform = "translateY(-4px)";
-                    e.currentTarget.style.boxShadow = "0 16px 60px rgba(99,102,241,0.25)";
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "0 8px 40px rgba(0,0,0,0.4)";
-                  }}
-                >
-                  <RowsPhotoAlbum
-                    photos={photos}
-                    onClick={({ index }) => {
-                      setIndex(index);
-                      setGalleryOpen(true);
-                    }}
-                  />
-                </div>
-
-                <Lightbox
-                  open={galleryOpen}
-                  index={index}
-                  close={() => setGalleryOpen(false)}
-                  plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-                  slides={photos.map((p) => ({ src: p.src }))}
+            {hero?.images?.length > 0 ? (
+              <div
+                style={photoWrapperStyle}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = "translateY(-4px)";
+                  e.currentTarget.style.boxShadow = "0 16px 60px rgba(99,102,241,0.25)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 8px 40px rgba(0,0,0,0.4)";
+                }}
+              >
+                <img
+                  src={hero.images[0].url}
+                  alt={hero.images[0]?.alternativeText || "Hero Image"}
+                  style={{ width: "100%", height: "auto", display: "block" }}
                 />
-              </>
+              </div>
             ) : (
               /* Placeholder shimmer when no images */
               <div style={{
