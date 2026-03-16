@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 import './mainservices.css';
 
 const MainSolutions = ({ data }) => {
-  if (!data?.MainServices?.length) return null;
+  if (!data?.MainSolutions?.length) return null;
 
   return (
     <div className="ms-wrapper">
@@ -31,7 +31,7 @@ const MainSolutions = ({ data }) => {
       <section className="ms-section">
         <div className="ms-container">
 
-          {data.MainServices.map((service, index) => (
+          {data.MainSolutions.map((service, index) => (
             <article className="ms-card" key={service.id}>
 
               {/* left: number + vertical line */}
