@@ -1,36 +1,90 @@
-/* Brand card container */
-.brand-card {
-  height: 90px;
+/* ─── SECTION ────────────────────────────────────────────────── */
+.brands-section {
+  background: #0b0f19;
+  padding: 50px 0;
+  position: relative;
+}
+
+/* top divider glow */
+.brands-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 91, 237, 0.4),
+    rgba(93, 237, 237, 0.5),
+    rgba(0, 91, 237, 0.4),
+    transparent
+  );
+}
+
+/* ─── HEADING ────────────────────────────────────────────────── */
+.brands-section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+/* ─── NAV BUTTONS ────────────────────────────────────────────── */
+.brands-section .btn-prev,
+.brands-section .btn-next {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: transparent;
-  border: none !important;
-  box-shadow: none !important;
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
 }
 
-/* ❌ Remove hover background */
-.brand-card:hover {
-  background: transparent;
+.brands-section .btn-prev:hover,
+.brands-section .btn-next:hover {
+  background: rgba(0, 91, 237, 0.15);
+  border-color: rgba(0, 91, 237, 0.4) !important;
+  color: #5DEDED;
 }
 
-/* Logo styling */
+/* ─── LOGO ───────────────────────────────────────────────────── */
 .brand-logo {
-  max-width: 165px;
-  max-height: 60px;
+  max-width: 140px;
+  max-height: 55px;
   width: auto;
   height: auto;
   object-fit: contain;
-
-  /* ❌ Remove grayscale */
-  filter: none;
-  opacity: 1;
-
-  transition: transform 0.3s ease;
+  opacity: 0.65;
+  filter: grayscale(30%) brightness(1.1);
+  transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Optional: subtle modern hover (scale only) */
-.brand-card:hover .brand-logo {
+.brand-logo:hover {
+  opacity: 1;
+  filter: none;
   transform: scale(1.05);
+}
+
+/* ─── SLIDE ──────────────────────────────────────────────────── */
+.swiper-slide.py-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── PAGINATION DOTS ────────────────────────────────────────── */
+.brands-section .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+}
+
+.brands-section .swiper-pagination-bullet-active {
+  background: #005BED;
 }
