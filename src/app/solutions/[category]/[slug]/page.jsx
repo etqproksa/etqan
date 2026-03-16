@@ -37,7 +37,7 @@ const SolutionsDetails = ({ params: paramsPromise }) => {
   if (error) return <div className="sd-error">Error: {error}</div>;
   if (!solution) return <div className="sd-error">No record found</div>;
 
-  const bannerImage = solution.images?.[0];
+  const bannerImage = solution.bannerImage;
 
   return (
     <div className="sd-page">
