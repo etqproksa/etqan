@@ -15,7 +15,7 @@ export async function GET(req, { params }) {
 
 
   const url = `${process.env.STRAPI_URL}/api/solutions?${query}`;
-  console.log("this is url",url);
+ // console.log("this is url",url);
 
   try {
     const res = await fetch(url, {

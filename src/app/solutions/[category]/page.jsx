@@ -18,6 +18,7 @@ export default async function CategoryPage({ params }) {
             solutionIcon: {
               fields: ["url", "alternativeText", "name", "width", "height"],
             },
+            
            
           },
         },
