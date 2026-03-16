@@ -45,17 +45,28 @@ export default function Header({ headerdata, menu }) {
   return (
     <>
       <header
-        className={`header navbar navbar-expand-lg fixed-top shadow-sm ${isScrolled ? "scrolled" : ""}`}
+        className={`header navbar navbar-expand-lg fixed-top shadow-sm ${
+          isScrolled ? "scrolled" : ""
+        }`}
         style={{
-          backgroundColor: isScrolled ? "#131222" : "transparent",
+          backgroundColor: isScrolled
+            ? "#0b0f19"
+            : "transparent" /* ← was #131222 */,
           transition: "background-color 0.3s ease",
+          borderBottom: isScrolled
+            ? "1px solid rgba(0, 91, 237, 0.15)"
+            : "none" /* ← add subtle border */,
         }}
       >
         <div className="container px-3">
           {/* ── Logo ── */}
           <Link href="/" className="navbar-brand pe-3" onClick={closeOffcanvas}>
             {logo ? (
-              <img src={logo.url} width="130" alt={logo.alternativeText || logo.name} />
+              <img
+                src={logo.url}
+                width="130"
+                alt={logo.alternativeText || logo.name}
+              />
             ) : (
               <span>Etqan Project</span>
             )}
@@ -81,15 +92,21 @@ export default function Header({ headerdata, menu }) {
             aria-labelledby="navbarNavLabel"
           >
             <div className="offcanvas-header border-bottom d-lg-none">
-              <h5 className="offcanvas-title" id="navbarNavLabel">Menu</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
+              <h5 className="offcanvas-title" id="navbarNavLabel">
+                Menu
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              />
             </div>
 
             <div className="offcanvas-body">
               <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                 {sections.map((section) =>
                   section.dropdown?.length > 0 ? (
-
                     /* ── Hover dropdown item ── */
                     <li
                       key={section.id}
@@ -100,22 +117,41 @@ export default function Header({ headerdata, menu }) {
                       {/* Label — NOT a link, just shows the name + chevron */}
                       <span
                         className={`nav-link hd-dropdown-label ${
-                          pathname.startsWith(section.headingUrl || "__") ? "active" : ""
+                          pathname.startsWith(section.headingUrl || "__")
+                            ? "active"
+                            : ""
                         }`}
                       >
                         {section.heading}
                         <svg
-                          className={`hd-chevron ${openDropdown === section.id ? "hd-chevron--open" : ""}`}
-                          width="12" height="12" viewBox="0 0 12 12" fill="none"
+                          className={`hd-chevron ${
+                            openDropdown === section.id
+                              ? "hd-chevron--open"
+                              : ""
+                          }`}
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
                         >
-                          <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.6"
-                            strokeLinecap="round" strokeLinejoin="round"/>
+                          <path
+                            d="M2 4l4 4 4-4"
+                            stroke="currentColor"
+                            strokeWidth="1.6"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
                         </svg>
                       </span>
 
                       {/* ── Dropdown panel ── */}
-                      <div className={`hd-dropdown-menu ${openDropdown === section.id ? "hd-dropdown-menu--open" : ""}`}>
-
+                      <div
+                        className={`hd-dropdown-menu ${
+                          openDropdown === section.id
+                            ? "hd-dropdown-menu--open"
+                            : ""
+                        }`}
+                      >
                         {/* View All Services — top link */}
                         <Link
                           href={getViewAllUrl(section)}
@@ -123,9 +159,19 @@ export default function Header({ headerdata, menu }) {
                           onClick={closeOffcanvas}
                         >
                           <span>View All {section.heading}</span>
-                          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5"
-                              strokeLinecap="round" strokeLinejoin="round"/>
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                          >
+                            <path
+                              d="M3 8h10M9 4l4 4-4 4"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </svg>
                         </Link>
 
@@ -145,20 +191,20 @@ export default function Header({ headerdata, menu }) {
                         ))}
                       </div>
                     </li>
-
                   ) : (
-
                     /* ── Plain nav link ── */
                     <li key={section.id} className="nav-item">
                       <Link
                         href={section.headingUrl || "#"}
-                        className={`nav-link ${pathname === section.headingUrl ? "active" : ""}`}
+                        className={`nav-link ${
+                          pathname === section.headingUrl ? "active" : ""
+                        }`}
                         onClick={closeOffcanvas}
                       >
                         {section.heading}
                       </Link>
                     </li>
-                  )
+                  ),
                 )}
               </ul>
             </div>
@@ -168,147 +214,148 @@ export default function Header({ headerdata, menu }) {
 
       {/* ── Scoped styles ── */}
       <style>{`
-        /* ── dropdown wrapper ── */
-        .hd-dropdown-wrap {
-          position: relative;
-        }
+  /* ── dropdown wrapper ── */
+  .hd-dropdown-wrap {
+    position: relative;
+  }
 
-        /* ── label (non-clickable) ── */
-        .hd-dropdown-label {
-          display: inline-flex;
-          align-items: center;
-          gap: 5px;
-          cursor: default;
-          user-select: none;
-        }
+  /* ── label (non-clickable) ── */
+  .hd-dropdown-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: default;
+    user-select: none;
+  }
 
-        /* ── chevron ── */
-        .hd-chevron {
-          transition: transform 0.22s ease;
-          opacity: 0.7;
-          flex-shrink: 0;
-          margin-top: 1px;
-        }
-        .hd-chevron--open {
-          transform: rotate(180deg);
-          opacity: 1;
-        }
+  /* ── chevron ── */
+  .hd-chevron {
+    transition: transform 0.22s ease;
+    opacity: 0.7;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .hd-chevron--open {
+    transform: rotate(180deg);
+    opacity: 1;
+  }
 
-        /* ── dropdown panel ── */
-        .hd-dropdown-menu {
-          position: absolute;
-          top: calc(100% + 6px);
-          left: 50%;
-          transform: translateX(-50%) translateY(6px);
-          min-width: 240px;
-          background: #1a1c2e;
-          border: 1px solid rgba(99,102,241,0.18);
-          border-radius: 10px;
-          padding: 6px;
-          box-shadow: 0 16px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.04);
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-          transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-          z-index: 9999;
-        }
-        .hd-dropdown-menu--open {
-          opacity: 1;
-          visibility: visible;
-          pointer-events: auto;
-          transform: translateX(-50%) translateY(0);
-        }
+  /* ── dropdown panel ── */
+  .hd-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    min-width: 240px;
+    background: #0b0f19;                              /* ← was #1a1c2e */
+    border: 1px solid rgba(0, 91, 237, 0.2);          /* ← was indigo */
+    border-radius: 10px;
+    padding: 6px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.04);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 9999;
+  }
+  .hd-dropdown-menu--open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
 
-        /* ── view all link ── */
-        .hd-dropdown-viewall {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 8px;
-          padding: 10px 14px;
-          border-radius: 7px;
-          font-size: 0.82rem;
-          font-weight: 700;
-          letter-spacing: 0.04em;
-          text-transform: uppercase;
-          color: #818cf8;
-          background: rgba(99,102,241,0.1);
-          text-decoration: none;
-          transition: background 0.18s ease, color 0.18s ease;
-        }
-        .hd-dropdown-viewall:hover {
-          background: rgba(99,102,241,0.2);
-          color: #c7d2fe;
-        }
-        .hd-dropdown-viewall svg {
-          flex-shrink: 0;
-          transition: transform 0.18s ease;
-        }
-        .hd-dropdown-viewall:hover svg {
-          transform: translateX(3px);
-        }
+  /* ── view all link ── */
+  .hd-dropdown-viewall {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 7px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #12A2A2;                                   /* ← was #818cf8 */
+    background: rgba(0, 91, 237, 0.08);               /* ← was indigo */
+    text-decoration: none;
+    transition: background 0.18s ease, color 0.18s ease;
+  }
+  .hd-dropdown-viewall:hover {
+    background: rgba(0, 91, 237, 0.18);               /* ← was indigo */
+    color: #5DEDED;                                   /* ← was #c7d2fe */
+  }
+  .hd-dropdown-viewall svg {
+    flex-shrink: 0;
+    transition: transform 0.18s ease;
+  }
+  .hd-dropdown-viewall:hover svg {
+    transform: translateX(3px);
+  }
 
-        /* ── divider ── */
-        .hd-dropdown-divider {
-          height: 1px;
-          background: rgba(255,255,255,0.07);
-          margin: 6px 4px;
-        }
+  /* ── divider ── */
+  .hd-dropdown-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.07);
+    margin: 6px 4px;
+  }
 
-        /* ── individual item ── */
-        .hd-dropdown-item {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          padding: 9px 14px;
-          border-radius: 7px;
-          font-size: 0.9rem;
-          color: rgba(255,255,255,0.72);
-          text-decoration: none;
-          transition: background 0.18s ease, color 0.18s ease;
-        }
-        .hd-dropdown-item:hover {
-          background: rgba(255,255,255,0.06);
-          color: #fff;
-        }
+  /* ── individual item ── */
+  .hd-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 14px;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.72);
+    text-decoration: none;
+    transition: background 0.18s ease, color 0.18s ease;
+  }
+  .hd-dropdown-item:hover {
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+  }
 
-        .hd-dropdown-dot {
-          width: 5px;
-          height: 5px;
-          border-radius: 50%;
-          background: rgba(99,102,241,0.6);
-          flex-shrink: 0;
-          transition: background 0.18s ease;
-        }
-        .hd-dropdown-item:hover .hd-dropdown-dot {
-          background: #818cf8;
-        }
+  /* ── dot ── */
+  .hd-dropdown-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(0, 91, 237, 0.6);               /* ← was indigo */
+    flex-shrink: 0;
+    transition: background 0.18s ease;
+  }
+  .hd-dropdown-item:hover .hd-dropdown-dot {
+    background: #5DEDED;                              /* ← was #818cf8 */
+  }
 
-        /* ── mobile: show as static list inside offcanvas ── */
-        @media (max-width: 991px) {
-          .hd-dropdown-menu {
-            position: static;
-            transform: none !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-            pointer-events: auto !important;
-            box-shadow: none;
-            border: none;
-            border-left: 2px solid rgba(99,102,241,0.3);
-            border-radius: 0;
-            background: transparent;
-            padding: 4px 0 4px 12px;
-            margin-top: 4px;
-            display: none;
-          }
-          .hd-dropdown-menu--open {
-            display: block;
-          }
-          .hd-dropdown-label {
-            cursor: pointer;
-          }
-        }
-      `}</style>
+  /* ── mobile ── */
+  @media (max-width: 991px) {
+    .hd-dropdown-menu {
+      position: static;
+      transform: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      box-shadow: none;
+      border: none;
+      border-left: 2px solid rgba(0, 91, 237, 0.3);  /* ← was indigo */
+      border-radius: 0;
+      background: transparent;
+      padding: 4px 0 4px 12px;
+      margin-top: 4px;
+      display: none;
+    }
+    .hd-dropdown-menu--open {
+      display: block;
+    }
+    .hd-dropdown-label {
+      cursor: pointer;
+    }
+  }
+`}</style>
     </>
   );
 }
