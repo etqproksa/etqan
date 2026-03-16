@@ -2,12 +2,11 @@ import { NextResponse } from "next/server";
 import qs from "qs";
 
 export async function GET(req, { params }) {
-  const { category, slug } = await params; // ← grab both
+  const { slug } = await params; // ← only slug, no category
 
   const query = qs.stringify({
     filters: {
       slug: { $eq: slug },
-  
     },
     populate: {
       bannerImage: { fields: ['url', 'alternativeText', 'width', 'height'] },
