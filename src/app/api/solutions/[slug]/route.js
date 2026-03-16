@@ -2,28 +2,28 @@ import { NextResponse } from "next/server";
 import qs from "qs";
 
 export async function GET(req, { params }) {
-  const { slug } =  await params;
+  const { category, slug } = await params; // ← grab both
 
- const query = qs.stringify({
-  filters: { slug: { $eq: slug } },
-  populate: {
-     bannerImage: { fields: ['url', 'alternativeText', 'width', 'height'] },
-     solutionIcon: { fields: ['url', 'alternativeText', 'width', 'height'] },
+  const query = qs.stringify({
+    filters: {
+      slug: { $eq: slug },
   
-  },
-  locale: 'en',
-});
-
+    },
+    populate: {
+      bannerImage: { fields: ['url', 'alternativeText', 'width', 'height'] },
+      solutionIcon: { fields: ['url', 'alternativeText', 'width', 'height'] },
+    },
+    locale: 'en',
+  });
 
   const url = `${process.env.STRAPI_URL}/api/solutions?${query}`;
- // console.log("this is url",url);
 
   try {
     const res = await fetch(url, {
       headers: {
         Authorization: `Bearer ${process.env.STRAPI_JWT}`,
       },
-      cache: "no-store", // always fresh
+      cache: "no-store",
     });
 
     if (!res.ok) {
@@ -34,7 +34,6 @@ export async function GET(req, { params }) {
     }
 
     const data = await res.json();
-    console.log("this is the services data from api data",data);
     return NextResponse.json(data);
   } catch (err) {
     return NextResponse.json({ error: err.message }, { status: 500 });
