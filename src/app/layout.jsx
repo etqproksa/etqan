@@ -5,7 +5,7 @@ import BootstrapClient from "./components/BootstrapClient";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 export const metadata = {
-  title: "Etqan Projects",
+  title: "Etqan Projects | Technology You Trust ",
   description: "Technology You Trust",
 };
 
