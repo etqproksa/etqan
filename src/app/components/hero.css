@@ -116,7 +116,7 @@
 .hero-left {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 25px;
   animation: fadeSlideDown 0.7s ease both;
 }
 
@@ -162,22 +162,24 @@
 /* Heading */
 .hero-heading {
   font-family: "Orbitron", sans-serif;
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 900;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  padding-bottom: 0.15em;
+  /* line-height: 1.2;
+  letter-spacing: -0.02em; */
+ 
   overflow: visible;
   animation: fadeSlideDown 0.7s ease 0.1s both;
 }
-
+.heading-inline {
+  display: inline; /* keeps both words on one line */
+}
 .heading-main {
-  display: block;
+  display: inline;
   color: #fff;
 }
 
 .heading-gradient {
-  display: block;
+  display: inline;
   background: linear-gradient(90deg, #005bed, #12a2a2, #5deded);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -334,7 +336,7 @@
   justify-content: center;
   align-self: start; /* ← add this */
   /* ← add this */
-  padding-top: 95px; /* ← badge height (~32px) + gap (~28px) + small offset (~12px) */
+  padding-top: 80px; /* ← badge height (~32px) + gap (~28px) + small offset (~12px) */
   animation: fadeSlideRight 0.9s ease 0.3s both;
 }
 

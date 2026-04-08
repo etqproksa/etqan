@@ -6,12 +6,12 @@ import Link from "next/link";
 
 export default function Hero({ data }) {
   const heading = data?.heading || "Etqan";
-  const subheading = data?.subheading || "Technology You Trust, Security You Rely On!";
+  const subheading =
+    data?.subheading || "Technology You Trust, Security You Rely On!";
   const summary =
     data?.summary ||
     "A premier IT solutions provider delivering innovative, comprehensive cybersecurity and infrastructure services — built to drive operational excellence and business growth across industries.";
-  const imageUrl =
-    data?.Swiper?.images?.[0]?.url || "/assets/img/fallback.jpg";
+  const imageUrl = data?.Swiper?.images?.[0]?.url || "/assets/img/fallback.jpg";
   const imageAlt =
     data?.Swiper?.images?.[0]?.alternativeText ||
     "Etqan Agency - Digital Transformation";
@@ -28,18 +28,20 @@ export default function Hero({ data }) {
       <div className="accent-line" />
 
       <div className="hero-container">
-
         {/* LEFT COLUMN */}
         <div className="hero-left">
-
           <div className="hero-badge">
             <span className="badge-dot" />
             <span className="badge-text">Est. 2020 · Riyadh, Saudi Arabia</span>
           </div>
 
           <h1 className="hero-heading">
-            <span className="heading-main">{mainHeading || heading}</span>
-            <span className="heading-gradient">Projects</span>
+            <span className="heading-inline">
+              <span className="heading-main">
+                {mainHeading || heading}&nbsp;
+              </span>
+              <span className="heading-gradient">Projects</span>
+            </span>
           </h1>
 
           <p className="hero-subheading">{subheading?.trim()}</p>
@@ -70,15 +72,15 @@ export default function Hero({ data }) {
               <span>Explore Services</span>
               <span className="btn-arrow">→</span>
             </Link>
-            <Link href="/pages/about" className="btn-secondary">  About Us ↗</Link>
-            
+            <Link href="/pages/about" className="btn-secondary">
+              {" "}
+              About Us ↗
+            </Link>
           </div>
-
         </div>
 
         {/* RIGHT COLUMN */}
         <div className="hero-right">
-
           <div className="image-frame">
             <div className="image-inner">
               <Image
@@ -120,9 +122,7 @@ export default function Hero({ data }) {
               <span className="ft-value">Secured 24/7</span>
             </div>
           </div>
-
         </div>
-
       </div>
 
       {/* Scroll indicator */}
@@ -130,7 +130,6 @@ export default function Hero({ data }) {
         <span className="scroll-text">Scroll</span>
         <div className="scroll-line" />
       </div>
-
     </section>
   );
 }
