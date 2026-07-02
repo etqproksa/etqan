@@ -70,7 +70,7 @@ export default async function RootLayout({ children }) {
 
       <body className={poppins.variable}>
         {/* Preloader */}
-        <Preloader />
+        <Preloader logo={headerData?.logo?.[0]} />
 
         <main className="page-wrapper">
           <Header headerdata={headerData} menu={menu}  />
