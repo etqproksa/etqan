@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 import { Poppins } from "next/font/google";
 import Preloader from "./components/Preloader";
 import BootstrapClient from "./components/BootstrapClient";
@@ -16,36 +16,31 @@ const poppins = Poppins({
   variable: "--font-poppins",
   display: "swap",
 });
- async function getGlobalSettings() {
+async function getGlobalSettings() {
   try {
     const res = await fetch(`${process.env.STRAPI_URL}/api/global-setting`, {
       headers: {
         Authorization: `Bearer ${process.env.STRAPI_JWT}`,
       },
-    cache: "no-store",
+      next: { revalidate: 300 },
     });
 
     if (!res.ok) {
-      console.error("❌ Failed to fetch Global Settings from Strapi");
       return null;
     }
 
     const data = await res.json();
     return data?.data?.Global || [];
-  } catch (error) {
-    console.error("❌ Error fetching Global Settings:", error);
+  } catch {
     return null;
   }
 }
 
 export default async function RootLayout({ children }) {
-   const globalData = await getGlobalSettings();
+  const globalData = (await getGlobalSettings()) || [];
 
-
-  // Example extracting data (adjust depending on your Strapi structure)
   const headerData = globalData.find((item) => item.__component === "layout.header");
   const menu = globalData.find((item) => item.__component === "layout.menu");
- 
   const footerData = globalData.find((item) => item.__component === "layout.footer");
 
   return (

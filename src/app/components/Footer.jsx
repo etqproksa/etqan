@@ -18,7 +18,15 @@ export default function Footer({ footerData }) {
           <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <div className="footer-brand d-flex align-items-center gap-2 mb-3">
               {icon && (
-                <Image src={icon} alt="Footer Icon" width={46} height={46} />
+                <Image
+                  src={icon}
+                  alt="Footer Icon"
+                  width={46}
+                  height={46}
+                  sizes="46px"
+                  loading="lazy"
+                  decoding="async"
+                />
               )}
               <span>{footerData?.heading}</span>
             </div>
@@ -63,6 +71,9 @@ export default function Footer({ footerData }) {
                           alt={social.title}
                           width={18}
                           height={18}
+                          sizes="18px"
+                          loading="lazy"
+                          decoding="async"
                         />
                       ) : (
                         <span className="text-white" style={{ fontSize: "12px" }}>

@@ -1,13 +1,17 @@
 // components/AosBlock.jsx
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const animations = ["fade-up", "fade-down", "zoom-in", "fade-up", "zoom-in", "fade-down"];
 
 export default function AosBlock({ children, index }) {
+  const initializedRef = useRef(false);
+
   useEffect(() => {
+    if (initializedRef.current) return;
+    initializedRef.current = true;
     AOS.init({ duration: 800, easing: "ease-in-out", once: true, offset: 100 });
   }, []);
 

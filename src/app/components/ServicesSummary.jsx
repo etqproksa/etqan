@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import "./servicesSummary.css";
 
 function ServicesSummary({ data }) {
@@ -24,11 +25,14 @@ function ServicesSummary({ data }) {
 
                 {service.serviceIcon?.url && (
                   <div className="service-icon-wrap mx-auto">
-                    <img
+                    <Image
                       src={service.serviceIcon.url}
                       alt={service.serviceIcon.alternativeText || service.title}
                       width={36}
                       height={36}
+                      sizes="36px"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 )}

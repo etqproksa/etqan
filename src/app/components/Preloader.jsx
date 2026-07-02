@@ -5,8 +5,8 @@ export default function Preloader() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 800); // fade out after 0.8s
-    return () => clearTimeout(timer);
+    const timer = window.requestAnimationFrame(() => setLoading(false));
+    return () => window.cancelAnimationFrame(timer);
   }, []);
 
   if (!loading) return null;

@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -62,10 +63,13 @@ export default function Header({ headerdata, menu }) {
           {/* ── Logo ── */}
           <Link href="/" className="navbar-brand pe-3" onClick={closeOffcanvas}>
             {logo ? (
-              <img
+              <Image
                 src={logo.url}
-                width="130"
+                width={130}
+                height={40}
+                sizes="130px"
                 alt={logo.alternativeText || logo.name}
+                priority
               />
             ) : (
               <span>Etqan Project</span>

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import "./servicesSolutions.css";
 
@@ -24,10 +25,15 @@ const ServicesSolutions = ({ data }) => {
             {/* IMAGE LEFT */}
             {imageAlignment === "Left" && (
               <div className="col-md-6 text-center mb-4 mb-md-0">
-                <img
+                <Image
                   src={image?.url}
                   alt={image?.alternativeText || heading}
                   className="ss-image"
+                  width={image?.width || 600}
+                  height={image?.height || 420}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             )}
@@ -38,12 +44,14 @@ const ServicesSolutions = ({ data }) => {
               {heading && (
                 <div className="d-flex align-items-center gap-3 mb-4">
                   {icon?.url && (
-                    <img
+                    <Image
                       src={icon.url}
                       alt={icon.alternativeText || "icon"}
-                      width="60"
-                      height="60"
+                      width={60}
+                      height={60}
                       className="ss-icon"
+                      loading="lazy"
+                      decoding="async"
                     />
                   )}
                   <h2 className="mb-0">{heading}</h2>
@@ -65,10 +73,15 @@ const ServicesSolutions = ({ data }) => {
             {/* IMAGE RIGHT */}
             {imageAlignment === "Right" && (
               <div className="col-md-6 text-center mt-4 mt-md-0">
-                <img
+                <Image
                   src={image?.url}
                   alt={image?.alternativeText || heading}
                   className="ss-image"
+                  width={image?.width || 600}
+                  height={image?.height || 420}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             )}

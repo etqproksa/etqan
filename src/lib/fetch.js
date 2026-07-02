@@ -1,29 +1,29 @@
-
 export async function fetchData(url, authToken, cacheStatus = {}) {
   const headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${authToken}`,
   };
 
-  try {
-    const response = await fetch(url, {
-      method: "GET",
-      headers,
-      ...cacheStatus,
-    });
+  const fetchOptions = {
+    method: "GET",
+    headers,
+    ...cacheStatus,
+  };
 
-    console.log("Response Status:", response.status, response.statusText);
+  if (!fetchOptions.next && !("cache" in fetchOptions)) {
+    fetchOptions.next = { revalidate: 300 };
+  }
+
+  try {
+    const response = await fetch(url, fetchOptions);
 
     if (!response.ok) {
-      const errorData = await response.json(); // Parse error response
-      console.error("Fetch failed:", response.status, response.statusText, errorData);
+      const errorData = await response.json();
       throw new Error(`Failed to fetch data: ${response.statusText}`);
     }
 
-    const data = await response.json();
-    return data;
+    return response.json();
   } catch (error) {
-    console.error("Error fetching data:", error.message);
-    throw error; // Propagate error to the caller
+    throw error;
   }
 }

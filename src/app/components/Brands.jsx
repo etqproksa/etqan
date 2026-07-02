@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
@@ -67,11 +68,15 @@ export default function Brands({ data }) {
         >
           {logos?.map((logo) => (
             <SwiperSlide key={logo.id} className="py-3">
-              <img
+              <Image
                 src={logo.url}
                 alt={logo.alternativeText || logo.name}
                 className="brand-logo"
+                width={160}
+                height={80}
+                sizes="(max-width: 650px) 50vw, 16vw"
                 loading="lazy"
+                decoding="async"
               />
             </SwiperSlide>
           ))}

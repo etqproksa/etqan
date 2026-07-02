@@ -1,8 +1,9 @@
 
-import AosBlock from "./components/AosBlock"; // 👈 add this import
+export const revalidate = 300;
+
+import AosBlock from "./components/AosBlock";
 import Hero from "./components/Hero";
 import FeaturedProjects from "./components/FeaturedProjects";
-//data from lib
 import { getStrapiURL } from "@/lib/utils";
 import { fetchData } from "@/lib/fetch";
 import Services from "./components/Etservices";
@@ -11,24 +12,21 @@ import ServicesSummary from "./components/ServicesSummary";
 import Brands from "./components/Brands";
 import VisionMission from "./components/VisionMission";
 import CtaImage from "./components/ui/CtaImage";
+
 export default async function Home() {
   // Loader function to fetch data
   async function loader() {
     const path = `/api/landing-page`;
     const baseUrl = getStrapiURL();
     const url = new URL(path, baseUrl);
-    console.log("Full API URL", url.href); // Debugging the complete URL
     const authToken = process.env.STRAPI_JWT;
 
-    const data = await fetchData(url.href, authToken, {
+    return fetchData(url.href, authToken, {
       next: {
         tags: ["landing-page-data"],
-        revalidate: 30,
+        revalidate: 300,
       },
     });
-
-    console.log("Data fetched in loader after revalidation:", data);
-    return data;
   }
 
   // BlockRenderer function with switch-case to render components dynamically
@@ -57,11 +55,9 @@ export default async function Home() {
 
   // Fetching data from the loader
   const data = await loader();
-  const homeData = data?.data?.SwiperHero || []; // ✅ array of blocks
-  console.log("Extracted home blocks:", homeData);
+  const homeData = data?.data?.SwiperHero || [];
 
   if (homeData.length === 0) {
-    console.log("No home data found");
     return <div>No content available</div>;
   }
 

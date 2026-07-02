@@ -66,9 +66,12 @@ const FeaturedProjects = ({ data }) => {
               <div className="card-img">
                 <Image
                   src={item.frontimage?.url}
-                  width={item.frontimage?.width}
-                  height={item.frontimage?.height}
+                  width={item.frontimage?.width || 720}
+                  height={item.frontimage?.height || 480}
                   alt={item.frontimage?.alternativeText || item.title}
+                  sizes="(max-width: 960px) 100vw, 33vw"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </Link>
