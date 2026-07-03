@@ -3,15 +3,16 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Preloader({ logo }) {
+  const [mounted, setMounted] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const hide = () => setLoading(false);
-    const timer = window.setTimeout(hide, 450);
+    setMounted(true);
+    const timer = window.setTimeout(() => setLoading(false), 450);
     return () => window.clearTimeout(timer);
   }, []);
 
-  if (!loading) return null;
+  if (!mounted || !loading) return null;
 
   const logoUrl = logo?.url;
   const altText = logo?.alternativeText || logo?.name || "Etqan logo";
