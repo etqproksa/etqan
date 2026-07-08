@@ -360,6 +360,34 @@ export default function Header({ headerdata, menu }) {
       cursor: pointer;
     }
   }
+
+  /* ── Logo positioning ── */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    height: auto;
+    min-width: 130px;
+    z-index: 10;
+    position: relative;
+  }
+
+  .navbar-brand img {
+    max-width: 130px !important;
+    max-height: 50px !important;
+    width: auto !important;
+    height: auto !important;
+    display: block;
+  }
+
+  @media (max-width: 991px) {
+    .navbar-brand {
+      min-width: 110px;
+    }
+    .navbar-brand img {
+      max-width: 110px !important;
+      max-height: 40px !important;
+    }
+  }
 `}</style>
     </>
   );
