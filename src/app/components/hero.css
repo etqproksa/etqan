@@ -7,6 +7,7 @@
   overflow: hidden;
   background: #000;
   font-family: "Space Grotesk", sans-serif;
+  margin-top: 70px;
 }
 
 /* ─── ANIMATED GRID BACKGROUND ─────────────────────────────── */
@@ -182,7 +183,7 @@
 
 /* Heading */
 .hero-heading {
-  font-family: "Orbitron", sans-serif;
+ /* font-family: "Orbitron", sans-serif; */
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 900;
   /* line-height: 1.2;

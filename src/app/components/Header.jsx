@@ -57,6 +57,7 @@ export default function Header({ headerdata, menu }) {
           borderBottom: isScrolled
             ? "1px solid rgba(0, 91, 237, 0.15)"
             : "none" /* ← add subtle border */,
+          zIndex: 1000,
         }}
       >
         <div className="container px-3">

@@ -13,6 +13,11 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Account for fixed header */
+.page-wrapper {
+  padding-top: 70px;
+}
+
 @supports (-webkit-touch-callout: none) {
   .page-loading {
     backdrop-filter: none !important;
