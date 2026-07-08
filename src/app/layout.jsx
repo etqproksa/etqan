@@ -1,5 +1,6 @@
 export const revalidate = 300;
 import { Poppins } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Preloader from "./components/Preloader";
 import BootstrapClient from "./components/BootstrapClient";
 import Header from "./components/Header";
@@ -86,6 +87,7 @@ export default async function RootLayout({ children }) {
 
         {/* Bootstrap Client Loader */}
         <BootstrapClient />
+        <SpeedInsights />
       </body>
     </html>
   );
