@@ -45,19 +45,16 @@ export default function Header({ headerdata, menu }) {
 
   return (
     <>
-      <header
-        className={`header navbar navbar-expand-lg fixed-top shadow-sm ${
+     <header
+       className={`header navbar navbar-expand-lg fixed-top shadow-sm ${
           isScrolled ? "scrolled" : ""
         }`}
         style={{
-          backgroundColor: isScrolled
-            ? "#0b0f19"
-            : "transparent" /* ← was #131222 */,
+          backgroundColor: isScrolled ? "#0b0f19" : "transparent",
           transition: "background-color 0.3s ease",
           borderBottom: isScrolled
             ? "1px solid rgba(0, 91, 237, 0.15)"
-            : "none" /* ← add subtle border */,
-          zIndex: 1000,
+            : "none",
         }}
       >
         <div className="container px-3">
