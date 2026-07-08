@@ -16,16 +16,21 @@
   background-image: linear-gradient(rgba(0, 91, 237, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 91, 237, 0.08) 1px, transparent 1px);
   background-size: 60px 60px;
-  animation: gridMove 20s linear infinite;
   pointer-events: none;
 }
 
-@keyframes gridMove {
-  0% {
-    transform: translateY(0);
+@media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
+  .grid-bg {
+    animation: gridMove 20s linear infinite;
   }
-  100% {
-    transform: translateY(60px);
+
+  @keyframes gridMove {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(60px);
+    }
   }
 }
 
@@ -36,7 +41,12 @@
   filter: blur(80px);
   opacity: 0.35;
   pointer-events: none;
-  animation: orbPulse 6s ease-in-out infinite;
+}
+
+@media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
+  .orb {
+    animation: orbPulse 6s ease-in-out infinite;
+  }
 }
 
 .orb-1 {
@@ -45,7 +55,6 @@
   background: radial-gradient(circle, #005bed, transparent);
   top: -100px;
   right: -100px;
-  animation-duration: 6s;
 }
 
 .orb-2 {
@@ -54,8 +63,6 @@
   background: radial-gradient(circle, #12a2a2, transparent);
   bottom: -50px;
   left: 10%;
-  animation-duration: 8s;
-  animation-direction: reverse;
 }
 
 .orb-3 {
@@ -64,18 +71,32 @@
   background: radial-gradient(circle, #5deded, transparent);
   top: 40%;
   left: 40%;
-  animation-duration: 10s;
 }
 
-@keyframes orbPulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.35;
+@media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
+  .orb-1 {
+    animation-duration: 6s;
   }
-  50% {
-    transform: scale(1.15);
-    opacity: 0.5;
+
+  .orb-2 {
+    animation-duration: 8s;
+    animation-direction: reverse;
+  }
+
+  .orb-3 {
+    animation-duration: 10s;
+  }
+
+  @keyframes orbPulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.35;
+    }
+    50% {
+      transform: scale(1.15);
+      opacity: 0.5;
+    }
   }
 }
 
@@ -469,13 +490,18 @@
   gap: 8px;
   padding: 8px 14px;
   background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(0, 91, 237, 0.35);
   border-radius: 10px;
   z-index: 5;
   white-space: nowrap;
-  animation: floatUp 3s ease-in-out infinite;
+}
+
+@media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
+  .float-tag {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    animation: floatUp 3s ease-in-out infinite;
+  }
 }
 
 .float-tag-2 {

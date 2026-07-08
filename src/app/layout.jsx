@@ -46,26 +46,41 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" data-bs-theme="dark" className={poppins.variable}>
       <head>
+        {/* Preload critical fonts */}
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@700;900&display=swap"
+          as="style"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@700;900&display=swap"
+        />
+        
+        {/* Main Critical Styles */}
+        <link rel="stylesheet" href="/assets/css/globals.css" />
+        <link rel="stylesheet" href="/assets/css/theme.min.css" />
+        
         {/* Vendor Styles */}
         <link
           rel="stylesheet"
-          media="screen"
           href="/assets/vendor/boxicons/css/boxicons.min.css"
         />
         <link
           rel="stylesheet"
-          media="screen"
           href="/assets/vendor/swiper/swiper-bundle.min.css"
         />
         <link
           rel="stylesheet"
-          media="screen"
           href="/assets/vendor/lightgallery/css/lightgallery-bundle.min.css"
         />
-
-        {/* Main Theme Styles + Bootstrap */}
-        <link rel="stylesheet" media="screen" href="/assets/css/theme.min.css" />
-        <link rel="stylesheet" href="/assets/css/globals.css" />
+        
+        {/* Noscript fallback */}
+        <noscript>
+          <link rel="stylesheet" href="/assets/vendor/boxicons/css/boxicons.min.css" />
+          <link rel="stylesheet" href="/assets/vendor/swiper/swiper-bundle.min.css" />
+          <link rel="stylesheet" href="/assets/vendor/lightgallery/css/lightgallery-bundle.min.css" />
+        </noscript>
       </head>
 
       <body className={poppins.variable}>

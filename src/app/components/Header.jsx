@@ -68,6 +68,7 @@ export default function Header({ headerdata, menu }) {
                 width={130}
                 height={40}
                 sizes="130px"
+                style={{ width: "auto", height: "auto" }}
                 alt={logo.alternativeText || logo.name}
                 priority
               />

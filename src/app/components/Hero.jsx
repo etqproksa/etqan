@@ -47,7 +47,11 @@ export default function Hero({ data }) {
           <p className="hero-subheading">{subheading?.trim()}</p>
 
           <div className="hero-body markdown-container">
-            <ReactMarkdown>{summary}</ReactMarkdown>
+            {summary && typeof summary === "string" ? (
+              <ReactMarkdown>{summary}</ReactMarkdown>
+            ) : (
+              <p>{summary || ""}</p>
+            )}
           </div>
 
           {/* <div className="hero-stats">

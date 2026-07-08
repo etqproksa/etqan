@@ -13,11 +13,13 @@ export default function BootstrapClient() {
     };
 
     if ("requestIdleCallback" in window) {
-      const id = window.requestIdleCallback(loadBootstrap);
+      const id = window.requestIdleCallback(() => {
+        window.requestIdleCallback(loadBootstrap, { timeout: 5000 });
+      });
       return () => window.cancelIdleCallback?.(id);
     }
 
-    const timeoutId = window.setTimeout(loadBootstrap, 250);
+    const timeoutId = window.setTimeout(loadBootstrap, 3000);
     return () => window.clearTimeout(timeoutId);
   }, []);
 
