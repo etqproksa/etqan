@@ -8,7 +8,21 @@ export default function Preloader({ logo }) {
 
   useEffect(() => {
     setMounted(true);
-    const timer = window.setTimeout(() => setLoading(false), 450);
+
+    if (typeof window === "undefined") return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isAppleSafari =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) &&
+      /Safari/.test(navigator.userAgent) &&
+      !/Chrome|CriOS|FxiOS/.test(navigator.userAgent);
+
+    if (reduceMotion || isAppleSafari) {
+      setLoading(false);
+      return;
+    }
+
+    const timer = window.setTimeout(() => setLoading(false), 260);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -43,8 +57,8 @@ export default function Preloader({ logo }) {
           z-index: 99999;
           display: grid;
           place-items: center;
-          background: radial-gradient(circle at top, rgba(0, 91, 237, 0.18), transparent 45%), #060816;
-          backdrop-filter: blur(8px);
+          background: #060816;
+          transition: opacity 180ms ease;
         }
 
         .page-loading-inner {
@@ -60,15 +74,12 @@ export default function Preloader({ logo }) {
           justify-content: center;
           width: 180px;
           height: 58px;
-          transform: scale(1.12);
-          animation: rotateLogo 1.4s linear infinite;
         }
 
         .page-logo-wrap img {
           width: 100%;
           height: auto;
           object-fit: contain;
-          filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.28));
         }
 
         .page-logo-fallback {
@@ -82,16 +93,6 @@ export default function Preloader({ logo }) {
           color: white;
           font-weight: 700;
           letter-spacing: 0.08em;
-          box-shadow: 0 12px 24px rgba(0, 183, 255, 0.25);
-        }
-
-        @keyframes rotateLogo {
-          from {
-            transform: scale(1.12) rotate(0deg);
-          }
-          to {
-            transform: scale(1.12) rotate(360deg);
-          }
         }
       `}</style>
     </div>

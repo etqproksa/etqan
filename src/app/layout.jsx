@@ -1,7 +1,6 @@
 export const revalidate = 300;
 import { Poppins } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Preloader from "./components/Preloader";
 import BootstrapClient from "./components/BootstrapClient";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -70,9 +69,6 @@ export default async function RootLayout({ children }) {
       </head>
 
       <body className={poppins.variable}>
-        {/* Preloader */}
-        <Preloader logo={headerData?.logo?.[0]} />
-
         <main className="page-wrapper">
           <Header headerdata={headerData} menu={menu}  />
           {children}
