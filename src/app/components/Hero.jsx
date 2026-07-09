@@ -3,19 +3,8 @@ import "./hero.css";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Hero({ data }) {
-  const [isSafari, setIsSafari] = useState(false);
-
-  useEffect(() => {
-    // Detect Safari browser
-    const ua = navigator.userAgent;
-    const isSafariDetected =
-      /^((?!chrome|android).)*safari/i.test(ua) &&
-      !/chrome/i.test(ua);
-    setIsSafari(isSafariDetected);
-  }, []);
 
   const heading = data?.heading || "Etqan";
   const subheading =
@@ -31,21 +20,14 @@ export default function Hero({ data }) {
   const [mainHeading, subHeading] = heading.split("—");
 
   return (
-    <section className={`hero-section ${isSafari ? "safari-reduced" : ""}`}>
+    <section className="hero-section">
       {/* Background layers */}
       <div className="grid-bg" />
-      {!isSafari && (
-        <>
-          <div className="orb orb-1" />
-          <div className="orb orb-2" />
-          <div className="orb orb-3" />
-        </>
-      )}
-      {isSafari ? (
-        <div className="safari-fallback-bg" />
-      ) : (
-        <div className="accent-line" />
-      )}
+      <div className="orb orb-1" />
+      <div className="orb orb-2" />
+      <div className="orb orb-3" />
+      <div className="accent-line" />
+      <div className="safari-fallback-bg" />
 
       <div className="hero-container">
         {/* LEFT COLUMN */}

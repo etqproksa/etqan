@@ -118,10 +118,6 @@
 }
 
 /* ─── SAFARI FALLBACK ───────────────────────────────────────── */
-.safari-reduced .orb {
-  display: none !important;
-}
-
 .safari-fallback-bg {
   position: absolute;
   inset: 0;
@@ -131,11 +127,47 @@
     transparent 50%
   );
   pointer-events: none;
+  display: none;
 }
 
-.safari-reduced .grid-bg {
-  animation: none !important;
-  opacity: 0.5;
+/* Safari-only rules using @supports */
+@supports (-webkit-appearance: none) and (not (-moz-appearance: none)) {
+  .orb {
+    display: none !important;
+  }
+  
+  .orb-1,
+  .orb-2,
+  .orb-3 {
+    display: none !important;
+  }
+  
+  .safari-fallback-bg {
+    display: block;
+  }
+  
+  .grid-bg {
+    animation: none !important;
+    opacity: 0.3;
+  }
+  
+  .accent-line {
+    opacity: 0.15;
+    animation: none !important;
+  }
+  
+  .float-tag {
+    animation: none !important;
+  }
+  
+  .scan-line {
+    animation: none !important;
+    opacity: 0;
+  }
+  
+  .scroll-line {
+    animation: none !important;
+  }
 }
 
 /* ─── DIAGONAL ACCENT LINE ──────────────────────────────────── */
