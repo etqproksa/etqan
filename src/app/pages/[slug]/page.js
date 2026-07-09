@@ -6,7 +6,7 @@ import Textbox from "../../components/Textbox";
 import HeroSection from "../../components/ui/HeroSection";
 import VideoSection from "../../components/ui/VideoSection";
 
-import ImageGallery from "../../components/ui/ImageGallery";
+// import ImageGallery from "../../components/ui/ImageGallery";
 import TextBoxWithImage from "../../components/ui/TextBoxWithImage";
 import TextBoxWithCarousel from "../../components/ui/TextBoxWithCarousel";
 import MainServices from "../../components/MainServices";
