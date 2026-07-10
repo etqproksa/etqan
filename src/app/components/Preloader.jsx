@@ -11,13 +11,11 @@ export default function Preloader({ logo }) {
 
     if (typeof window === "undefined") return;
 
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const isAppleSafari =
-      /iPad|iPhone|iPod/.test(navigator.userAgent) &&
-      /Safari/.test(navigator.userAgent) &&
-      !/Chrome|CriOS|FxiOS/.test(navigator.userAgent);
 
-    if (reduceMotion || isAppleSafari) {
+    // Skip animations on iOS to prevent crashes
+    if (reduceMotion || isIOS) {
       setLoading(false);
       return;
     }
@@ -59,6 +57,9 @@ export default function Preloader({ logo }) {
           place-items: center;
           background: #060816;
           transition: opacity 180ms ease;
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+          will-change: opacity;
         }
 
         .page-loading-inner {
@@ -66,6 +67,8 @@ export default function Preloader({ logo }) {
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
         }
 
         .page-logo-wrap {
@@ -74,12 +77,16 @@ export default function Preloader({ logo }) {
           justify-content: center;
           width: 180px;
           height: 58px;
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
         }
 
         .page-logo-wrap img {
           width: 100%;
           height: auto;
           object-fit: contain;
+          -webkit-user-select: none;
+          user-select: none;
         }
 
         .page-logo-fallback {
@@ -93,6 +100,8 @@ export default function Preloader({ logo }) {
           color: white;
           font-weight: 700;
           letter-spacing: 0.08em;
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
         }
       `}</style>
     </div>
