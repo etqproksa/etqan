@@ -43,7 +43,7 @@ const MainSolutions = ({ data }) => {
               {/* right: text content */}
               <div className="ms-card-body">
                 <h2 className="ms-card-title">{service.title}</h2>
-                <div className="ms-card-text" style={{textAlign:"justify"}}>
+                <div className="ms-card-text" style={{textAlign:"left"}}>
                   <ReactMarkdown>{service.text}</ReactMarkdown>
                 </div>
                 <Link href={`/${service.ctaUrl}`} className="ms-card-cta">
